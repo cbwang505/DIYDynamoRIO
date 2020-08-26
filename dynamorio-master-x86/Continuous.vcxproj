@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6E2A4A05-61C0-332C-89F7-46171F77A4FC}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>Continuous</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\7cd7068e1d2b6be2b967a2e7330e9639\Continuous.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\ctest.exe" -C $(Configuration) -D Continuous
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\Continuous</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.17\Modules\FindCygwin.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindMFC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPerl.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeCCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeSystem.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CTestConfig.cmake;E:\svn\PowerResearch\dynamorio-master-x86\api\docs\CMake_doxyutils.cmake;E:\svn\PowerResearch\dynamorio-master-x86\api\docs\CMake_rundoxygen.cmake;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_api.h;E:\svn\PowerResearch\dynamorio-master-x86\make\CMake_asm.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\DynamoRIOConfig.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\make\DynamoRIOConfigVersion.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\make\configure.cmake.h;E:\svn\PowerResearch\dynamorio-master-x86\make\cpp2asm_support.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\policies.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\utils.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\utils_exposed.cmake;E:\svn\PowerResearch\dynamorio-master-x86\suite\lookup_visualstudio.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\Continuous" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

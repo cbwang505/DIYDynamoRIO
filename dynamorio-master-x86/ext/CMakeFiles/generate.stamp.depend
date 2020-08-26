@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+E:/svn/PowerResearch/dynamorio-master-x86/cmake/DynamoRIOConfig.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/cmake/DynamoRIOConfigVersion.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/ext/CMakeLists.txt
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drext.h
+E:/svn/PowerResearch/dynamorio-master-x86/make/policies.cmake

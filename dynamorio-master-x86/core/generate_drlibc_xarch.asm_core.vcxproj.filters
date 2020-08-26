@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\a4487a119b719fa4f3b7dbf70e94a7e9\drlibc_xarch.asm_core.obj.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\e72bb18ecf169face396d7f9a51abe80\generate_drlibc_xarch.asm_core.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeFiles\generate_drlibc_xarch.asm_core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{88FD253A-FE05-32B0-8BB0-8DB94163DF00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

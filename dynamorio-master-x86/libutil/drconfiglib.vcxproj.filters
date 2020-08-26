@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\dr_config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\services.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\elm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\processes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\utils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\policy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\parser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\detach.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\mfapi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\options.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\inject_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\module_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\ntdll_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drmarker.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\resources.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FD7DB4E2-83BA-30CB-8005-C4CB2E632724}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

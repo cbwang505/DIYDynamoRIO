@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\simulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_lru.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_fifo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_miss_analyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\caching_device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\caching_device_stats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_stats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\prefetcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_simulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\snoop_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\tlb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\tlb_simulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FD7DB4E2-83BA-30CB-8005-C4CB2E632724}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5FEC387A-E0BE-31C6-9923-4601A2397902}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>drearlyhelp1</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\lib32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">drearlyhelp1.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">drearlyhelp1</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86;E:\svn\PowerResearch\dynamorio-master-x86\core\win32;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;E:\svn\PowerResearch\dynamorio-master-x86\core\lib;E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\include\annotations;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /FS</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>RC_IS_EARLY1;CMAKE_INTDIR="Debug";drearlyhelp1_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;RC_IS_EARLY1;CMAKE_INTDIR=\"Debug\";drearlyhelp1_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86;E:\svn\PowerResearch\dynamorio-master-x86\core\win32;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;E:\svn\PowerResearch\dynamorio-master-x86\core\lib;E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\include\annotations;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86;E:\svn\PowerResearch\dynamorio-master-x86\core\win32;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;E:\svn\PowerResearch\dynamorio-master-x86\core\lib;E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\include\annotations;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib32\drearlyhelp2.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86 /subsystem:console,5.01 /opt:ref /opt:icf /pdbcompress /dll /base:0x70FF0000 /entry:DllMain</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/svn/PowerResearch/dynamorio-master-x86/lib32/drearlyhelp1.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/svn/PowerResearch/dynamorio-master-x86/lib32/drearlyhelp1.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations.c;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations_asm.h;E:\svn\PowerResearch\dynamorio-master-x86\make\CMake_events.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\policies.cmake;E:\svn\PowerResearch\dynamorio-master-x86\third_party\valgrind\memcheck.h;E:\svn\PowerResearch\dynamorio-master-x86\third_party\valgrind\valgrind.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\early_inject_helper1.c" />
+    <ResourceCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\drearlyhelp2.vcxproj">
+      <Project>{F1E9D2C3-45A6-36A8-9F39-E502D2CB2FB0}</Project>
+      <Name>drearlyhelp2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,2 @@
+# drcpusim tool config file
+CLIENT_REL=clients/lib32/debug/drcpusim.dll

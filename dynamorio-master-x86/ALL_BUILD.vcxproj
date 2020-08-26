@@ -1,0 +1,1486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F875C68C-93F5-37AB-9A2F-65B47FA77CF7}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.17\Modules\FindCygwin.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindMFC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPerl.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeCCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeSystem.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CTestConfig.cmake;E:\svn\PowerResearch\dynamorio-master-x86\api\docs\CMake_doxyutils.cmake;E:\svn\PowerResearch\dynamorio-master-x86\api\docs\CMake_rundoxygen.cmake;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_api.h;E:\svn\PowerResearch\dynamorio-master-x86\make\CMake_asm.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\DynamoRIOConfig.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\make\DynamoRIOConfigVersion.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\make\configure.cmake.h;E:\svn\PowerResearch\dynamorio-master-x86\make\cpp2asm_support.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\policies.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\utils.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\utils_exposed.cmake;E:\svn\PowerResearch\dynamorio-master-x86\suite\lookup_visualstudio.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRcontrol.vcxproj">
+      <Project>{43F7BE6D-2900-35EB-8666-B03DFED6EC8B}</Project>
+      <Name>DRcontrol</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRkill.vcxproj">
+      <Project>{6416B99C-9D9A-35D5-9265-79C1B9376B76}</Project>
+      <Name>DRkill</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRload.vcxproj">
+      <Project>{C94D7F32-E48D-36D2-89BC-16407408861A}</Project>
+      <Name>DRload</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\DRstats.vcxproj">
+      <Project>{E8F95206-A62A-39F1-A925-43778C4563FA}</Project>
+      <Name>DRstats</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRview.vcxproj">
+      <Project>{9F1D4CBE-F00E-3899-9ABB-65E93C57B62C}</Project>
+      <Name>DRview</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.detach.vcxproj">
+      <Project>{9740BF3F-5D1F-3269-8E1C-68E5F9192256}</Project>
+      <Name>api.detach</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.dis.vcxproj">
+      <Project>{C57051A2-A03A-32FF-BDFE-8A429495F531}</Project>
+      <Name>api.dis</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.drdecode.vcxproj">
+      <Project>{238B6829-1281-34BB-AAFF-C4FFB4C4DB25}</Project>
+      <Name>api.drdecode</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.ibl-stress.vcxproj">
+      <Project>{D93E6BE8-89C9-3E71-BE2C-BDDE0D18A841}</Project>
+      <Name>api.ibl-stress</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.ir.vcxproj">
+      <Project>{DA42BE05-7A54-3291-927F-05AFA4D0C192}</Project>
+      <Name>api.ir</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.ir-static.vcxproj">
+      <Project>{CCBC7937-5A31-335E-A400-9F09E3814A30}</Project>
+      <Name>api.ir-static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.startstop.vcxproj">
+      <Project>{676D60D5-8578-375C-A34C-9BA33B19D5AA}</Project>
+      <Name>api.startstop</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.static_detach.vcxproj">
+      <Project>{E9CD9E4A-092A-3BFA-A266-41C52C983BF1}</Project>
+      <Name>api.static_detach</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.static_noclient.vcxproj">
+      <Project>{F2F867AD-BC04-3444-A6D3-B993CE91FFF5}</Project>
+      <Name>api.static_noclient</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.static_noinit.vcxproj">
+      <Project>{8C6810EF-35AB-37D8-88FD-7BF64CFF895C}</Project>
+      <Name>api.static_noinit</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.static_prepop.vcxproj">
+      <Project>{D03693A4-542E-3ADC-B7FB-07F6751AB5EC}</Project>
+      <Name>api.static_prepop</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.static_startstop.vcxproj">
+      <Project>{2C7C5DB7-2060-3468-B721-C17FE488996C}</Project>
+      <Name>api.static_startstop</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\api.symtest.vcxproj">
+      <Project>{3A62921E-05A2-3C4C-97B5-0C3BFBADB5CC}</Project>
+      <Name>api.symtest</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\balloon.vcxproj">
+      <Project>{A92906D1-A343-3166-887C-C06F066FC9F8}</Project>
+      <Name>balloon</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\bbbuf.vcxproj">
+      <Project>{60B43DA7-963C-3D57-BD5C-7F826B22C119}</Project>
+      <Name>bbbuf</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\bbcount.vcxproj">
+      <Project>{05D1FAC8-0E3A-3746-A919-3E685EC3F896}</Project>
+      <Name>bbcount</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\bbsize.vcxproj">
+      <Project>{8A6FA168-3B59-3C9F-A62B-05737B0AAB21}</Project>
+      <Name>bbsize</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\cbr.vcxproj">
+      <Project>{87F94C34-7EE9-3260-96B1-C21D06B42624}</Project>
+      <Name>cbr</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\cbrtrace.vcxproj">
+      <Project>{16A643B9-E923-3D86-B410-D944FD44DDDA}</Project>
+      <Name>cbrtrace</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.abort.vcxproj">
+      <Project>{26707A40-369B-3ED3-BB67-C05AFEB2B6D8}</Project>
+      <Name>client.abort</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.abort.dll.vcxproj">
+      <Project>{83037C14-0494-34AD-8391-04987D33B3EF}</Project>
+      <Name>client.abort.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.alloc.vcxproj">
+      <Project>{AB45CBBB-C245-3D89-BF3E-A7BA7B9135B7}</Project>
+      <Name>client.alloc</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.alloc.dll.vcxproj">
+      <Project>{278E7169-C4D6-301E-97D6-6CAA1155D527}</Project>
+      <Name>client.alloc.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-concurrency.vcxproj">
+      <Project>{C012C7B6-3373-3D02-9076-78D75BBD439F}</Project>
+      <Name>client.annotation-concurrency</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-concurrency-opt.vcxproj">
+      <Project>{B2E8A305-731A-3D2F-ACAB-81FDD62EF37D}</Project>
+      <Name>client.annotation-concurrency-opt</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-concurrency-opt.appdll.vcxproj">
+      <Project>{A7409FC2-7995-3C85-9915-5997B28E9EAA}</Project>
+      <Name>client.annotation-concurrency-opt.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-concurrency-opt.dll.vcxproj">
+      <Project>{0CED36B7-5DCC-38A7-BD52-FFA2B4C9798D}</Project>
+      <Name>client.annotation-concurrency-opt.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-concurrency.appdll.vcxproj">
+      <Project>{A83D4AE9-9593-39D9-A2B0-0D044214001D}</Project>
+      <Name>client.annotation-concurrency.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-concurrency.dll.vcxproj">
+      <Project>{23360B0E-51C8-351A-AAEA-7C357FD4D573}</Project>
+      <Name>client.annotation-concurrency.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-detection.vcxproj">
+      <Project>{6B8787B3-6200-3C00-9846-A454D446428E}</Project>
+      <Name>client.annotation-detection</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-detection-opt.vcxproj">
+      <Project>{0031DA0B-C02C-394F-8B22-1292923588F0}</Project>
+      <Name>client.annotation-detection-opt</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-detection-opt.dll.vcxproj">
+      <Project>{60CB2CEA-D5EE-3831-8B0E-DD1A87CEEEB2}</Project>
+      <Name>client.annotation-detection-opt.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.annotation-detection.dll.vcxproj">
+      <Project>{9CAE488F-3824-30B1-8622-22CC09E3F4BD}</Project>
+      <Name>client.annotation-detection.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.app_inscount.dll.vcxproj">
+      <Project>{4CB168F1-3A79-3784-85B0-D142A7A14040}</Project>
+      <Name>client.app_inscount.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.blackbox.dll.A.vcxproj">
+      <Project>{FB1722F0-86CC-38CC-8C35-7E74B366F69B}</Project>
+      <Name>client.blackbox.dll.A</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.blackbox.dll.B.vcxproj">
+      <Project>{3E6AC20C-593C-331D-88EB-72A42CBEF587}</Project>
+      <Name>client.blackbox.dll.B</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.call-retarget.vcxproj">
+      <Project>{643260CC-409C-3B31-B1C5-2120F35B70B0}</Project>
+      <Name>client.call-retarget</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.call-retarget.dll.vcxproj">
+      <Project>{123B0B24-5C95-37FF-A28B-BE40AFC197CC}</Project>
+      <Name>client.call-retarget.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cbr-retarget.vcxproj">
+      <Project>{6CD67427-FC97-3BF9-BA83-D44590220446}</Project>
+      <Name>client.cbr-retarget</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cbr-retarget.dll.vcxproj">
+      <Project>{23D8B37A-0196-3258-B581-253DC41FE4FE}</Project>
+      <Name>client.cbr-retarget.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cbr3.vcxproj">
+      <Project>{DBEF0E4C-D69B-3D5E-81E1-44F9B11AB0D2}</Project>
+      <Name>client.cbr3</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cbr3.dll.vcxproj">
+      <Project>{2DB39357-231C-3770-9119-43849409D2D0}</Project>
+      <Name>client.cbr3.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cbr4.vcxproj">
+      <Project>{102778BB-0810-30DA-9542-43F0659AB48B}</Project>
+      <Name>client.cbr4</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cbr4.dll.vcxproj">
+      <Project>{B5AC241B-0517-3EC6-8497-DAD2122B1F2E}</Project>
+      <Name>client.cbr4.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cleancall.vcxproj">
+      <Project>{F8DF0315-CF28-36C6-8AEE-FB608AFE499F}</Project>
+      <Name>client.cleancall</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cleancall-opt-1.vcxproj">
+      <Project>{F3B80210-4C24-3EC0-87C2-4AD177B8D962}</Project>
+      <Name>client.cleancall-opt-1</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cleancall-opt-1.dll.vcxproj">
+      <Project>{043BAE2C-72AE-3734-9CAE-6DA0186B2B1C}</Project>
+      <Name>client.cleancall-opt-1.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cleancall.dll.vcxproj">
+      <Project>{1D809D0B-4523-3E62-BE18-3773CA2530F3}</Project>
+      <Name>client.cleancall.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.cleancallparams.dll.vcxproj">
+      <Project>{CDA8E549-6694-3629-A494-51782D4D61E3}</Project>
+      <Name>client.cleancallparams.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.count-bbs.dll.vcxproj">
+      <Project>{2657707A-F1C0-3AA4-85EE-075463B6A704}</Project>
+      <Name>client.count-bbs.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.count-ctis.vcxproj">
+      <Project>{41221C2D-3518-3C9D-8232-03360105E9D1}</Project>
+      <Name>client.count-ctis</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.count-ctis.dll.vcxproj">
+      <Project>{777B7A91-4FA5-3105-A7EB-181CD407A52D}</Project>
+      <Name>client.count-ctis.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.crashmsg.dll.vcxproj">
+      <Project>{5E3AA59B-81A9-3775-A4EE-DD1815AF9151}</Project>
+      <Name>client.crashmsg.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.destructor.vcxproj">
+      <Project>{03A8FD04-2723-3163-BA76-ADEDDA7D9497}</Project>
+      <Name>client.destructor</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.destructor.dll.vcxproj">
+      <Project>{F1B3D0D2-D36B-3DF5-8922-1A298DEFE58A}</Project>
+      <Name>client.destructor.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.dr_options.dll.vcxproj">
+      <Project>{9CDEC498-68AC-3531-B50A-D3256B242232}</Project>
+      <Name>client.dr_options.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drbbdup-analysis-test.dll.vcxproj">
+      <Project>{5EFB4FCD-7FED-39DB-B497-D19FF641B928}</Project>
+      <Name>client.drbbdup-analysis-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drbbdup-no-encode-test.dll.vcxproj">
+      <Project>{DB1C6359-CD36-3239-99FD-22FF0275B402}</Project>
+      <Name>client.drbbdup-no-encode-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drbbdup-test.dll.vcxproj">
+      <Project>{20662476-6A4E-37DD-BC52-296490624FB3}</Project>
+      <Name>client.drbbdup-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drcontainers-test.dll.vcxproj">
+      <Project>{DF3754C1-EE6B-3A2C-A52D-8ECD7D89DC60}</Project>
+      <Name>client.drcontainers-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drmgr-test.vcxproj">
+      <Project>{F210BF50-85B2-33F0-B985-92B27FD27CC5}</Project>
+      <Name>client.drmgr-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drmgr-test.dll.vcxproj">
+      <Project>{9455F12B-2114-385F-B073-61613B15A6BA}</Project>
+      <Name>client.drmgr-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drmodtrack-test.dll.vcxproj">
+      <Project>{25593FCD-F820-30D7-AD2F-AA45987B3286}</Project>
+      <Name>client.drmodtrack-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drreg-cross.dll.vcxproj">
+      <Project>{8EAEB1C7-516A-37A2-AC9D-66F5B1E738CD}</Project>
+      <Name>client.drreg-cross.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drreg-end-restore.dll.vcxproj">
+      <Project>{3BA86589-8BE8-3C4C-983A-9FF98AB282C4}</Project>
+      <Name>client.drreg-end-restore.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drreg-flow.dll.vcxproj">
+      <Project>{12059288-C7B9-3561-B5DA-452E127A609E}</Project>
+      <Name>client.drreg-flow.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drreg-test.vcxproj">
+      <Project>{B0C5DD27-C970-3F9D-951C-433AD9C49A75}</Project>
+      <Name>client.drreg-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drreg-test.dll.vcxproj">
+      <Project>{E5BBB9EC-16AE-34E0-BF48-FF2E326A0797}</Project>
+      <Name>client.drreg-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drsyms-test.vcxproj">
+      <Project>{986FCA93-E48A-32A1-AA50-6276524273EA}</Project>
+      <Name>client.drsyms-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drsyms-test.appdll.vcxproj">
+      <Project>{976D540B-3230-3E33-BFB3-81DD8F1C44F2}</Project>
+      <Name>client.drsyms-test.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drsyms-test.dll.vcxproj">
+      <Project>{A04B641E-047C-3C3B-A208-564A69C61249}</Project>
+      <Name>client.drsyms-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drutil-test.vcxproj">
+      <Project>{B3466AD2-7E62-3F1F-9543-D7D363C0B83C}</Project>
+      <Name>client.drutil-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drutil-test.dll.vcxproj">
+      <Project>{59250878-96B4-354A-9C96-8FB2A14D5E81}</Project>
+      <Name>client.drutil-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drwrap-test.vcxproj">
+      <Project>{DBC6901E-5EF9-35E8-B02D-360DCCB051FB}</Project>
+      <Name>client.drwrap-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drwrap-test-callconv.vcxproj">
+      <Project>{6B44DDDE-02D1-3CB9-8CED-1CE7E94EEC1A}</Project>
+      <Name>client.drwrap-test-callconv</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drwrap-test-callconv.dll.vcxproj">
+      <Project>{8223D3B9-B89B-382F-A056-064D185B7FB5}</Project>
+      <Name>client.drwrap-test-callconv.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drwrap-test-detach.vcxproj">
+      <Project>{F2FCF224-1F1B-3938-8811-7DD5210374D8}</Project>
+      <Name>client.drwrap-test-detach</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drwrap-test.appdll.vcxproj">
+      <Project>{66630B9A-49EE-3303-8405-9D64F8A04C94}</Project>
+      <Name>client.drwrap-test.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drwrap-test.dll.vcxproj">
+      <Project>{DDBDF75D-983E-3E1E-894B-059C9F9BC279}</Project>
+      <Name>client.drwrap-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drx-scattergather.vcxproj">
+      <Project>{1A5418E6-2C7A-3CDB-8D4D-327658E928CA}</Project>
+      <Name>client.drx-scattergather</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drx-scattergather.dll.vcxproj">
+      <Project>{9B1E2B25-B9DF-3646-9B5C-DEDAD25E9C1E}</Project>
+      <Name>client.drx-scattergather.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drx-test.vcxproj">
+      <Project>{8AC411C6-EDE6-394A-BF16-AA1CFC2CD49A}</Project>
+      <Name>client.drx-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drx-test.dll.vcxproj">
+      <Project>{315ED31F-B139-3323-A0F4-0BD45E890843}</Project>
+      <Name>client.drx-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drx_buf-test.vcxproj">
+      <Project>{375C2D3F-CFD8-38F9-B704-670627465705}</Project>
+      <Name>client.drx_buf-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drx_buf-test.dll.vcxproj">
+      <Project>{6F361458-627A-3B05-96E7-7598D868D247}</Project>
+      <Name>client.drx_buf-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.drxmgr-test.dll.vcxproj">
+      <Project>{FB398C7C-A10E-3626-98C3-5EC0270B16F6}</Project>
+      <Name>client.drxmgr-test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.events.vcxproj">
+      <Project>{5525F2CB-FBF5-3991-9CA3-14337BE8087E}</Project>
+      <Name>client.events</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.events.appdll.vcxproj">
+      <Project>{93C56D4F-990F-33C3-A392-4726340C8DFA}</Project>
+      <Name>client.events.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.events.dll.vcxproj">
+      <Project>{48EB01DA-2536-3892-A4C1-39C7ACA10181}</Project>
+      <Name>client.events.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.events_cpp.vcxproj">
+      <Project>{943AFDBF-75BA-384F-9203-C76C1BDB55AA}</Project>
+      <Name>client.events_cpp</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.events_cpp.dll.vcxproj">
+      <Project>{F9BC3978-0F9F-3FA6-897E-8C5DC7E5B323}</Project>
+      <Name>client.events_cpp.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.execfault.vcxproj">
+      <Project>{8F66CBDD-A405-3159-88FC-37430F29A1FA}</Project>
+      <Name>client.execfault</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.execfault.dll.vcxproj">
+      <Project>{E8160DA5-0DF0-3D1B-A7A2-7DFFCFC0EE0C}</Project>
+      <Name>client.execfault.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.fcache_shift.vcxproj">
+      <Project>{60AD6590-AFD2-3041-BA77-F22FC8FEA3D8}</Project>
+      <Name>client.fcache_shift</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.fcache_shift.dll.vcxproj">
+      <Project>{DEB71FDE-2A5B-3CAF-8BCC-FB12F64236E4}</Project>
+      <Name>client.fcache_shift.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.fibers.vcxproj">
+      <Project>{9588B0F6-7B8E-37BE-9338-2A2A195736F2}</Project>
+      <Name>client.fibers</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.file_io.vcxproj">
+      <Project>{C06B6157-BAF4-3A4C-B70A-F61B2FDDB618}</Project>
+      <Name>client.file_io</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.file_io.dll.vcxproj">
+      <Project>{07DD7562-08C9-31A6-9079-A91C3430F57F}</Project>
+      <Name>client.file_io.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.flush.vcxproj">
+      <Project>{979471D5-8B37-3ECD-8ED1-0AAECD0243D0}</Project>
+      <Name>client.flush</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.flush.dll.vcxproj">
+      <Project>{825ED8A9-28D0-3EA9-9F6F-9C4F7F4C8684}</Project>
+      <Name>client.flush.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.inline.vcxproj">
+      <Project>{283B69E0-2967-3F06-840E-DCDDA9821E27}</Project>
+      <Name>client.inline</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.inline.dll.vcxproj">
+      <Project>{9494A5C4-BA5F-30E3-8498-8763075E12FB}</Project>
+      <Name>client.inline.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.int64_overrides.dll.vcxproj">
+      <Project>{E37DFC73-4C01-31AE-B23A-F411F5913844}</Project>
+      <Name>client.int64_overrides.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.large_options.vcxproj">
+      <Project>{AD0F7430-FCA0-36BF-9AA8-BECB0A5CC2D3}</Project>
+      <Name>client.large_options</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.large_options.dll.vcxproj">
+      <Project>{1B82BF76-3C5F-3844-91DC-8E2107BBD56F}</Project>
+      <Name>client.large_options.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.loader.vcxproj">
+      <Project>{B7D72FB7-8CDA-3A56-9CAD-D2EBDA0A8880}</Project>
+      <Name>client.loader</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.loader.dll.vcxproj">
+      <Project>{E3192C79-7495-3FC1-A6A9-A3099926D2BC}</Project>
+      <Name>client.loader.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.low_on_memory.vcxproj">
+      <Project>{902FC7C2-1EE3-3C10-B08E-9F0A2C48325A}</Project>
+      <Name>client.low_on_memory</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.low_on_memory.dll.vcxproj">
+      <Project>{78358AB8-E223-3D3B-97B6-A5FAD660C955}</Project>
+      <Name>client.low_on_memory.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.modules.vcxproj">
+      <Project>{3C42CFCD-6F14-38AC-B311-EC2CD5EB6D9E}</Project>
+      <Name>client.modules</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.modules.appdll.vcxproj">
+      <Project>{B72256FB-5011-30EA-8BA7-E3F3555EA5CE}</Project>
+      <Name>client.modules.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.modules.dll.vcxproj">
+      <Project>{C9888D89-6075-300E-8326-CBDBC95A2432}</Project>
+      <Name>client.modules.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.nudge_ex.vcxproj">
+      <Project>{2A224827-9EAA-32D7-98D4-BEEF48273737}</Project>
+      <Name>client.nudge_ex</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.nudge_ex.dll.vcxproj">
+      <Project>{7BC3749F-DF4F-3EA9-A2D7-325476F65A5E}</Project>
+      <Name>client.nudge_ex.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.nudge_test.dll.vcxproj">
+      <Project>{627539A5-DBD0-3A0A-987E-2248B702486D}</Project>
+      <Name>client.nudge_test.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.null_instrument.vcxproj">
+      <Project>{C691D1DA-2FB8-3C78-8F8D-E62906EE559C}</Project>
+      <Name>client.null_instrument</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.null_instrument.appdll.vcxproj">
+      <Project>{77969A8A-AE84-360B-A530-0239E8F5D64D}</Project>
+      <Name>client.null_instrument.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.null_instrument.dll.vcxproj">
+      <Project>{9EFEB5A7-A961-3CF2-8B0C-5839EDE0E550}</Project>
+      <Name>client.null_instrument.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.option_parse.dll.vcxproj">
+      <Project>{ADDA7E67-F6A7-330C-B926-AAEC7A01659B}</Project>
+      <Name>client.option_parse.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.pcache.vcxproj">
+      <Project>{37B27FF0-CBF9-3946-B86E-DD4E8F8C1097}</Project>
+      <Name>client.pcache</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.pcache.dll.vcxproj">
+      <Project>{7B15C8DF-5CCE-3E37-BA7F-41AE69FF7678}</Project>
+      <Name>client.pcache.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.reachability.dll.vcxproj">
+      <Project>{C4619C31-4F82-3F93-91DB-631CBD64F2EE}</Project>
+      <Name>client.reachability.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.retaddr.vcxproj">
+      <Project>{7FB3C089-9BB6-30E7-A6F8-10794DDCA9F4}</Project>
+      <Name>client.retaddr</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.retaddr.dll.vcxproj">
+      <Project>{60075C21-712F-3FC8-BD04-5A13EFC9C28E}</Project>
+      <Name>client.retaddr.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.segfault.vcxproj">
+      <Project>{B71CB2CA-8DED-32CC-824B-E430F10BB5DF}</Project>
+      <Name>client.segfault</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.segfault.dll.vcxproj">
+      <Project>{C692637B-A684-33A7-9EF3-395037B707C1}</Project>
+      <Name>client.segfault.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.strace.vcxproj">
+      <Project>{7A42E295-4A68-3A84-AE5B-E5D5B4DEB8A6}</Project>
+      <Name>client.strace</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.strace.dll.vcxproj">
+      <Project>{4D3FCC6F-DA2C-366C-820B-FDDDFD4A54A4}</Project>
+      <Name>client.strace.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.syscall.vcxproj">
+      <Project>{8D002478-2702-39F1-AE20-5B057D540895}</Project>
+      <Name>client.syscall</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.syscall.dll.vcxproj">
+      <Project>{CBDBFFFD-A74F-3980-9965-2204D63470FD}</Project>
+      <Name>client.syscall.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.thread.vcxproj">
+      <Project>{9D211FC1-F1CF-3093-B53D-EBA4F3389B11}</Project>
+      <Name>client.thread</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.thread.appdll.vcxproj">
+      <Project>{B993967B-29DF-329A-87B8-39FF8E5AB209}</Project>
+      <Name>client.thread.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.thread.dll.vcxproj">
+      <Project>{AB3F024E-C590-351E-B342-761DCBC1FA8B}</Project>
+      <Name>client.thread.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.thread_exit_xl8.dll.vcxproj">
+      <Project>{447926DA-6C26-3E9C-8DE9-F76A293F94AC}</Project>
+      <Name>client.thread_exit_xl8.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.tls.vcxproj">
+      <Project>{9E40B70F-1627-3169-8F35-8B67965D6C18}</Project>
+      <Name>client.tls</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.tls.dll.vcxproj">
+      <Project>{01EA41A3-79C7-3967-862E-C3544DD6DEE7}</Project>
+      <Name>client.tls.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.translate_sandbox.vcxproj">
+      <Project>{096AEA83-6485-3028-B97E-B9E26ACBFE53}</Project>
+      <Name>client.translate_sandbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.translate_sandbox.dll.vcxproj">
+      <Project>{776E8530-E8D4-39F1-8DDC-8183094C7534}</Project>
+      <Name>client.translate_sandbox.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.truncate.dll.vcxproj">
+      <Project>{5F58075A-5D7E-312F-BD63-FD440819BC2F}</Project>
+      <Name>client.truncate.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.unregister.dll.vcxproj">
+      <Project>{BB4CD52B-EC8C-37DB-89DD-D526A44F0B22}</Project>
+      <Name>client.unregister.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.vg-annot.vcxproj">
+      <Project>{66661477-68A0-3E30-9B7B-4BE119B33D81}</Project>
+      <Name>client.vg-annot</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.vg-annot-opt.vcxproj">
+      <Project>{A23CDB3F-8DF7-3E47-B722-8C74DAC14A43}</Project>
+      <Name>client.vg-annot-opt</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.vg-annot-opt.dll.vcxproj">
+      <Project>{95D389CA-A42B-3C4E-AD4C-D823485F64BF}</Project>
+      <Name>client.vg-annot-opt.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.vg-annot.dll.vcxproj">
+      <Project>{DC26BF87-DACD-32DA-A2A1-1BBA5CEEEB8A}</Project>
+      <Name>client.vg-annot.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.winxfer.vcxproj">
+      <Project>{C9BC537B-001C-37A6-81DD-3C07F652928A}</Project>
+      <Name>client.winxfer</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\client.winxfer.dll.vcxproj">
+      <Project>{DEE5FC43-3B82-3C50-8473-03A1BDDF9155}</Project>
+      <Name>client.winxfer.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\closewnd.vcxproj">
+      <Project>{D0180EA7-6057-34B7-93FE-6201BBFA8527}</Project>
+      <Name>closewnd</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.broadfun.vcxproj">
+      <Project>{7A9DC9CC-597A-3A5F-85BC-E41D8D5ECACC}</Project>
+      <Name>common.broadfun</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.decode.vcxproj">
+      <Project>{9284F0D7-45E4-333B-B63D-25561261C2C8}</Project>
+      <Name>common.decode</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.decode-bad.vcxproj">
+      <Project>{51C2AA34-A13F-3471-9169-042660527228}</Project>
+      <Name>common.decode-bad</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.eflags.vcxproj">
+      <Project>{C806040D-088C-391E-8A9C-26B15B87C200}</Project>
+      <Name>common.eflags</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.fib.vcxproj">
+      <Project>{6205F585-5F5F-39AC-9FB0-6B000AF51559}</Project>
+      <Name>common.fib</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.floatpc.vcxproj">
+      <Project>{BF8C715B-9F84-3CFA-B9CD-8AE93105FF95}</Project>
+      <Name>common.floatpc</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.getretaddr.vcxproj">
+      <Project>{7A36B79B-B034-3A97-AA64-55499EB67CAC}</Project>
+      <Name>common.getretaddr</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.nativeexec.vcxproj">
+      <Project>{06F38CC0-B3E9-39FF-8E88-9D34D3C43F18}</Project>
+      <Name>common.nativeexec</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.nativeexec.appdll.vcxproj">
+      <Project>{C6A931C0-D553-327D-BD97-C7F5FFE6A806}</Project>
+      <Name>common.nativeexec.appdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.protect-dstack.vcxproj">
+      <Project>{7B325E81-41B0-36E3-9103-D2967053AC63}</Project>
+      <Name>common.protect-dstack</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\common.segfault.vcxproj">
+      <Project>{3A059AAD-BA22-3F86-A6D0-7BE9A33C256E}</Project>
+      <Name>common.segfault</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\countcalls.vcxproj">
+      <Project>{2F79587C-44F0-380C-94D0-AF0B59CD6639}</Project>
+      <Name>countcalls</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\create_process.vcxproj">
+      <Project>{E193EF13-A0A2-3842-A9C9-2AB235BC4584}</Project>
+      <Name>create_process</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\decenc.drdecode_decenc_x86.vcxproj">
+      <Project>{FD68D8A9-A1FC-334B-B749-A33B6E5BD92A}</Project>
+      <Name>decenc.drdecode_decenc_x86</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\directory_iterator.vcxproj">
+      <Project>{75605DB8-1151-3A88-9604-814EDBFBC3D7}</Project>
+      <Name>directory_iterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\div.vcxproj">
+      <Project>{4B2B4653-4DE7-32B1-AFE4-F78E7AC63FCD}</Project>
+      <Name>div</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drbbdup\drbbdup.vcxproj">
+      <Project>{DB1CA364-52E2-33F9-B97B-3DE43B63FE0D}</Project>
+      <Name>drbbdup</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drbbdup\drbbdup_static.vcxproj">
+      <Project>{2860B8E1-DD4A-3F51-93E5-194C548FAA0E}</Project>
+      <Name>drbbdup_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drcachesim.vcxproj">
+      <Project>{CB392A21-0C0C-3DE9-BF1E-035E1D68534C}</Project>
+      <Name>drcachesim</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drcachesim_ops.vcxproj">
+      <Project>{C6B97C0D-BDF5-3CD1-A4A6-1B764682376D}</Project>
+      <Name>drcachesim_ops</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\drconfig.vcxproj">
+      <Project>{B2893FA7-FE75-33BF-AA0B-234214E598DA}</Project>
+      <Name>drconfig</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\drconfiglib.vcxproj">
+      <Project>{4DC2EFD3-5B61-38A3-951D-01882F4C49AA}</Project>
+      <Name>drconfiglib</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drcontainers\drcontainers.vcxproj">
+      <Project>{201CABA4-9333-31ED-9D47-A960783A2B95}</Project>
+      <Name>drcontainers</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcov\drcov.vcxproj">
+      <Project>{00BCAE91-CB19-31D3-A733-B50C385F810D}</Project>
+      <Name>drcov</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcov\drcov2lcov.vcxproj">
+      <Project>{978E2E5B-5995-31B5-A6C8-902D95BA35B3}</Project>
+      <Name>drcov2lcov</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drcovlib\drcovlib.vcxproj">
+      <Project>{C7B44579-809E-3027-828E-580A7079B691}</Project>
+      <Name>drcovlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drcovlib\drcovlib_static.vcxproj">
+      <Project>{DF078042-8909-3F35-B8E7-3BCD8A85F7A4}</Project>
+      <Name>drcovlib_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcpusim\drcpusim.vcxproj">
+      <Project>{C0895A64-CFEA-3C4F-939B-7B64C9E7E250}</Project>
+      <Name>drcpusim</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcpusim\drcpusim_ops.vcxproj">
+      <Project>{C06D77B3-79C8-3137-B897-9188FC465A60}</Project>
+      <Name>drcpusim_ops</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\drdecode.vcxproj">
+      <Project>{7FDB283A-270B-31F0-82CB-365441013206}</Project>
+      <Name>drdecode</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drdisas\drdisas.vcxproj">
+      <Project>{71F46FB8-E4E7-3661-99F6-650139B82E39}</Project>
+      <Name>drdisas</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\drearlyhelp1.vcxproj">
+      <Project>{5FEC387A-E0BE-31C6-9923-4601A2397902}</Project>
+      <Name>drearlyhelp1</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\drearlyhelp2.vcxproj">
+      <Project>{F1E9D2C3-45A6-36A8-9F39-E502D2CB2FB0}</Project>
+      <Name>drearlyhelp2</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\drfrontendlib.vcxproj">
+      <Project>{6CF5775B-331F-38A4-BC5C-93C8194F90BB}</Project>
+      <Name>drfrontendlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drgui\drgui.vcxproj">
+      <Project>{8B929E3D-F40F-3E30-A6AC-A7BD4C2F2DD2}</Project>
+      <Name>drgui</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\drinject.vcxproj">
+      <Project>{76357371-10EF-3E55-9A47-186BDEC3BD88}</Project>
+      <Name>drinject</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\drinjectlib.vcxproj">
+      <Project>{2751DBB2-84F4-382D-A169-8F1252E6E424}</Project>
+      <Name>drinjectlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc.vcxproj">
+      <Project>{D7326D7B-5157-385A-8AC5-00F240091C48}</Project>
+      <Name>drlibc</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace.vcxproj">
+      <Project>{D5EA2856-5EA8-33B9-A57F-456E7EFF86EC}</Project>
+      <Name>drmemtrace</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_analyzer.vcxproj">
+      <Project>{00B47384-0266-382C-8007-29B021004CA3}</Project>
+      <Name>drmemtrace_analyzer</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_basic_counts.vcxproj">
+      <Project>{BFCE6178-6371-3370-9948-4C035CF135DC}</Project>
+      <Name>drmemtrace_basic_counts</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_func_view.vcxproj">
+      <Project>{48B1BA5A-E40E-31BD-823D-62C3A3484CFB}</Project>
+      <Name>drmemtrace_func_view</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_histogram.vcxproj">
+      <Project>{E328889A-D425-3F91-A2C1-1B60092C6B99}</Project>
+      <Name>drmemtrace_histogram</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_opcode_mix.vcxproj">
+      <Project>{517F7143-C119-3420-92D5-8FDBF9E0EF68}</Project>
+      <Name>drmemtrace_opcode_mix</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_raw2trace.vcxproj">
+      <Project>{25C2878C-9555-3E00-ADF9-D8D8CD828A37}</Project>
+      <Name>drmemtrace_raw2trace</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_reuse_distance.vcxproj">
+      <Project>{5716C109-340E-324F-A268-13CD0E437F53}</Project>
+      <Name>drmemtrace_reuse_distance</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_reuse_time.vcxproj">
+      <Project>{7D917A1B-2044-3048-AA3F-EC15B21C6AD1}</Project>
+      <Name>drmemtrace_reuse_time</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_simulator.vcxproj">
+      <Project>{01F58F84-838D-3A4F-A7CF-78B040796D94}</Project>
+      <Name>drmemtrace_simulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_static.vcxproj">
+      <Project>{DCA82B8C-7ED1-32B7-BE1B-AB4EC244A899}</Project>
+      <Name>drmemtrace_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_view.vcxproj">
+      <Project>{DE5A3D15-9479-3F62-AB72-3886DFA7DE1B}</Project>
+      <Name>drmemtrace_view</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drmgr\drmgr.vcxproj">
+      <Project>{587685B0-A145-3EB2-A2FB-6DAF79585D74}</Project>
+      <Name>drmgr</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drmgr\drmgr_static.vcxproj">
+      <Project>{F524B7BA-0ADD-314F-8607-6CEB39F404A9}</Project>
+      <Name>drmgr_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\drpreinject.vcxproj">
+      <Project>{27DD5E16-2C11-30B1-87E8-BF548F0ECAC6}</Project>
+      <Name>drpreinject</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drraw2trace.vcxproj">
+      <Project>{858EE483-C414-33E5-8BBF-4DFA7127B8BE}</Project>
+      <Name>drraw2trace</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drreg\drreg.vcxproj">
+      <Project>{231D7C81-B170-391B-85B6-9A9AE57C3D8D}</Project>
+      <Name>drreg</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drreg\drreg_static.vcxproj">
+      <Project>{761DCFA3-4F41-360D-BD71-FEFF7AAE5DE4}</Project>
+      <Name>drreg_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\drrun.vcxproj">
+      <Project>{D327A2D6-74B9-3FCD-B73B-44AF3E056EBC}</Project>
+      <Name>drrun</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drsyms\drsyms.vcxproj">
+      <Project>{89AD8787-E120-3954-8292-FE02066AAE41}</Project>
+      <Name>drsyms</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drsyms\drsyms_bench.vcxproj">
+      <Project>{3EA008AC-2E6A-334D-9963-E7E90A229B25}</Project>
+      <Name>drsyms_bench</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drsyms\drsyms_static.vcxproj">
+      <Project>{393B0654-2E0F-3C76-A187-3682B960BCF4}</Project>
+      <Name>drsyms_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drutil\drutil.vcxproj">
+      <Project>{8502AE82-123C-334A-A91F-6D5C1F63131F}</Project>
+      <Name>drutil</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drutil\drutil_static.vcxproj">
+      <Project>{0BC6AC16-DE1D-3D49-AA61-708588A2E73F}</Project>
+      <Name>drutil_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drwrap\drwrap.vcxproj">
+      <Project>{C627F3E8-DD93-35C9-88F5-7715D13C1E1E}</Project>
+      <Name>drwrap</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drwrap\drwrap_static.vcxproj">
+      <Project>{B0028A6D-3257-34D3-A95B-D12BBC67DDE1}</Project>
+      <Name>drwrap_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drx\drx.vcxproj">
+      <Project>{A4FEEE1D-A3C2-36EE-8FE1-4C00C9893521}</Project>
+      <Name>drx</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drx\drx_static.vcxproj">
+      <Project>{4DF9DFF9-426F-32A6-9BB8-FF0EDED9B114}</Project>
+      <Name>drx_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\dummy.vcxproj">
+      <Project>{ADC929D0-FA85-3522-A75F-06FA2E311487}</Project>
+      <Name>dummy</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\dumpevts.vcxproj">
+      <Project>{DA6BCABD-9E5A-324A-808D-A2105EE6A489}</Project>
+      <Name>dumpevts</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\dynamorio.vcxproj">
+      <Project>{51BEB376-6C9A-34C4-9841-C9ED4126E15D}</Project>
+      <Name>dynamorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\dynamorio_static.vcxproj">
+      <Project>{33DE9280-3F86-3012-BCE5-84B29A746FF5}</Project>
+      <Name>dynamorio_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\empty.vcxproj">
+      <Project>{E956CC71-1F8D-3172-B6BB-029EE201DDA0}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\histogram_launcher.vcxproj">
+      <Project>{1D57E7AE-7CA2-3A08-B185-B33D6587EDCA}</Project>
+      <Name>histogram_launcher</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\hot_bbcount.vcxproj">
+      <Project>{D17331C3-329D-3C89-A7B4-0DCE9FE74510}</Project>
+      <Name>hot_bbcount</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\docs\htmldocs.vcxproj">
+      <Project>{102712A4-B3CF-3F76-B90F-306A920DD482}</Project>
+      <Name>htmldocs</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\inc2add.vcxproj">
+      <Project>{8088CB3C-E0C3-33FE-B336-6B763ACCB113}</Project>
+      <Name>inc2add</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\inline.vcxproj">
+      <Project>{EC117B02-3089-3820-966B-345F7EA929C6}</Project>
+      <Name>inline</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\inscount.vcxproj">
+      <Project>{85225D00-8812-39EA-B650-343528843603}</Project>
+      <Name>inscount</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\instrace_simple.vcxproj">
+      <Project>{C5083FBC-901B-37DD-A10B-CBDABB3F8CE9}</Project>
+      <Name>instrace_simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\instrace_x86_binary.vcxproj">
+      <Project>{62CD9B27-3156-345C-BBFB-6D68E98D7C55}</Project>
+      <Name>instrace_x86_binary</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\instrace_x86_text.vcxproj">
+      <Project>{6DAFB2C5-D9C6-373A-AA71-003683D7D8C2}</Project>
+      <Name>instrace_x86_text</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\instrcalls.vcxproj">
+      <Project>{BA879C50-989E-3563-9B24-3A789A429DDF}</Project>
+      <Name>instrcalls</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\ldmp.vcxproj">
+      <Project>{335513FF-F6AE-35D3-87F4-1760EEBCCDBB}</Project>
+      <Name>ldmp</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\libutil.frontend_test.vcxproj">
+      <Project>{9431CB9C-4816-3381-B804-F0C7212A3949}</Project>
+      <Name>libutil.frontend_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\memtrace_simple.vcxproj">
+      <Project>{3565BBD6-2CD1-30B1-AD42-3846D0C3C850}</Project>
+      <Name>memtrace_simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\memtrace_x86_binary.vcxproj">
+      <Project>{A5362FF8-9C5A-3E76-8C42-48340D165E25}</Project>
+      <Name>memtrace_x86_binary</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\memtrace_x86_text.vcxproj">
+      <Project>{F7CE91FD-85B8-3EE6-97B1-ECE9E87B2506}</Project>
+      <Name>memtrace_x86_text</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\memval_simple.vcxproj">
+      <Project>{618E17FF-853E-3BB8-B3E0-0BF7B09BFEFB}</Project>
+      <Name>memval_simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\modxfer.vcxproj">
+      <Project>{3C57CD27-9DE6-33D2-82C6-35637A3B1873}</Project>
+      <Name>modxfer</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\modxfer_app2lib.vcxproj">
+      <Project>{98C0603A-057F-39D3-987D-4835A5A60EC2}</Project>
+      <Name>modxfer_app2lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\ntdll_imports.vcxproj">
+      <Project>{56C3103F-5067-3CB2-A2A8-781C66282FFD}</Project>
+      <Name>ntdll_imports</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\opcode_count.vcxproj">
+      <Project>{790FBAD5-71F7-35F1-B365-B55A73656987}</Project>
+      <Name>opcode_count</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\opcode_mix_launcher.vcxproj">
+      <Project>{322ACE0D-16F6-3030-A9B0-9F6BFD14A12E}</Project>
+      <Name>opcode_mix_launcher</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\opcodes.vcxproj">
+      <Project>{9EF8BD9D-E7BC-3502-9B64-2F681EA1954A}</Project>
+      <Name>opcodes</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\policy_static.vcxproj">
+      <Project>{7FA5E489-EB46-3357-B2C0-B0B00D6694CA}</Project>
+      <Name>policy_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\prefetch.vcxproj">
+      <Project>{0CC3D756-4AC3-3901-8EE1-FCA496FF1B2A}</Project>
+      <Name>prefetch</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\run_in_bg.vcxproj">
+      <Project>{E8A58301-67B3-363D-A4F9-1380CB8AEB1E}</Project>
+      <Name>run_in_bg</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.TestAllocWE.vcxproj">
+      <Project>{460FA9CF-DBD5-39D8-BD3B-DC953121F116}</Project>
+      <Name>security-common.TestAllocWE</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.TestMemProtChg.vcxproj">
+      <Project>{8F3CC3D0-327A-3508-B551-4DB7C25882C5}</Project>
+      <Name>security-common.TestMemProtChg</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.codemod.vcxproj">
+      <Project>{129CAF19-38AE-34E6-A4AD-D02ACB187160}</Project>
+      <Name>security-common.codemod</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.decode-bad-stack_FLAKY.vcxproj">
+      <Project>{31ADC621-2371-3BBF-9941-49B12946E80E}</Project>
+      <Name>security-common.decode-bad-stack_FLAKY</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.ret_noncall_trace.vcxproj">
+      <Project>{76D50B28-C9D2-385B-9B05-99564656EA71}</Project>
+      <Name>security-common.ret_noncall_trace</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.retexisting.vcxproj">
+      <Project>{B06C295E-7133-3767-8472-1EFFCAE5634B}</Project>
+      <Name>security-common.retexisting</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.retnonexisting.vcxproj">
+      <Project>{403263DB-D25C-3CAC-8A2E-636FB4FAF253}</Project>
+      <Name>security-common.retnonexisting</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.selfmod.vcxproj">
+      <Project>{71B753E8-3C21-3D1E-AD7C-BC6CB706BF0E}</Project>
+      <Name>security-common.selfmod</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.selfmod-big.vcxproj">
+      <Project>{151E2F9A-4FFB-3465-9CEE-870D7B210102}</Project>
+      <Name>security-common.selfmod-big</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.selfmod2.vcxproj">
+      <Project>{2D8EF37E-A218-318D-A755-771A6A87E843}</Project>
+      <Name>security-common.selfmod2</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-common.vbjmp-rac-test.vcxproj">
+      <Project>{E1001B88-AF9B-301B-9069-016EE27BEBC7}</Project>
+      <Name>security-common.vbjmp-rac-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.TestNTFlush.vcxproj">
+      <Project>{477A86C6-03D8-3147-A7D7-610A29A71222}</Project>
+      <Name>security-win32.TestNTFlush</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.apc-shellcode.vcxproj">
+      <Project>{12F3BC44-B1CA-3451-A1DB-E0C993E1065B}</Project>
+      <Name>security-win32.apc-shellcode</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.aslr-ind.vcxproj">
+      <Project>{B987924E-1CE4-3D29-98F6-A914FDD09451}</Project>
+      <Name>security-win32.aslr-ind</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.aslr-ind.dll.vcxproj">
+      <Project>{1824BED4-70E8-3466-A620-BF6FCDBACC7A}</Project>
+      <Name>security-win32.aslr-ind.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.codemod-threads_FLAKY.vcxproj">
+      <Project>{25BDF898-80A2-37D1-8532-BECCDA71D9C9}</Project>
+      <Name>security-win32.codemod-threads_FLAKY</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.except-debugreg.vcxproj">
+      <Project>{A05A4E1D-9DD1-357F-880C-1E121E2592D5}</Project>
+      <Name>security-win32.except-debugreg</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.except-execution.vcxproj">
+      <Project>{85534FFB-712D-3BA1-BBBB-8FC4C76CEE3D}</Project>
+      <Name>security-win32.except-execution</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.except-guard.vcxproj">
+      <Project>{8A0C404D-1509-3368-B6EA-4480B1C24C14}</Project>
+      <Name>security-win32.except-guard</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.except-int2d.vcxproj">
+      <Project>{117356AC-6835-3F42-8609-86CAA53FA230}</Project>
+      <Name>security-win32.except-int2d</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.except-thread.vcxproj">
+      <Project>{9793DB02-9FDA-3173-BDD9-6F3B73F2F1D8}</Project>
+      <Name>security-win32.except-thread</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.gbop-test.vcxproj">
+      <Project>{0A96228A-D2A8-3B1D-93C6-874ECC8C3A55}</Project>
+      <Name>security-win32.gbop-test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.hooker-ntdll.vcxproj">
+      <Project>{0E8958C5-67E1-3495-AE37-AF21BEC71A74}</Project>
+      <Name>security-win32.hooker-ntdll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.hooker_FLAKY.vcxproj">
+      <Project>{3D2B2A99-4A09-3658-86D2-0EEDA6A7E6BE}</Project>
+      <Name>security-win32.hooker_FLAKY</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.indexisting.vcxproj">
+      <Project>{38D96E18-1F2F-3213-AC92-A7D4BF4AA35F}</Project>
+      <Name>security-win32.indexisting</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.patterns.vcxproj">
+      <Project>{949329C5-A53D-3950-8A6C-9A8EED0B4DB4}</Project>
+      <Name>security-win32.patterns</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.ret-SEH.vcxproj">
+      <Project>{7D0402CC-0772-3720-915C-6A11F1E3E052}</Project>
+      <Name>security-win32.ret-SEH</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.sd_tester.vcxproj">
+      <Project>{D534D452-FEDC-3ABC-890F-E7C5C9915BB8}</Project>
+      <Name>security-win32.sd_tester</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.sec-adata.vcxproj">
+      <Project>{FE58BE89-9F9E-3F45-B6A2-F7462AA63532}</Project>
+      <Name>security-win32.sec-adata</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.sec-fixed.vcxproj">
+      <Project>{3F7F2C8A-E4FC-3261-87FF-7C394A0C9EC1}</Project>
+      <Name>security-win32.sec-fixed</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.sec-fixed.dll.vcxproj">
+      <Project>{1154183D-49EE-3FD7-93D8-D2BBDED39657}</Project>
+      <Name>security-win32.sec-fixed.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.sec-xdata.vcxproj">
+      <Project>{BC4CAFDE-9034-3E39-929F-B5F8976C2DB0}</Project>
+      <Name>security-win32.sec-xdata</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.sec-xdata.dll.vcxproj">
+      <Project>{5AA66273-1EFB-3085-AC7F-F4AF3F8C6DCB}</Project>
+      <Name>security-win32.sec-xdata.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.secalign-fixed.vcxproj">
+      <Project>{2C648486-BE2E-3BEA-9388-DA1F744FA652}</Project>
+      <Name>security-win32.secalign-fixed</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.secalign-fixed.dll.vcxproj">
+      <Project>{C3308D5C-50C3-3160-854C-689F3193C458}</Project>
+      <Name>security-win32.secalign-fixed.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.singlestep.vcxproj">
+      <Project>{F700CE2A-F9E3-3B79-9C05-E59FE815AEC7}</Project>
+      <Name>security-win32.singlestep</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\security-win32.thread-setcontext.vcxproj">
+      <Project>{0B47C05E-F488-3B4C-96F6-03BE0ACA75B3}</Project>
+      <Name>security-win32.thread-setcontext</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\signal.vcxproj">
+      <Project>{33908E1F-01F2-3315-B077-BEF5A2D39FB9}</Project>
+      <Name>signal</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\simple_app.vcxproj">
+      <Project>{32B9EB8F-95EB-3B60-B5D3-4BC5B1D04B5D}</Project>
+      <Name>simple_app</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\stats.vcxproj">
+      <Project>{415BF5C4-6891-3369-98D8-5A1DB238A969}</Project>
+      <Name>stats</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\stl_test.vcxproj">
+      <Project>{F19ED51E-5411-3594-BC21-41866A6619C7}</Project>
+      <Name>stl_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\svccntrl.vcxproj">
+      <Project>{0BE4306F-5858-369E-94D2-EDA4F678101F}</Project>
+      <Name>svccntrl</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\syscall.vcxproj">
+      <Project>{FC658EC2-2B1C-3AB9-A6A0-A665CEC696E6}</Project>
+      <Name>syscall</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\tool.cpuid.vcxproj">
+      <Project>{A541F1E8-04B8-3BAC-8C4C-E4B4DAF76713}</Project>
+      <Name>tool.cpuid</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcacheoff.burst_malloc.vcxproj">
+      <Project>{3CAE2DC2-6943-35C2-BFC9-705FB20DC6D3}</Project>
+      <Name>tool.drcacheoff.burst_malloc</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcacheoff.burst_replace.vcxproj">
+      <Project>{EFD9F228-4C24-3E23-9E0C-88D25AD1C2A7}</Project>
+      <Name>tool.drcacheoff.burst_replace</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcacheoff.burst_replaceall.vcxproj">
+      <Project>{5A6DFC33-DCCB-36CB-9ED6-45422B19B055}</Project>
+      <Name>tool.drcacheoff.burst_replaceall</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcacheoff.burst_static.vcxproj">
+      <Project>{89CE7DFF-F818-3A85-A916-C8D371556BB4}</Project>
+      <Name>tool.drcacheoff.burst_static</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcacheoff.burst_threadfilter.vcxproj">
+      <Project>{7920F432-BF47-3A87-87C0-F5AA0C327BA2}</Project>
+      <Name>tool.drcacheoff.burst_threadfilter</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcacheoff.burst_threads.vcxproj">
+      <Project>{DFA26BAA-8419-3A05-9185-F629FB32A64D}</Project>
+      <Name>tool.drcacheoff.burst_threads</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcacheoff.burst_traceopts.vcxproj">
+      <Project>{77B5CB15-4E67-3CC4-8C22-67206E136A12}</Project>
+      <Name>tool.drcacheoff.burst_traceopts</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcachesim.miss_analyzer_unit_test.vcxproj">
+      <Project>{09786AA0-E0FA-36EB-9283-841C430296D4}</Project>
+      <Name>tool.drcachesim.miss_analyzer_unit_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tool.drcachesim.unit_tests.vcxproj">
+      <Project>{2ED625E1-A7CD-3E36-B495-7EDE478FAA01}</Project>
+      <Name>tool.drcachesim.unit_tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\tools.vcxproj">
+      <Project>{6693BE2F-06F5-347E-BD18-9C6E223FF043}</Project>
+      <Name>tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\tracedump.vcxproj">
+      <Project>{2951659E-1F2A-3B5A-A0F8-F7E75121705E}</Project>
+      <Name>tracedump</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\unit_tests.vcxproj">
+      <Project>{8F2C4E03-DCFE-37A7-8D25-2C5A6D2634EF}</Project>
+      <Name>unit_tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.callback.vcxproj">
+      <Project>{56F80474-D9BB-30FC-88A6-F00B02E3D8BD}</Project>
+      <Name>win32.callback</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.crtprcs.vcxproj">
+      <Project>{CA140598-5871-3A78-9E0B-FEAF8692F19F}</Project>
+      <Name>win32.crtprcs</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.delaybind.vcxproj">
+      <Project>{DA8C64A5-C564-39A2-8E13-F75665339D09}</Project>
+      <Name>win32.delaybind</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.delaybind.dll.vcxproj">
+      <Project>{22CA2175-B0CC-3078-8F61-1BB9517637F4}</Project>
+      <Name>win32.delaybind.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.dll.vcxproj">
+      <Project>{349D711C-C5AA-3531-B270-BE7CA9D2C942}</Project>
+      <Name>win32.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.dll.dll.vcxproj">
+      <Project>{75897820-1EA7-3845-96AC-55425E1D4C48}</Project>
+      <Name>win32.dll.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.dotnet.vcxproj">
+      <Project>{64D2EA73-5318-3A60-BCC7-ACAFF7D1B8DB}</Project>
+      <Name>win32.dotnet</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.earlythread.vcxproj">
+      <Project>{5F3252D3-819F-32D5-8B8C-8A8DD851DCBB}</Project>
+      <Name>win32.earlythread</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.earlythread.dll.vcxproj">
+      <Project>{D3D670E2-3EE3-3173-9A8E-1E8FF55B68B9}</Project>
+      <Name>win32.earlythread.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.except.vcxproj">
+      <Project>{BA14716F-F438-3DC8-B842-B527DD95E79D}</Project>
+      <Name>win32.except</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.fiber-rac.vcxproj">
+      <Project>{B612DE02-389D-30F7-9E09-FC552587F6D2}</Project>
+      <Name>win32.fiber-rac</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.finally.vcxproj">
+      <Project>{96FAA2F2-9041-3E26-98D8-C0A3A0D65C3E}</Project>
+      <Name>win32.finally</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.fpe.vcxproj">
+      <Project>{FE7ECDED-EB11-35DE-938D-5600E1C5DAD7}</Project>
+      <Name>win32.fpe</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.getthreadcontext.vcxproj">
+      <Project>{1826969B-5258-352D-BECE-A15F8A03D963}</Project>
+      <Name>win32.getthreadcontext</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.hooker-secur32.vcxproj">
+      <Project>{4FDE8480-C29F-3BFF-9471-A4E93408FE56}</Project>
+      <Name>win32.hooker-secur32</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.hookerfirst.vcxproj">
+      <Project>{68E1AB65-AAFB-3BAD-9AFF-C7BBF857A27A}</Project>
+      <Name>win32.hookerfirst</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.hookerfirst.dll.vcxproj">
+      <Project>{49DC74D1-E12C-3F93-8F5A-DBC1185079ED}</Project>
+      <Name>win32.hookerfirst.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.infloop.vcxproj">
+      <Project>{C4A183EB-CC29-3D8F-A193-7F884FB58BA3}</Project>
+      <Name>win32.infloop</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.mixedmode.vcxproj">
+      <Project>{D0F953E3-0039-3A9A-BAB9-88A1C094D15D}</Project>
+      <Name>win32.mixedmode</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.multisec.vcxproj">
+      <Project>{B9C52672-0751-39C1-99E3-76D22996775B}</Project>
+      <Name>win32.multisec</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.multisec.dll.vcxproj">
+      <Project>{30EEB13B-2647-3FD4-9CC1-DC2028320681}</Project>
+      <Name>win32.multisec.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.nativeterminate.vcxproj">
+      <Project>{DE410AF1-244E-370F-99E5-219BFD18EA34}</Project>
+      <Name>win32.nativeterminate</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.nativeterminate.dll.vcxproj">
+      <Project>{9559F612-EF62-358C-8078-5D7F8A2B8647}</Project>
+      <Name>win32.nativeterminate.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.partial_map.vcxproj">
+      <Project>{C85C63B4-1171-3ED3-A996-B261375B2AF7}</Project>
+      <Name>win32.partial_map</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.protect-datasec.vcxproj">
+      <Project>{E36BD553-1C1D-3925-A06A-634B98628208}</Project>
+      <Name>win32.protect-datasec</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.rebased.vcxproj">
+      <Project>{45EDA135-5517-3784-AE92-ACD6CBA2CB17}</Project>
+      <Name>win32.rebased</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.rebased.dll.vcxproj">
+      <Project>{1AAF42AB-A1A9-3A1C-A2F9-9B972820CBFE}</Project>
+      <Name>win32.rebased.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.reload.vcxproj">
+      <Project>{FD7C0E43-0E56-319A-BD0D-AACFC1D54D40}</Project>
+      <Name>win32.reload</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.reload-newaddr.vcxproj">
+      <Project>{EEAC6550-4B71-3267-8127-B1A88B77B5E6}</Project>
+      <Name>win32.reload-newaddr</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.reload-newaddr.dll.vcxproj">
+      <Project>{F6DF951C-A1B0-32CD-8653-5AB929F11DEE}</Project>
+      <Name>win32.reload-newaddr.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.reload.dll.vcxproj">
+      <Project>{27D6153B-42C2-3723-A694-0986E8503A85}</Project>
+      <Name>win32.reload.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.rsbtest.vcxproj">
+      <Project>{240646B5-B17D-39FA-8B16-165136745F8A}</Project>
+      <Name>win32.rsbtest</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.section-max.vcxproj">
+      <Project>{0BA9ACAB-19FF-3B4B-877B-66D31CC82083}</Project>
+      <Name>win32.section-max</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.section-max.dll.vcxproj">
+      <Project>{6515376B-0F0C-3E5F-84BF-857B7B8123E9}</Project>
+      <Name>win32.section-max.dll</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.setcxtsyscall.vcxproj">
+      <Project>{E4BBDB0A-C283-3D0B-9F73-19F87D2BB1CD}</Project>
+      <Name>win32.setcxtsyscall</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.setthreadcontext.vcxproj">
+      <Project>{06579F42-D029-3951-ADC2-2585F1EF26A9}</Project>
+      <Name>win32.setthreadcontext</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.suspend.vcxproj">
+      <Project>{8660D194-421E-3E32-8159-BD15B60383BA}</Project>
+      <Name>win32.suspend</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.threadchurn.vcxproj">
+      <Project>{53606AEF-9E87-3127-A492-0828FE2866C3}</Project>
+      <Name>win32.threadchurn</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.threadexit_FLAKY.vcxproj">
+      <Project>{A1E203E7-5FA1-317E-A183-66E0991519A1}</Project>
+      <Name>win32.threadexit_FLAKY</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.threadterm.vcxproj">
+      <Project>{0D48C811-9CA9-3220-949C-86CEE9928147}</Project>
+      <Name>win32.threadterm</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.tls.vcxproj">
+      <Project>{9A0784F3-1C40-3320-8878-EFE22F75C09A}</Project>
+      <Name>win32.tls</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.virtualfree.vcxproj">
+      <Project>{F26E12FE-158C-3FA5-B875-0396E62D4D52}</Project>
+      <Name>win32.virtualfree</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.virtualreserve.vcxproj">
+      <Project>{0DBAD9A2-2957-32CE-9208-97B047A3BA9E}</Project>
+      <Name>win32.virtualreserve</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.winapc.vcxproj">
+      <Project>{BD468698-E261-3BBC-8E87-F8779AE144D2}</Project>
+      <Name>win32.winapc</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\win32.winthread.vcxproj">
+      <Project>{296079AC-C5A7-31A4-B7DC-4A160B5762F7}</Project>
+      <Name>win32.winthread</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\winstats.vcxproj">
+      <Project>{8F2A9E28-64AA-3D81-85C4-79A7C60E3E31}</Project>
+      <Name>winstats</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\standalone\winsysnums.vcxproj">
+      <Project>{C1D9833A-65CA-31D2-B9F0-8D564276BE59}</Project>
+      <Name>winsysnums</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\wrap.vcxproj">
+      <Project>{D69FB57C-8989-32B6-9F66-51BB72D2B2EF}</Project>
+      <Name>wrap</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

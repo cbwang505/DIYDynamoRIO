@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1DB3B753-6D1E-3858-9C43-2F0BC6655A98}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>generate_x86.asm_core</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86;E:\svn\PowerResearch\dynamorio-master-x86\core\win32;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;E:\svn\PowerResearch\dynamorio-master-x86\core\lib;E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\include\annotations;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\a4487a119b719fa4f3b7dbf70e94a7e9\x86.asm_core.obj.stamp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating x86.asm_core.obj.stamp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd E:\svn\PowerResearch\dynamorio-master-x86\core
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch E:/svn/PowerResearch/dynamorio-master-x86/core/x86.asm_core.obj.stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\Hostx86\x86\cl.exe" /nologo /I E:/svn/PowerResearch/dynamorio-master-x86 -E /EP arch/x86/x86.asm &gt; E:/svn/PowerResearch/dynamorio-master-x86/core/x86.asm_core.s
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D file=E:/svn/PowerResearch/dynamorio-master-x86/core/x86.asm_core.s -P E:/svn/PowerResearch/dynamorio-master-x86/make/CMake_asm.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\Hostx86\x86\ml.exe" /nologo /Zi /Zd /safeseh /c /Fo E:/svn/PowerResearch/dynamorio-master-x86/core/x86.asm_core.obj E:/svn/PowerResearch/dynamorio-master-x86/core/x86.asm_core.s
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\x86.asm;E:\svn\PowerResearch\dynamorio-master-x86\make\CMake_asm.cmake;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\asm_defines.asm;E:\svn\PowerResearch\dynamorio-master-x86\configure.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\x86.asm_core.obj.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\e72bb18ecf169face396d7f9a51abe80\generate_x86.asm_core.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\x86.asm_core.obj.stamp;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeFiles\generate_x86.asm_core</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations.c;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations_asm.h;E:\svn\PowerResearch\dynamorio-master-x86\make\CMake_events.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\policies.cmake;E:\svn\PowerResearch\dynamorio-master-x86\third_party\valgrind\memcheck.h;E:\svn\PowerResearch\dynamorio-master-x86\third_party\valgrind\valgrind.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeFiles\generate_x86.asm_core" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

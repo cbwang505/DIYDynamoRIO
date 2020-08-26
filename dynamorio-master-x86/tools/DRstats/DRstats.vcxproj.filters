@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\CmdlineDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\DynamoRIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\DynamoRIODoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\DynamoRIOView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\IgnoreDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\LoggingDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\OptionsDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\ShellInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\SyswideDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\tools\DRstats\DynamoRIO.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FD7DB4E2-83BA-30CB-8005-C4CB2E632724}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

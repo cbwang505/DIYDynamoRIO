@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DD9CFFAA-B674-3C57-8305-C74DC29A791B}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>generate_burst_traceopts.cpp_asm.asm</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\include;E:\svn\PowerResearch\dynamorio-master-x86\ext\include;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\reader;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tracer;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\clients\include;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tests/burst_traceopts.cpp E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/burst_traceopts.cpp_asm.asm
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\edccbb3a17544279d77779c909521dc8\burst_traceopts.cpp_asm.asm.obj.stamp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating burst_traceopts.cpp_asm.asm.obj.stamp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/burst_traceopts.cpp_asm.asm.obj.stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\Hostx86\x86\cl.exe" /nologo /I E:/svn/PowerResearch/dynamorio-master-x86 -DASM_CODE_ONLY -E /EP E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/burst_traceopts.cpp_asm.asm &gt; E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/burst_traceopts.cpp_asm.asm.s
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D file=E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/burst_traceopts.cpp_asm.asm.s -P E:/svn/PowerResearch/dynamorio-master-x86/make/CMake_asm.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.16.27023\bin\Hostx86\x86\ml.exe" /nologo /Zi /Zd /safeseh /c /Fo E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/burst_traceopts.cpp_asm.asm.obj E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/burst_traceopts.cpp_asm.asm.s
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\burst_traceopts.cpp_asm.asm;E:\svn\PowerResearch\dynamorio-master-x86\make\CMake_asm.cmake;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\asm_defines.asm;E:\svn\PowerResearch\dynamorio-master-x86\configure.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\burst_traceopts.cpp_asm.asm.obj.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\598676fd3c551f6b2bc086980ab8eaf9\generate_burst_traceopts.cpp_asm.asm.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\burst_traceopts.cpp_asm.asm.obj.stamp;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\CMakeFiles\generate_burst_traceopts.cpp_asm.asm</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\analysis_tool.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\analyzer.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common\memref.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common\trace_entry.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common\utils.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\reader\reader.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_simulator.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_simulator_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\tlb_simulator_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\basic_counts_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\func_view_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\histogram_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\opcode_mix_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\reuse_distance_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\reuse_time_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\view_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tracer\drmemtrace.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tracer\raw2trace.h;E:\svn\PowerResearch\dynamorio-master-x86\make\policies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\CMakeFiles\generate_burst_traceopts.cpp_asm.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

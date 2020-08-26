@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\options.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\dynamo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\fragment.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\fcache.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\link.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\dispatch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\emit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\utils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\config.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\stats.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\heap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\monitor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\perfctr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\vmareas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\rct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\hotpatch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\hashtable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\module_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\moduledb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\perscache.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\nudge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\synch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\buildmark.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\loader_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\native_exec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\lib\instrument.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\translate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\annotations.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\jit_opt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\arch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\emit_utils_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\emit_utils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\opnd_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\opnd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\instr_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\instr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\instrlist.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\decode_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\decode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\encode_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\encode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\disassemble_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\disassemble.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\decode_table.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\decode_fast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\interp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\proc_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\proc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\mangle_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\mangle_utils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\mangle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\clean_call_opt_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\clean_call_opt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\steal_reg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86_code.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\optimize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\sideline.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\retcheck.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\eventlog.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\os.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\syscall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\callback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drmarker.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\ntdll.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\ntdll_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\inject.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\inject_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\module.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\module_shared.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\native_pe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\diagnost.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\aslr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\loader.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\drwinapi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\ntdll_redir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\kernel32_redir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\kernel32_proc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\kernel32_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\kernel32_mem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\kernel32_file.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\kernel32_sync.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\kernel32_misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\rpcrt4_redir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drwinapi\advapi32_redir.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\core\lib\genapi.pl" />
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\make\ldscript.cmake" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="E:\svn\PowerResearch\dynamorio-master-x86\core\x86.asm_core.obj">
+      <Filter>Object Files</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\win32\resources.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Object Files">
+      <UniqueIdentifier>{1B641244-244B-3160-BC32-7E498DCFF210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FD7DB4E2-83BA-30CB-8005-C4CB2E632724}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,6 @@
+-IE:/svn/PowerResearch/dynamorio-master-x86
+-D_CRT_SECURE_NO_WARNINGS
+-DWIN32
+-o
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drgui/moc_drgui_options_window.cpp
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drgui/drgui_options_window.h

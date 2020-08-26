@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\4e5b7ab0e5bcdb3ca49dcd3abf8a9ada\drwrap_asm_x86.asm.obj.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\c8540d9c875d8db3ababc76e2a3baed4\generate_drwrap_asm_x86.asm.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drwrap\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\ext\drwrap\CMakeFiles\generate_drwrap_asm_x86.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{88FD253A-FE05-32B0-8BB0-8DB94163DF00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

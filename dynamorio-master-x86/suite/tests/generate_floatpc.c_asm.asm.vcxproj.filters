@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\e5cd34b2544e35d6b6a8c73f64685702\floatpc.c_asm.asm.obj.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\6d03848b8f9f9356b69df384e5731625\generate_floatpc.c_asm.asm.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\suite\tests\CMakeFiles\generate_floatpc.c_asm.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{88FD253A-FE05-32B0-8BB0-8DB94163DF00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

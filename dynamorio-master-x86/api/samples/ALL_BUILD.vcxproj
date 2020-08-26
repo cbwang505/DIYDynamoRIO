@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F875C68C-93F5-37AB-9A2F-65B47FA77CF7}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\include;E:\svn\PowerResearch\dynamorio-master-x86\api\samples\..\..\ext\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/api/samples/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/api/samples/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\cmake\DynamoRIOConfig.cmake;E:\svn\PowerResearch\dynamorio-master-x86\cmake\DynamoRIOConfigVersion.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\api\samples\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\bbbuf.vcxproj">
+      <Project>{60B43DA7-963C-3D57-BD5C-7F826B22C119}</Project>
+      <Name>bbbuf</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\bbcount.vcxproj">
+      <Project>{05D1FAC8-0E3A-3746-A919-3E685EC3F896}</Project>
+      <Name>bbcount</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\bbsize.vcxproj">
+      <Project>{8A6FA168-3B59-3C9F-A62B-05737B0AAB21}</Project>
+      <Name>bbsize</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\cbr.vcxproj">
+      <Project>{87F94C34-7EE9-3260-96B1-C21D06B42624}</Project>
+      <Name>cbr</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\cbrtrace.vcxproj">
+      <Project>{16A643B9-E923-3D86-B410-D944FD44DDDA}</Project>
+      <Name>cbrtrace</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\countcalls.vcxproj">
+      <Project>{2F79587C-44F0-380C-94D0-AF0B59CD6639}</Project>
+      <Name>countcalls</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\div.vcxproj">
+      <Project>{4B2B4653-4DE7-32B1-AFE4-F78E7AC63FCD}</Project>
+      <Name>div</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\empty.vcxproj">
+      <Project>{E956CC71-1F8D-3172-B6BB-029EE201DDA0}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\hot_bbcount.vcxproj">
+      <Project>{D17331C3-329D-3C89-A7B4-0DCE9FE74510}</Project>
+      <Name>hot_bbcount</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\inc2add.vcxproj">
+      <Project>{8088CB3C-E0C3-33FE-B336-6B763ACCB113}</Project>
+      <Name>inc2add</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\inline.vcxproj">
+      <Project>{EC117B02-3089-3820-966B-345F7EA929C6}</Project>
+      <Name>inline</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\inscount.vcxproj">
+      <Project>{85225D00-8812-39EA-B650-343528843603}</Project>
+      <Name>inscount</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\instrace_simple.vcxproj">
+      <Project>{C5083FBC-901B-37DD-A10B-CBDABB3F8CE9}</Project>
+      <Name>instrace_simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\instrace_x86_binary.vcxproj">
+      <Project>{62CD9B27-3156-345C-BBFB-6D68E98D7C55}</Project>
+      <Name>instrace_x86_binary</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\instrace_x86_text.vcxproj">
+      <Project>{6DAFB2C5-D9C6-373A-AA71-003683D7D8C2}</Project>
+      <Name>instrace_x86_text</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\instrcalls.vcxproj">
+      <Project>{BA879C50-989E-3563-9B24-3A789A429DDF}</Project>
+      <Name>instrcalls</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\memtrace_simple.vcxproj">
+      <Project>{3565BBD6-2CD1-30B1-AD42-3846D0C3C850}</Project>
+      <Name>memtrace_simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\memtrace_x86_binary.vcxproj">
+      <Project>{A5362FF8-9C5A-3E76-8C42-48340D165E25}</Project>
+      <Name>memtrace_x86_binary</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\memtrace_x86_text.vcxproj">
+      <Project>{F7CE91FD-85B8-3EE6-97B1-ECE9E87B2506}</Project>
+      <Name>memtrace_x86_text</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\memval_simple.vcxproj">
+      <Project>{618E17FF-853E-3BB8-B3E0-0BF7B09BFEFB}</Project>
+      <Name>memval_simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\modxfer.vcxproj">
+      <Project>{3C57CD27-9DE6-33D2-82C6-35637A3B1873}</Project>
+      <Name>modxfer</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\modxfer_app2lib.vcxproj">
+      <Project>{98C0603A-057F-39D3-987D-4835A5A60EC2}</Project>
+      <Name>modxfer_app2lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\opcode_count.vcxproj">
+      <Project>{790FBAD5-71F7-35F1-B365-B55A73656987}</Project>
+      <Name>opcode_count</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\opcodes.vcxproj">
+      <Project>{9EF8BD9D-E7BC-3502-9B64-2F681EA1954A}</Project>
+      <Name>opcodes</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\prefetch.vcxproj">
+      <Project>{0CC3D756-4AC3-3901-8EE1-FCA496FF1B2A}</Project>
+      <Name>prefetch</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\signal.vcxproj">
+      <Project>{33908E1F-01F2-3315-B077-BEF5A2D39FB9}</Project>
+      <Name>signal</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\stats.vcxproj">
+      <Project>{415BF5C4-6891-3369-98D8-5A1DB238A969}</Project>
+      <Name>stats</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\stl_test.vcxproj">
+      <Project>{F19ED51E-5411-3594-BC21-41866A6619C7}</Project>
+      <Name>stl_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\syscall.vcxproj">
+      <Project>{FC658EC2-2B1C-3AB9-A6A0-A665CEC696E6}</Project>
+      <Name>syscall</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\tracedump.vcxproj">
+      <Project>{2951659E-1F2A-3B5A-A0F8-F7E75121705E}</Project>
+      <Name>tracedump</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api\samples\wrap.vcxproj">
+      <Project>{D69FB57C-8989-32B6-9F66-51BB72D2B2EF}</Project>
+      <Name>wrap</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

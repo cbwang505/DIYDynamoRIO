@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1D57E7AE-7CA2-3A08-B185-B33D6587EDCA}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>histogram_launcher</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\bin32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">histogram_launcher.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">histogram_launcher</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\include;E:\svn\PowerResearch\dynamorio-master-x86\ext\include;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\reader;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tracer;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\clients\include;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /FS</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4127;4054</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>DEBUG;X86_32;WINDOWS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;X86_32;WINDOWS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\include;E:\svn\PowerResearch\dynamorio-master-x86\ext\include;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\reader;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tracer;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\clients\include;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\include;E:\svn\PowerResearch\dynamorio-master-x86\ext\include;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\reader;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tracer;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim;E:\svn\PowerResearch\dynamorio-master-x86\cmake\..\clients\include;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib32\debug\drmemtrace_analyzer.lib;..\lib32\debug\drmemtrace_histogram.lib;..\..\lib32\drfrontendlib.lib;..\lib32\debug\directory_iterator.lib;..\..\lib32\drfrontendlib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86 /subsystem:console,5.01 /opt:ref /opt:icf /pdbcompress /nodefaultlib:libcmt</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>E:/svn/PowerResearch/dynamorio-master-x86/clients/lib32/debug/histogram_launcher.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/svn/PowerResearch/dynamorio-master-x86/clients/bin32/histogram_launcher.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\analysis_tool.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\analyzer.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common\memref.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common\trace_entry.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\common\utils.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\reader\reader.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_simulator.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\cache_simulator_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\simulator\tlb_simulator_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\basic_counts_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\func_view_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\histogram_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\opcode_mix_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\reuse_distance_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\reuse_time_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\view_create.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tracer\drmemtrace.h;E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tracer\raw2trace.h;E:\svn\PowerResearch\dynamorio-master-x86\make\policies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tools\histogram_launcher.cpp" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\tests\trace_invariants.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalOptions) /FS</AdditionalOptions>
+      <BufferSecurityCheck Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</BufferSecurityCheck>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4100;4127;4054;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Sync</ExceptionHandling>
+      <MultiProcessorCompilation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</MultiProcessorCompilation>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MultiThreadedDebug</RuntimeLibrary>
+      <StringPooling Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</StringPooling>
+      <SuppressStartupBanner Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</SuppressStartupBanner>
+      <TreatWarningAsError Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</TreatWarningAsError>
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Level4</WarningLevel>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\api_headers.vcxproj">
+      <Project>{1EDA5F8B-B583-3C6B-B062-392F53E09632}</Project>
+      <Name>api_headers</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\directory_iterator.vcxproj">
+      <Project>{75605DB8-1151-3A88-9604-814EDBFBC3D7}</Project>
+      <Name>directory_iterator</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\libutil\drfrontendlib.vcxproj">
+      <Project>{6CF5775B-331F-38A4-BC5C-93C8194F90BB}</Project>
+      <Name>drfrontendlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_analyzer.vcxproj">
+      <Project>{00B47384-0266-382C-8007-29B021004CA3}</Project>
+      <Name>drmemtrace_analyzer</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcachesim\drmemtrace_histogram.vcxproj">
+      <Project>{E328889A-D425-3F91-A2C1-1B60092C6B99}</Project>
+      <Name>drmemtrace_histogram</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

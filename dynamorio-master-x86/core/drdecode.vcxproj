@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FDB283A-270B-31F0-82CB-365441013206}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>drdecode</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\lib32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">drdecode.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">drdecode</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86;E:\svn\PowerResearch\dynamorio-master-x86\core\win32;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;E:\svn\PowerResearch\dynamorio-master-x86\core\lib;E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\include\annotations;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /FS</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>NOT_DYNAMORIO_CORE_PROPER;STANDALONE_DECODER;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;NOT_DYNAMORIO_CORE_PROPER;STANDALONE_DECODER;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86;E:\svn\PowerResearch\dynamorio-master-x86\core\win32;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;E:\svn\PowerResearch\dynamorio-master-x86\core\lib;E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\include\annotations;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86;E:\svn\PowerResearch\dynamorio-master-x86\core\win32;E:\svn\PowerResearch\dynamorio-master-x86\core\arch;E:\svn\PowerResearch\dynamorio-master-x86\core\lib;E:\svn\PowerResearch\dynamorio-master-x86;E:\svn\PowerResearch\dynamorio-master-x86\include\annotations;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations.c;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations_asm.h;E:\svn\PowerResearch\dynamorio-master-x86\make\CMake_events.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\policies.cmake;E:\svn\PowerResearch\dynamorio-master-x86\third_party\valgrind\memcheck.h;E:\svn\PowerResearch\dynamorio-master-x86\third_party\valgrind\valgrind.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\opnd_shared.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\opnd.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\instr_shared.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\instr.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\instrlist.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\decode_shared.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\decode.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\encode_shared.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\encode.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\disassemble_shared.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\disassemble.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\decode_table.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\decode_fast.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\mangle.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\mangle_utils.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\arch\decodelib.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\string.c" />
+    <ClCompile Include="E:\svn\PowerResearch\dynamorio-master-x86\core\io.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalOptions) /QIfist</AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc.vcxproj">
+      <Project>{D7326D7B-5157-385A-8AC5-00F240091C48}</Project>
+      <Name>drlibc</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\generate_events.vcxproj">
+      <Project>{EC2CB43F-6B31-3787-A357-E34944C5688F}</Project>
+      <Name>generate_events</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\core\generate_syslog.vcxproj">
+      <Project>{F2CFCA13-C575-3E03-A5EE-2FBD5516D12A}</Project>
+      <Name>generate_syslog</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

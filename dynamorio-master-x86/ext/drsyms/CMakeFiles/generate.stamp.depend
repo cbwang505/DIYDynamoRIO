@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drsyms/CMakeLists.txt
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drsyms/drsyms.h
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drsyms/libelftc-pecoff/lib32/dwarf.pdb
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drsyms/libelftc-pecoff/lib32/elftc.pdb
+E:/svn/PowerResearch/dynamorio-master-x86/make/policies.cmake

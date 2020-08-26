@@ -1,0 +1,11 @@
+<!-- HTML footer for doxygen 1.8.16-->
+<!-- start footer part -->
+<!--BEGIN GENERATE_TREEVIEW-->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    $navpath
+    <li class="footer" style="float:none;text-align:center"><img border=0 src="favicon.png"> &nbsp;  $projectname version 8.0.0 --- $datetime &nbsp; <img border=0 src="favicon.png">
+</small></address>
+<!--END !GENERATE_TREEVIEW-->
+</body>
+</html>

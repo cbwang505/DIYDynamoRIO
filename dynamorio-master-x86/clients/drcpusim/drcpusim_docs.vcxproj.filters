@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\281f2b2592ca24704bb5cbc194a8b3cb\drcpusim.dox.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\350e02b928e0c1755d8d9d134a8003a4\drcpusim_docs.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcpusim\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\clients\drcpusim\CMakeFiles\drcpusim_docs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{88FD253A-FE05-32B0-8BB0-8DB94163DF00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

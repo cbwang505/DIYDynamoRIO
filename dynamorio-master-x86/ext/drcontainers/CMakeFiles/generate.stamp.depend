@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drcontainers/CMakeLists.txt
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drcontainers/drtable.h
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drcontainers/drvector.h
+E:/svn/PowerResearch/dynamorio-master-x86/ext/drcontainers/hashtable.h
+E:/svn/PowerResearch/dynamorio-master-x86/make/policies.cmake

@@ -1,0 +1,9 @@
+# CMake generation dependency list for this directory.
+E:/svn/PowerResearch/dynamorio-master-x86/core/CMakeLists.txt
+E:/svn/PowerResearch/dynamorio-master-x86/core/lib/dr_annotations.c
+E:/svn/PowerResearch/dynamorio-master-x86/core/lib/dr_annotations.h
+E:/svn/PowerResearch/dynamorio-master-x86/core/lib/dr_annotations_asm.h
+E:/svn/PowerResearch/dynamorio-master-x86/make/CMake_events.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/make/policies.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/third_party/valgrind/memcheck.h
+E:/svn/PowerResearch/dynamorio-master-x86/third_party/valgrind/valgrind.h

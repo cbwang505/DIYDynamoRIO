@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1EDA5F8B-B583-3C6B-B062-392F53E09632}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>api_headers</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>E:\svn\PowerResearch\dynamorio-master-x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3733a04073509dcd131a32507f32c449\dr_app.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating include/dr_app.h, include/dr_api.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd E:\svn\PowerResearch\dynamorio-master-x86\core
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Perl64\bin\perl.exe E:/svn/PowerResearch/dynamorio-master-x86/core/lib/genapi.pl -core E:/svn/PowerResearch/dynamorio-master-x86/core -header E:/svn/PowerResearch/dynamorio-master-x86/include "-DINTERNAL -DDEBUG -DDRSTATS_DEMO -DX86 -DWINDOWS -DCLIENT_INTERFACE -DAPP_EXPORTS -DKSTATS -DBUILD_TESTS -DANNOTATIONS -DNOLIBC -DASSEMBLE_WITH_MASM -DHAVE_MEMINFO -DHAVE_MEMINFO_QUERY -DWINDOWS_PC_SAMPLE -DDYNAMORIO_IR_EXPORTS -DCUSTOM_TRACES -DCLIENT_SIDELINE -DDR_APP_EXPORTS -DDEBUG_MEMORY -DHEAP_ACCOUNTING -DDEADLOCK_AVOIDANCE -DSHARING_STUDY -DHASHTABLE_STATISTICS -DAPI_EXPORT_ONLY"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\core\lib\genapi.pl;E:\svn\PowerResearch\dynamorio-master-x86\core\annotations.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\aarch64\build_ldstex.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\aarch64\codec.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\aarch64\decode_private.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\aarch64\instr_create.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\arch.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\arch_exports.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\arm\decode_private.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\arm\instr_create.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\arm\opcode.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\arm\table_private.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\clean_call_opt.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\decode.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\decode_fast.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\disassemble.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\instr.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\instr_create_shared.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\instr_inline.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\instrlist.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\loadtoconst.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\opnd.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\proc.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\sideline.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\steal_reg.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\decode_private.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\instr_create.h;E:\svn\PowerResearch\dynamorio-master-x86\core\arch\x86\opcode.h;E:\svn\PowerResearch\dynamorio-master-x86\core\config.h;E:\svn\PowerResearch\dynamorio-master-x86\core\dispatch.h;E:\svn\PowerResearch\dynamorio-master-x86\core\drlibc\drlibc.h;E:\svn\PowerResearch\dynamorio-master-x86\core\emit.h;E:\svn\PowerResearch\dynamorio-master-x86\core\fcache.h;E:\svn\PowerResearch\dynamorio-master-x86\core\fragment.h;E:\svn\PowerResearch\dynamorio-master-x86\core\globals.h;E:\svn\PowerResearch\dynamorio-master-x86\core\hashtable.h;E:\svn\PowerResearch\dynamorio-master-x86\core\hashtablex.h;E:\svn\PowerResearch\dynamorio-master-x86\core\heap.h;E:\svn\PowerResearch\dynamorio-master-x86\core\hotpatch.c;E:\svn\PowerResearch\dynamorio-master-x86\core\hotpatch.h;E:\svn\PowerResearch\dynamorio-master-x86\core\iox.h;E:\svn\PowerResearch\dynamorio-master-x86\core\jit_opt.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\c_defines.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_annotations_asm.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_api.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_app.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_config.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_inject.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_stats.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\globals_shared.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\hotpatch_interface.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\instrument.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\instrument_api.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\kstatsx.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\mcxtx.h;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\statsx.h;E:\svn\PowerResearch\dynamorio-master-x86\core\link.h;E:\svn\PowerResearch\dynamorio-master-x86\core\module_shared.h;E:\svn\PowerResearch\dynamorio-master-x86\core\moduledb.h;E:\svn\PowerResearch\dynamorio-master-x86\core\monitor.h;E:\svn\PowerResearch\dynamorio-master-x86\core\native_exec.h;E:\svn\PowerResearch\dynamorio-master-x86\core\nudge.h;E:\svn\PowerResearch\dynamorio-master-x86\core\options.h;E:\svn\PowerResearch\dynamorio-master-x86\core\optionsx.h;E:\svn\PowerResearch\dynamorio-master-x86\core\os_shared.h;E:\svn\PowerResearch\dynamorio-master-x86\core\perfctr.h;E:\svn\PowerResearch\dynamorio-master-x86\core\perscache.h;E:\svn\PowerResearch\dynamorio-master-x86\core\rct.h;E:\svn\PowerResearch\dynamorio-master-x86\core\stats.h;E:\svn\PowerResearch\dynamorio-master-x86\core\synch.h;E:\svn\PowerResearch\dynamorio-master-x86\core\translate.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\ksynch.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\memcache.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\memquery.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\memquery_macos.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\memquery_test.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\memquery_test_data.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\module.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\module_elf.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\module_macos_dyld.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\module_private.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\os_exports.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\os_private.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\os_public.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\rseq_linux.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\signal_private.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\symtab.h;E:\svn\PowerResearch\dynamorio-master-x86\core\unix\tls.h;E:\svn\PowerResearch\dynamorio-master-x86\core\utils.h;E:\svn\PowerResearch\dynamorio-master-x86\core\vmareas.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\aslr.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\diagnost.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\drmarker.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\gbop.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\inject_shared.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\module.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\ntdll.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\ntdll_shared.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\ntdll_types.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\os_exports.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\os_private.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\os_public.h;E:\svn\PowerResearch\dynamorio-master-x86\core\win32\syscallx.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drbbdup\drbbdup.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drcontainers\containers_private.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drcontainers\drtable.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drcontainers\drvector.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drcontainers\hashtable.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drcovlib\drcovlib.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drcovlib\drcovlib_private.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drcovlib\modules.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drgui\drgui_main_window.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drgui\drgui_options_interface.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drgui\drgui_options_window.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drgui\drgui_tool_interface.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drmgr\drmgr.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drmgr\drmgr_priv.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\droption\droption.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drreg\drreg.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drsyms\dbghelp_imports.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drsyms\demangle.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drsyms\drsyms.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drsyms\drsyms_obj.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drsyms\drsyms_private.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drutil\drutil.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drwrap\drwrap.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\drx\drx.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drbbdup.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drcovlib.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drext.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drmgr.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\droption.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drreg.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drsyms.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drtable.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drutil.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drvector.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drwrap.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\drx.h;E:\svn\PowerResearch\dynamorio-master-x86\ext\include\hashtable.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\config.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\dr_frontend.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\dr_frontend_private.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\elm.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\mfapi.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\our_tchar.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\parser.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\policy.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\processes.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\services.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\share.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\tests.h;E:\svn\PowerResearch\dynamorio-master-x86\libutil\utils.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\include\dr_app.h;E:\svn\PowerResearch\dynamorio-master-x86\include\dr_api.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\7cd7068e1d2b6be2b967a2e7330e9639\api_headers.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\include\dr_app.h;E:\svn\PowerResearch\dynamorio-master-x86\include\dr_api.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\api_headers</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule E:/svn/PowerResearch/dynamorio-master-x86/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SE:/svn/PowerResearch/dynamorio-master-x86 -BE:/svn/PowerResearch/dynamorio-master-x86 --check-stamp-file E:/svn/PowerResearch/dynamorio-master-x86/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTest.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTestTargets.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CTestUseLaunchers.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\DartConfiguration.tcl.in;C:\Program Files\CMake\share\cmake-3.17\Modules\FindCygwin.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindDoxygen.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindMFC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPerl.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeCCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\3.17.2\CMakeSystem.cmake;E:\svn\PowerResearch\dynamorio-master-x86\CTestConfig.cmake;E:\svn\PowerResearch\dynamorio-master-x86\api\docs\CMake_doxyutils.cmake;E:\svn\PowerResearch\dynamorio-master-x86\api\docs\CMake_rundoxygen.cmake;E:\svn\PowerResearch\dynamorio-master-x86\core\lib\dr_api.h;E:\svn\PowerResearch\dynamorio-master-x86\make\CMake_asm.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\DynamoRIOConfig.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\make\DynamoRIOConfigVersion.cmake.in;E:\svn\PowerResearch\dynamorio-master-x86\make\configure.cmake.h;E:\svn\PowerResearch\dynamorio-master-x86\make\cpp2asm_support.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\policies.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\utils.cmake;E:\svn\PowerResearch\dynamorio-master-x86\make\utils_exposed.cmake;E:\svn\PowerResearch\dynamorio-master-x86\suite\lookup_visualstudio.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\svn\PowerResearch\dynamorio-master-x86\CMakeFiles\api_headers" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:\svn\PowerResearch\dynamorio-master-x86\ZERO_CHECK.vcxproj">
+      <Project>{1F2F5D60-F5EC-347F-90EA-F473E13FBBFF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments>-verbose  -c "E:\svn\PowerResearch\dynamorio-master-x86\Debug\niii.dll"  -logdir "E:\git\ReverseEngineer"  -target_module mspaint.exe -target_offset 31EB5 -call_convention stdcall -- "C:\Windows\SysWOW64\mspaint.exe"</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerWorkingDirectory>E:\git\ALLIDA\stash</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+</Project>

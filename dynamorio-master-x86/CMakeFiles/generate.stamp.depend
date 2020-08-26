@@ -1,0 +1,56 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CPack.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CPackComponent.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CTest.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CTestTargets.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CTestUseLaunchers.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCXXCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/DartConfiguration.tcl.in
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindCygwin.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindDoxygen.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindMFC.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindPerl.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindZLIB.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/SelectLibraryConfigurations.cmake
+C:/Program Files/CMake/share/cmake-3.17/Templates/CPackConfig.cmake.in
+E:/svn/PowerResearch/dynamorio-master-x86/CMakeFiles/3.17.2/CMakeCCompiler.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/CMakeFiles/3.17.2/CMakeCXXCompiler.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/CMakeFiles/3.17.2/CMakeRCCompiler.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/CMakeFiles/3.17.2/CMakeSystem.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/CMakeLists.txt
+E:/svn/PowerResearch/dynamorio-master-x86/CTestConfig.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/api/docs/CMake_doxyutils.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/api/docs/CMake_rundoxygen.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/core/lib/dr_api.h
+E:/svn/PowerResearch/dynamorio-master-x86/make/CMake_asm.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/make/DynamoRIOConfig.cmake.in
+E:/svn/PowerResearch/dynamorio-master-x86/make/DynamoRIOConfigVersion.cmake.in
+E:/svn/PowerResearch/dynamorio-master-x86/make/configure.cmake.h
+E:/svn/PowerResearch/dynamorio-master-x86/make/cpp2asm_support.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/make/policies.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/make/utils.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/make/utils_exposed.cmake
+E:/svn/PowerResearch/dynamorio-master-x86/suite/lookup_visualstudio.cmake

@@ -1,0 +1,21 @@
+# CMake generation dependency list for this directory.
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/CMakeLists.txt
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/analysis_tool.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/analyzer.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/common/memref.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/common/trace_entry.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/common/utils.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/reader/reader.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/simulator/cache_simulator.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/simulator/cache_simulator_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/simulator/tlb_simulator_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tools/basic_counts_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tools/func_view_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tools/histogram_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tools/opcode_mix_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tools/reuse_distance_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tools/reuse_time_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tools/view_create.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tracer/drmemtrace.h
+E:/svn/PowerResearch/dynamorio-master-x86/clients/drcachesim/tracer/raw2trace.h
+E:/svn/PowerResearch/dynamorio-master-x86/make/policies.cmake
