@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="8c4b7ee4-fc20-4bb5-a63f-91e79ef02ae1" name="ida" url="http://localhost">
+        <fileTransfer mountedRoot="C:\Program Files\IDA 7.0\plugins" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
