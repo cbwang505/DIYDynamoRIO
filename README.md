@@ -2,7 +2,7 @@
 
 ## 简介 ## 
 
-DynamoRIO通过将程序代码进行反复插桩执行构建了源程序代码与操纵代码之间的桥梁,使DynamoRIO的客户端编写者能够在更高的层面上驾驭原有的程序代码.虽然程序的载体还是被编译成原生的汇编指令集执行,但是不管是原生代码还是程序行为逻辑DynamoRIO为我们提供的API已经把这些封装成了足够友好操作方式暴露给客户端编写者使用.本文主要分析DynamoRIO插桩的主要流程和实现原理,并附加相关demo分析让读者加深对DynamoRIO的认识. 
+DynamoRIO通过将程序代码进行反复插桩(Instrumentation)执行构建了源程序代码与操纵代码之间的桥梁,使DynamoRIO的客户端编写者能够在更高的层面上驾驭原有的程序代码.虽然程序的载体还是被编译成原生的汇编指令集执行,但是不管是原生代码还是程序行为逻辑DynamoRIO为我们提供丰富的API已经把这些封装成了足够友好操作方式暴露给客户端编写者使用,用户可以透明的修改原有的程序代码(HotPatch),执行追踪,Hook,调试,模拟等高级运行时操纵(Runtime Code Manipulation )技术.本文主要分析DynamoRIO插桩的主要流程和实现原理,并附加相关demo分析让读者加深对DynamoRIO的认识. 
 
 ## DynamoRIO启动参数介绍 ## 
 
@@ -86,11 +86,14 @@ fragment_t * build_basic_block_fragment(dcontext_t *dcontext, app_pc start, uint
                                _IF_CLIENT(instrlist_t **unmangled_ilist))
 {
  build_bb_ilist(dcontext, &bb);
- return f = emit_fragment_ex(dcontext, start, bb.ilist, bb.flags, bb.vmlist, link, visible);
+ return f = emit_fragment_ex(dcontext, start, bb.ilist, bb.flags, bb.vmlist, link, visible);{
+    return emit_fragment_common(dcontext, tag, ilist, flags, vmlist, link, visible,
+                                NULL /* not replacing */);
+}
 }
 ```
 build_basic_block_fragment内部调用了build_bb_ilist用于decode解码当前指令,DynamoRIO内部实现了一套编码与解码对相对于汇编语言的操作库用于将每一条汇编指令翻译成instr_t 结构,其中包含多个源操作数和目的操作数opnd_t结构和当前指令的实际解析地址app_pc translation和操作码opcode等字段,DynamoRIO的api提供了对于instr可以调用opnd_create_xxx创建操作数后将其和操作码opcode作为参数调用instr_create_xxx系列函数创建.
-build_bb_ilist中循环每个decode后的instr直到确定当前instr为一个分支指令,完成fragment的构建
+build_bb_ilist中循环每个decode后的instr直到确定当前instr为一个分支指令,完成fragment的构建.然后根据当前块分支数量在fragment尾部申请若干个linkstub(用于保存分支类型和偏移量),最后在set_linkstub_fields函数调用默认编码函数instr_encode_arch序列化出程序实际运行的汇编代码.
 ```
 static void build_bb_ilist(dcontext_t *dcontext, build_bb_t *bb){
 //最终构建好的块起始地址start_pc就是解码出来的第一条指令
@@ -121,6 +124,38 @@ bb->cur_pc = IF_AARCH64_ELSE(decode_cti_with_ldstex, decode_cti)(dcontext, bb->c
       //里面使用这个宏触发回调bb_callbacks
       call_all_ret(ret, |=, , bb_callbacks, int (*)(void *, void *, instrlist_t *, bool, bool), (void *)dcontext,(void *)tag, bb, for_trace, translating);
 }} 
+static fragment_t * emit_fragment_common(dcontext_t *dcontext, app_pc tag, instrlist_t *ilist, uint flags,void *vmlist, bool link_fragment, bool add_to_htable,fragment_t *replace_fragment)
+{
+//根据当前块分支数量在fragment尾部申请若干个linkstub
+fragment_t * f = fragment_create(dcontext, tag, offset + extra_jmp_padding_body, num_direct_stubs,
+                        num_indirect_stubs, stub_size_total + extra_jmp_padding_stubs,
+                        flags);
+//编码fragment						
+ pc = set_linkstub_fields(dcontext, f, ilist, num_direct_stubs, num_indirect_stubs,
+                             true /*encode each instr*/);
+return f;							 
+}
+ */
+cache_pc
+set_linkstub_fields(dcontext_t *dcontext, fragment_t *f, instrlist_t *ilist,
+                    uint num_direct_stubs, uint num_indirect_stubs, bool emit)
+{
+ cache_pc pc=f->start_pc;
+  linkstub_t*  l = FRAGMENT_EXIT_STUBS(f);
+   for (inst = instrlist_first(ilist); inst; inst = instr_get_next(inst)) {
+        if (instr_is_exit_cti(inst)) {
+		    //里面实际上是调用get_ibl_routine_ex获取ibl表中emit_indirect_branch_lookup,其他类型同理
+			instr_set_branch_target_pc(inst, get_unlinked_entry(dcontext, target));
+		}
+		 pc = instr_encode_to_copy(dcontext, inst, vmcode_get_writable_addr(pc),
+                                          pc);
+		  { 
+		  //调用默认编码函数instr_encode_arch序列化出程序实际运行的汇编代码
+		  instr_encode_arch(dcontext, instr, copy_pc, final_pc, true,NULL _IF_DEBUG(true));
+		  }
+     }		  
+}
+
 ```
 
 ### 插桩API回调分析 ### 
@@ -296,7 +331,7 @@ pc = emit_ibl_routines(dcontext, code, pc, code->fcache_return,
 	}
 }
 ```
-DynamoRIO在初始化时构建的一个全局的路由表,负责路由所有的插桩事件和ibl表.其中code->fcache_enter是所有构建好的块的全局入口负责跳转到保存在dcontext上下文中建好的块起始地址start_pc,在之前的分析中build_bb_ilist获取了每个块的分支类型将对应ibl表中路由地址中保存在bb->exit_target,这样在每个块被执行完成后就会跳到这类分支路由函数emit_xxx_branch_lookup中,也正是有这类函数存在,决定了是继续trace缓存执行,还是路由到下个块或者返回DynamoRIO.下面这段伪代码简化具体实现,其中加入了可选的多重判断,但主要的逻辑还是检查入口hash字段,判断下个路由如何执行,具体大致流程如下.
+DynamoRIO在初始化时构建的一个全局的路由表,负责路由所有的插桩事件和ibl表.其中code->fcache_enter是所有构建好的块的全局入口负责跳转到保存在dcontext上下文中建好的块起始地址start_pc,在之前的分析中build_bb_ilist获取了每个块的分支类型将对应ibl表中路由地址中保存在bb->exit_target,这样在每个块被执行完成后就会跳到这类分支路由函数emit_xxx_branch_lookup中,也正是有这类函数存在,决定了是继续trace缓存执行,还是路由到下个块或者返回DynamoRIO.ibl表中一种重要的indirect类型的路由处理函数emit_indirect_branch_lookup用于处理所有非内联类型indirect路由跳转,下面这段伪代码简化具体实现,其中加入了可选的多重判断,但主要的逻辑还是检查入口hash字段,判断是否跳转下个路由如何执行,直到返回DynamoRIO由d_r_dispatch处理继续插桩,具体大致流程如下.
 ```
 1.未开启sentinel检查模式 
 inline_ibl_head
@@ -368,6 +403,7 @@ byte * emit_indirect_branch_lookup(dcontext_t *dcontext, generated_code_t *code,
 	APP(&ilist,
 		INSTR_CREATE_jcc(dcontext, OP_jne_short,
 						 opnd_create_instr(next_fragment_nochasing)));
+	//增加fragment引用计数,跳转下个fragment入口执行					 
 	append_ibl_found(dcontext, &ilist, ibl_code, patch, HASHLOOKUP_START_PC_OFFS,
 					 true, only_spill_state_in_tls,
 					 target_trace_table ? DYNAMO_OPTION(trace_single_restore_prefix)
