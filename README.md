@@ -649,7 +649,10 @@ DynamoRIO客户端启动参数说明:
 立即结束进程dump追踪数据命令,参数pid为客户端程序进程id:
 "PathTo\drconfig.exe" -nudge_pid pid 0 67
 
-使用方法:在ida函数列表Function Window中右键任意函数Fuzz->Exec Tree就可以展示函数调用树,点击树中节点导航到对应函数反汇编代码
+使用方法:
+1.复制MyLighthouse目录下文件至"C:\Program Files\IDA 7.0\plugins"目录
+2.在ida打开文件File->Code Function Trace File
+3.在ida函数列表FunctionWindow中右键任意函数Fuzz->ExecTree就可以展示函数调用树,点击树中节点导航到对应函数反汇编代码
 ```
 ![查看大图](https://ftp.bmp.ovh/imgs/2020/09/5446d0f9f7077071.png)
 ##  相关项目 ##
