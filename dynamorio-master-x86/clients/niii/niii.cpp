@@ -1095,7 +1095,7 @@ dump_sub_inst_list_entry(void *drcontext, instr_t *instrFirst, instr_t *instrLas
         charm_table_entry_add(drcontext, data, start_pc, (uint)(end_pc - start_pc));
     }
     if (!findLast) {
-        dr_printf("trace inst overlapped has next\r\n");
+        //dr_printf("trace inst overlapped has next\r\n");
         dump_sub_inst_list_entry(drcontext, instr, instrLast, data);
     }
 }

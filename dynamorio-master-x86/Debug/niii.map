@@ -1,6 +1,6 @@
  niii
 
- Timestamp is 5f6d55a6 (Fri Sep 25 10:27:50 2020)
+ Timestamp is 5f6d55cf (Fri Sep 25 10:28:31 2020)
 
  Preferred load address is 10000000
 
@@ -45,21 +45,21 @@
 
   Address         Publics by Value              Rva+Base       Lib:Object
 
- 0000:00000000       ___guard_iat_table         00000000     <absolute>
- 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
- 0000:00000000       ___guard_iat_count         00000000     <absolute>
- 0000:00000000       __except_list              00000000     <absolute>
- 0000:00000000       ___guard_fids_table        00000000     <absolute>
- 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
- 0000:00000000       ___hybrid_code_map_count   00000000     <absolute>
- 0000:00000000       ___guard_fids_count        00000000     <absolute>
- 0000:00000000       ___guard_longjmp_table     00000000     <absolute>
- 0000:00000000       ___guard_longjmp_count     00000000     <absolute>
  0000:00000000       ___volatile_metadata       00000000     <absolute>
- 0000:00000000       ___dynamic_value_reloc_table 00000000     <absolute>
- 0000:00000000       ___hybrid_code_map         00000000     <absolute>
  0000:00000000       ___enclave_config          00000000     <absolute>
+ 0000:00000000       ___guard_iat_count         00000000     <absolute>
+ 0000:00000000       ___guard_longjmp_table     00000000     <absolute>
+ 0000:00000000       ___guard_fids_table        00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00000000       ___hybrid_code_map         00000000     <absolute>
+ 0000:00000000       ___hybrid_code_map_count   00000000     <absolute>
  0000:00000000       ___hybrid_auxiliary_iat    00000000     <absolute>
+ 0000:00000000       ___guard_longjmp_count     00000000     <absolute>
+ 0000:00000000       ___guard_iat_table         00000000     <absolute>
+ 0000:00000000       ___dynamic_value_reloc_table 00000000     <absolute>
+ 0000:00000000       ___guard_fids_count        00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       __except_list              00000000     <absolute>
  0000:00000100       ___guard_flags             00000100     <absolute>
  0000:00000000       ___ImageBase               10000000     <linker-defined>
  0001:00000000       __enc$textbss$begin        10001000     <linker-defined>
@@ -512,8 +512,8 @@
  0002:00022cfa       __abnormal_termination     10072cfa f   libvcruntimed:exsup.obj
  0002:00022d20       __NLG_Notify1              10072d20 f   libvcruntimed:exsup.obj
  0002:00022d2c       __NLG_Notify               10072d2c f   libvcruntimed:exsup.obj
- 0002:00022d43       __NLG_Dispatch             10072d43     libvcruntimed:exsup.obj
  0002:00022d43       __NLG_Dispatch2            10072d43     libvcruntimed:exsup.obj
+ 0002:00022d43       __NLG_Dispatch             10072d43     libvcruntimed:exsup.obj
  0002:00022d4b       __NLG_Call                 10072d4b f   libvcruntimed:exsup.obj
  0002:00022d4d       __NLG_Return2              10072d4d     libvcruntimed:exsup.obj
  0002:00022da0       ??$__crt_fast_decode_pointer@P6AXXZ@@YAP6AXXZQ6AXXZ@Z 10072da0 f i libvcruntimed:purevirt.obj
@@ -2715,8 +2715,8 @@
  0002:000a2720       __IsNonwritableInCurrentImage 100f2720 f   LIBCMTD:pesect.obj
  0002:000a28a0       __ValidateImageBase        100f28a0 f   LIBCMTD:pesect.obj
  0002:000a2920       ??1type_info@@UAE@XZ       100f2920 f   LIBCMTD:std_type_info_static.obj
- 0002:000a2940       ??_Etype_info@@UAEPAXI@Z   100f2940 f i LIBCMTD:std_type_info_static.obj
  0002:000a2940       ??_Gtype_info@@UAEPAXI@Z   100f2940 f i LIBCMTD:std_type_info_static.obj
+ 0002:000a2940       ??_Etype_info@@UAEPAXI@Z   100f2940 f i LIBCMTD:std_type_info_static.obj
  0002:000a2980       ??3@YAXPAXI@Z              100f2980 f   LIBCMTD:delete_scalar_size.obj
  0002:000a29a0       __alloca_probe_16          100f29a0 f   LIBCMTD:alloca16.obj
  0002:000a29b6       __alloca_probe_8           100f29b6     LIBCMTD:alloca16.obj
@@ -2744,7 +2744,6 @@
  0003:00000a3c       ___xt_z                    100f9a3c     LIBCMTD:initializers.obj
  0003:00000b40       ??_C@_00CNPNBAHC@@         100f9b40     charmmod.obj
  0003:00000b44       ??_C@_0O@NPGFCFOJ@pos?5?$DM?5max_pos@ 100f9b44     charmmod.obj
- 0003:00000b54       ??_C@_02DKCKIIND@?$CFs@    100f9b54     niii.obj
  0003:00000b58       ??_C@_0EC@FNCBBEMA@e?3?2svn?2powerresearch?2dynamorio?9@ 100f9b58     charmmod.obj
  0003:00000ba8       ??_C@_0BP@PKJMNDPJ@ASSERT?5FAILURE?3?5?$CFs?3?$CFd?3?5?$CFs?5?$CI?$CFs?$CJ@ 100f9ba8     charmmod.obj
  0003:00000bd0       ??_C@_0BE@EJAFFIEE@data?5?$CB?$DN?5?$CI?$CIvoid?5?$CK?$CJ0?$CJ@ 100f9bd0     charmmod.obj
@@ -2787,7 +2786,7 @@
  0003:00000fb4       ??_C@_0BC@CKMHEFGJ@DRCOV?5FLAVOR?3?5?$CFs?6@ 100f9fb4     niii.obj
  0003:00000fcc       ??_C@_0CG@MCJIKNAF@Function?5Table?3?5version?5?$CFu?0?5cou@ 100f9fcc     niii.obj
  0003:00001000       ??_C@_0GP@KPGILDL@FuncID?0?5TimeStamp?0?5FuncAddr?0?5Re@ 100fa000     niii.obj
- 0003:00001070       ??_C@_0L@MNPILAEK@?9dump_args@ 100fa070     niii.obj
+ 0003:00001070       ??_C@_0BA@HHHPINKN@?9no_nudge_kills@ 100fa070     niii.obj
  0003:00001088       ??_C@_0CE@EKFAKHCI@Memory?5Table?3?5version?5?$CFu?0?5count@ 100fa088     niii.obj
  0003:000010b4       ??_C@_0DH@EJLKGLP@FuncID?0MemoryType?0MemoryValue?0M@ 100fa0b4     niii.obj
  0003:000010f8       ??_C@_05CNDJFPDP@?$CF02x?5@ 100fa0f8     niii.obj
@@ -2825,69 +2824,67 @@
  0003:00001518       ??_C@_0BK@PHPGOLPL@drcontext?5can?5not?5be?5null@ 100fa518     niii.obj
  0003:0000153c       ??_C@_0BF@OMDGHPHG@data?5can?5not?5be?5null@ 100fa53c     niii.obj
  0003:00001554       ??_C@_0DL@GGOCEGJI@thread?3?$FL?$CFd?$FN?0trigger?5function?0st@ 100fa554     niii.obj
- 0003:00001598       ??_C@_0BE@DCMCFLNF@missing?5logdir?5path@ 100fa598     niii.obj
+ 0003:00001598       ??_C@_0P@EPPMGDCP@?$CIi?5?$CL?51?$CJ?5?$DM?5argc@ 100fa598     niii.obj
  0003:000015ac       ??_C@_0BC@BJCLGLFA@thread_trace?5?$CB?$DN?50@ 100fa5ac     niii.obj
- 0003:000015c0       ??_C@_0BI@ONBLMDAL@invalid?5?9verbose?5number@ 100fa5c0     niii.obj
- 0003:000015d8       ??_C@_0BJ@IKNDJNHD@using?5restrict?5function?6@ 100fa5d8     niii.obj
+ 0003:000015c0       ??_C@_0O@KNEJOIOH@?9trace_module@ 100fa5c0     niii.obj
+ 0003:000015d8       ??_C@_0L@MNPILAEK@?9dump_args@ 100fa5d8     niii.obj
  0003:000015f4       ??_C@_0L@NKOFBBIN@data2?5?$CB?$DN?50@ 100fa5f4     niii.obj
- 0003:00001600       ??_C@_0P@KGPIFLEP@?9restrict_func@ 100fa600     niii.obj
- 0003:00001610       ??_C@_0N@CFGJBGNI@?9nudge_kills@ 100fa610     niii.obj
- 0003:0000162c       ??_C@_07IIEDOMNN@?9logdir@ 100fa62c     niii.obj
+ 0003:00001610       ??_C@_07IIEDOMNN@?9logdir@ 100fa610     niii.obj
+ 0003:0000162c       ??_C@_0BE@DCMCFLNF@missing?5logdir?5path@ 100fa62c     niii.obj
  0003:00001640       ??_C@_0CC@OPLBGGAO@thread?5trace?5data?5can?5not?5be?5nu@ 100fa640     niii.obj
- 0003:00001670       ??_C@_0P@EPPMGDCP@?$CIi?5?$CL?51?$CJ?5?$DM?5argc@ 100fa670     niii.obj
- 0003:00001690       ??_C@_0N@MHIGLCNK@?9dump_binary@ 100fa690     niii.obj
- 0003:000016b0       ??_C@_0BB@PMCPFGNE@using?5logdir?5?$CFs?6@ 100fa6b0     niii.obj
- 0003:000016c4       ??_C@_0M@KFEKEHEH@tracing?5?$CFs?6@ 100fa6c4     niii.obj
- 0003:000016d4       ??_C@_0BG@LENPKJH@should?5not?5be?5reached@ 100fa6d4     niii.obj
- 0003:000016f8       ??_C@_0P@KBIPBDHH@?9target_module@ 100fa6f8     niii.obj
- 0003:00001714       ??_C@_0BP@EDLMKDGD@fuzzing?5target?5from?5module?5?$CFs?6@ 100fa714     niii.obj
- 0003:00001734       ??_C@_0BK@LHOMEOLM@fuzzing?5target?5module?5?$CFs?6@ 100fa734     niii.obj
- 0003:00001750       ??_C@_07OGMNIEIF@stdcall@  100fa750     niii.obj
- 0003:0000176c       ??_C@_0P@BCLMEHLF@?9target_offset@ 100fa76c     niii.obj
- 0003:0000177c       ??_C@_0BN@ENHKIOON@?$FL?$CK?$FNResume?5All?5Other?5Threads?6@ 100fa77c     niii.obj
- 0003:000017ac       ??_C@_0P@MFKACHI@missing?5offset@ 100fa7ac     niii.obj
- 0003:000017c8       ??_C@_0CC@HKKAIIAK@thread?5?$CFd?5suspending?5all?5thread@ 100fa7c8     niii.obj
+ 0003:00001670       ??_C@_0BB@PMCPFGNE@using?5logdir?5?$CFs?6@ 100fa670     niii.obj
+ 0003:00001690       ??_C@_0BE@CLKKOJBP@?9always_instruction@ 100fa690     niii.obj
+ 0003:000016b0       ??_C@_0L@OKCKALI@?9logprefix@ 100fa6b0     niii.obj
+ 0003:000016c4       ??_C@_0P@KBIPBDHH@?9target_module@ 100fa6c4     niii.obj
+ 0003:000016d4       ??_C@_0BG@PCCCJKHL@https?3?1?1www?4niii?4com?1@ 100fa6d4     niii.obj
+ 0003:000016f8       ??_C@_0BK@LHOMEOLM@fuzzing?5target?5module?5?$CFs?6@ 100fa6f8     niii.obj
+ 0003:00001714       ??_C@_0P@NJNKKHMJ@?9target_method@ 100fa714     niii.obj
+ 0003:00001734       ??_C@_0N@BOOJNEGH@?9from_module@ 100fa734     niii.obj
+ 0003:00001750       ??_C@_08LCHALNCP@fastcall@ 100fa750     niii.obj
+ 0003:0000176c       ??_C@_0P@MFKACHI@missing?5offset@ 100fa76c     niii.obj
+ 0003:0000177c       ??_C@_0CL@IJHBPHDL@?$FL?$CK?$FNPerform?5DynamoRIO?5Exit?5With?5@ 100fa77c     niii.obj
+ 0003:000017ac       ??_C@_0BM@FPNOODLH@fuzzing?5target?5method?5?$CF08x?6@ 100fa7ac     niii.obj
+ 0003:000017c8       ??_C@_0BO@LGBHDOFK@?$FL?$CK?$FNSuspend?5All?5Other?5Threads?6@ 100fa7c8     niii.obj
  0003:000017f0       ??_C@_0BM@IFDBMBOC@?9opt_speed?5is?5not?5supported@ 100fa7f0     niii.obj
- 0003:00001814       ??_C@_0CE@MKDMKNNP@missing?5?9native_until_thread?5nu@ 100fa814     niii.obj
- 0003:00001838       ??_C@_0P@JGDENKHC@max_elide_call@ 100fa838     niii.obj
- 0003:00001854       ??_C@_0P@LPGJFGLK@missing?5module@ 100fa854     niii.obj
- 0003:00001870       ??_C@_0BA@HHHPINKN@?9no_nudge_kills@ 100fa870     niii.obj
- 0003:00001884       ??_C@_0BG@PCCCJKHL@https?3?1?1www?4niii?4com?1@ 100fa884     niii.obj
- 0003:0000189c       ??_C@_0BM@FPNOODLH@fuzzing?5target?5method?5?$CF08x?6@ 100fa89c     niii.obj
- 0003:000018b8       ??_C@_0BH@KKKOBANM@using?5follow?5function?6@ 100fa8b8     niii.obj
- 0003:000018d4       ??_C@_0BJ@KBMPKFDO@failed?5to?5resume?5threads@ 100fa8d4     niii.obj
- 0003:000018f8       ??_C@_0P@MHDMOCAE@missing?5method@ 100fa8f8     niii.obj
- 0003:00001914       ??_C@_0BJ@BKPICHLP@missing?5logprefix?5string@ 100fa914     niii.obj
- 0003:00001940       ??_C@_0BI@JNDPKHJN@missing?5?9verbose?5number@ 100fa940     niii.obj
- 0003:00001958       ??_C@_0P@NJNKKHMJ@?9target_method@ 100fa958     niii.obj
- 0003:00001968       ??_C@_0BL@PNFCCLHC@missing?5calling?5convention@ 100fa968     niii.obj
- 0003:00001988       ??_C@_0BB@JDHCNEDH@?9call_convention@ 100fa988     niii.obj
- 0003:000019a4       ??_C@_0BF@FPDMNBDH@?9native_until_thread@ 100fa9a4     niii.obj
- 0003:000019d0       ??_C@_0O@KNEJOIOH@?9trace_module@ 100fa9d0     niii.obj
- 0003:000019e0       ??_C@_0BG@DCMMLBNF@DynamoRIO?5NIII?5tracer@ 100fa9e0     niii.obj
- 0003:000019f8       ??_C@_0BH@MMFIEEDB@PMyThreadData?5not?5null@ 100fa9f8     niii.obj
- 0003:00001a10       ??_C@_0BK@BBAEHBMG@fuzzing?5target?5method?5?$CFs?6@ 100faa10     niii.obj
- 0003:00001a38       ??_C@_0N@BOOJNEGH@?9from_module@ 100faa38     niii.obj
- 0003:00001a60       ??_C@_08PBKCDPML@thiscall@ 100faa60     niii.obj
- 0003:00001a84       ??_C@_0BL@MKAJMOCL@UNRECOGNIZED?5OPTION?3?5?$CC?$CFs?$CC?6@ 100faa84     niii.obj
- 0003:00001ab0       ??_C@_0CE@BPMGAPOG@invalid?5?9native_until_thread?5nu@ 100faab0     niii.obj
- 0003:00001afc       ??_C@_08EJAIINN@memtrace@  100faafc     niii.obj
- 0003:00001b08       ??_C@_0CN@EBIOMKDB@using?5dump?5binary?5mode?5and?5glob@ 100fab08     niii.obj
- 0003:00001b3c       ??_C@_0L@PAANLFBE@?9dump_text@ 100fab3c     niii.obj
- 0003:00001b4c       ??_C@_09EIFLJKJO@printing?6@ 100fab4c     niii.obj
- 0003:00001b6c       ??_C@_0P@PJFAGLMH@invalid?5option@ 100fab6c     niii.obj
- 0003:00001b7c       ??_C@_0N@MIBPPNFG@terminating?6@ 100fab7c     niii.obj
- 0003:00001ba0       ??_C@_0BP@EKDICGBH@?$FL?$CK?$FNFinish?5DynamoRIO?5Exit?5Work?6@ 100faba0     niii.obj
- 0003:00001bd4       ??_C@_07NOAPLFPL@to_wrap@  100fabd4     niii.obj
- 0003:00001bdc       ??_C@_0DK@JMLKLHFE@Unknown?5calling?5convention?0?5usi@ 100fabdc     niii.obj
- 0003:00001c1c       ??_C@_0BE@NOBGDLHK@nudge?5delivered?5?$CFd?6@ 100fac1c     niii.obj
- 0003:00001c44       ??_C@_05FFBMMOKN@self?6@   100fac44     niii.obj
- 0003:00001c70       ??_C@_0DI@IGIFNDDM@modname?3?$CFs?0trace?5function?5?3?$CF08x@ 100fac70     niii.obj
+ 0003:00001814       ??_C@_02DPKJAMEF@?$CFd@    100fa814     niii.obj
+ 0003:00001838       ??_C@_0BE@NOBGDLHK@nudge?5delivered?5?$CFd?6@ 100fa838     niii.obj
+ 0003:00001854       ??_C@_0M@KFEKEHEH@tracing?5?$CFs?6@ 100fa854     niii.obj
+ 0003:00001870       ??_C@_0N@CFGJBGNI@?9nudge_kills@ 100fa870     niii.obj
+ 0003:00001884       ??_C@_0BG@DCMMLBNF@DynamoRIO?5NIII?5tracer@ 100fa884     niii.obj
+ 0003:0000189c       ??_C@_0BB@JDHCNEDH@?9call_convention@ 100fa89c     niii.obj
+ 0003:000018b8       ??_C@_0P@KGPIFLEP@?9restrict_func@ 100fa8b8     niii.obj
+ 0003:000018d4       ??_C@_0BN@ENHKIOON@?$FL?$CK?$FNResume?5All?5Other?5Threads?6@ 100fa8d4     niii.obj
+ 0003:000018f8       ??_C@_0BK@BBAEHBMG@fuzzing?5target?5method?5?$CFs?6@ 100fa8f8     niii.obj
+ 0003:00001914       ??_C@_0BF@FPDMNBDH@?9native_until_thread@ 100fa914     niii.obj
+ 0003:00001940       ??_C@_02GMHACPFF@?$CFu@    100fa940     niii.obj
+ 0003:00001958       ??_C@_0P@MHDMOCAE@missing?5method@ 100fa958     niii.obj
+ 0003:00001968       ??_C@_07OGMNIEIF@stdcall@  100fa968     niii.obj
+ 0003:00001988       ??_C@_0BL@PNFCCLHC@missing?5calling?5convention@ 100fa988     niii.obj
+ 0003:000019a4       ??_C@_0CE@MKDMKNNP@missing?5?9native_until_thread?5nu@ 100fa9a4     niii.obj
+ 0003:000019d0       ??_C@_0P@LPGJFGLK@missing?5module@ 100fa9d0     niii.obj
+ 0003:000019e0       ??_C@_08EJAIINN@memtrace@  100fa9e0     niii.obj
+ 0003:00001a10       ??_C@_0P@BCLMEHLF@?9target_offset@ 100faa10     niii.obj
+ 0003:00001a38       ??_C@_0BP@EDLMKDGD@fuzzing?5target?5from?5module?5?$CFs?6@ 100faa38     niii.obj
+ 0003:00001a60       ??_C@_04LKDJNOLJ@ms64@     100faa60     niii.obj
+ 0003:00001a84       ??_C@_0P@PJFAGLMH@invalid?5option@ 100faa84     niii.obj
+ 0003:00001ab0       ??_C@_08FBJJFDKJ@?9verbose@ 100faab0     niii.obj
+ 0003:00001ad4       ??_C@_0BP@IODKOCDP@ModLoad?3?$CFs?0base?3?$CF08x?0end?3?$CF08x?6@ 100faad4     niii.obj
+ 0003:00001b08       ??_C@_02DKCKIIND@?$CFs@    100fab08     niii.obj
+ 0003:00001b3c       ??_C@_0N@MHIGLCNK@?9dump_binary@ 100fab3c     niii.obj
+ 0003:00001b4c       ??_C@_0N@MIBPPNFG@terminating?6@ 100fab4c     niii.obj
+ 0003:00001b6c       ??_C@_0O@OLBDDKIK@max_elide_jmp@ 100fab6c     niii.obj
+ 0003:00001b7c       ??_C@_0CC@HKKAIIAK@thread?5?$CFd?5suspending?5all?5thread@ 100fab7c     niii.obj
+ 0003:00001ba0       ??_C@_0BJ@KBMPKFDO@failed?5to?5resume?5threads@ 100faba0     niii.obj
+ 0003:00001bc0       ??_C@_0BJ@IKNDJNHD@using?5restrict?5function?6@ 100fabc0     niii.obj
+ 0003:00001bdc       ??_C@_0BM@EIJBLFNJ@fuzzing?5call?5convention?5?$CFs?6@ 100fabdc     niii.obj
+ 0003:00001c1c       ??_C@_05FFBMMOKN@self?6@   100fac1c     niii.obj
+ 0003:00001c44       ??_C@_09EIFLJKJO@printing?6@ 100fac44     niii.obj
+ 0003:00001c70       ??_C@_0DA@NMBJNKIO@modname?3?$CFs?0trace?5found?5restrict@ 100fac70     niii.obj
  0003:00001ca8       ??_C@_0CM@BFPMBDFF@pc?5?$CB?$DN?50?5?$CG?$CG?5?$CIpc?5?$DO?$DN?5start_pc?5?$HM?$HM?5p@ 100faca8     niii.obj
- 0003:00001cd4       ??_C@_02DPKJAMEF@?$CFd@    100facd4     niii.obj
+ 0003:00001cd4       ??_C@_0CE@BPMGAPOG@invalid?5?9native_until_thread?5nu@ 100facd4     niii.obj
  0003:00001cf8       ??_C@_0BN@LNPKCAPI@?$CIend_pc?5?9?5start_pc?$CJ?5?$DM?50xffff@ 100facf8     niii.obj
- 0003:00001d18       ??_C@_0CB@IMHIDAKN@trace?5inst?5overlapped?5has?5next?$AN@ 100fad18     niii.obj
- 0003:00001d4c       ??_C@_0N@OKMAEFDD@?9follow_func@ 100fad4c     niii.obj
+ 0003:00001d18       ??_C@_0BH@MMFIEEDB@PMyThreadData?5not?5null@ 100fad18     niii.obj
+ 0003:00001d4c       ??_C@_0BH@KKKOBANM@using?5follow?5function?6@ 100fad4c     niii.obj
  0003:00001d80       ??_C@_0CC@JDCCBOPM@thread?5local?5data?5can?5not?5be?5nu@ 100fad80     niii.obj
  0003:00001da4       ??_C@_0BD@JBKHFNOB@buf?5?$CB?$DN?5?$CI?$CIvoid?5?$CK?$CJ0?$CJ@ 100fada4     charmtable.obj
  0003:00001dc0       ??_C@_0EE@EPOJOLCJ@e?3?2svn?2powerresearch?2dynamorio?9@ 100fadc0     charmtable.obj
@@ -2904,9 +2901,9 @@
  0003:00001fe0       __pRawDllMain              100fafe0     LIBCMTD:dll_dllmain.obj
  0003:00001fe0       __pDefaultRawDllMain       100fafe0     LIBCMTD:dll_dllmain.obj
  0003:000020a0       ??_C@_0NN@NGPKDKPD@The?5value?5of?5ESP?5was?5not?5proper@ 100fb0a0     LIBCMTD:error.obj
- 0003:00002188       ??_C@_02GMHACPFF@?$CFu@    100fb188     niii.obj
+ 0003:00002188       ??_C@_0BI@ONBLMDAL@invalid?5?9verbose?5number@ 100fb188     niii.obj
  0003:000021b0       ??_C@_0BBN@GPMLNJCF@A?5cast?5to?5a?5smaller?5data?5type?5h@ 100fb1b0     LIBCMTD:error.obj
- 0003:000022e0       ??_C@_08FBJJFDKJ@?9verbose@ 100fb2e0     niii.obj
+ 0003:000022e0       ??_C@_0BI@JNDPKHJN@missing?5?9verbose?5number@ 100fb2e0     niii.obj
  0003:00002308       ??_C@_0BN@FFOINMNJ@Stack?5memory?5was?5corrupted?6?$AN@ 100fb308     LIBCMTD:error.obj
  0003:0000232c       ??_C@_0DG@HKJMLLLP@A?5local?5variable?5was?5used?5befor@ 100fb32c     LIBCMTD:error.obj
  0003:0000236c       ??_C@_0CM@NGINOKPC@Stack?5memory?5around?5_alloca?5was@ 100fb36c     LIBCMTD:error.obj
@@ -3169,9 +3166,9 @@
  0003:00003d64       ??_C@_1M@ILHOPKA@?$AAE?$AAr?$AAr?$AAo?$AAr@ 100fcd64     libucrtd:dbgrpt.obj
  0003:00003d74       ??_C@_1CC@CGHMNGDG@?$AAA?$AAs?$AAs?$AAe?$AAr?$AAt?$AAi?$AAo?$AAn?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe@ 100fcd74     libucrtd:dbgrpt.obj
  0003:00003da0       ??_C@_1OG@PMPPFHAF@?$AA?6?$AA?6?$AAF?$AAo?$AAr?$AA?5?$AAi?$AAn?$AAf?$AAo?$AAr?$AAm?$AAa?$AAt?$AAi@ 100fcda0     libucrtd:dbgrpt.obj
- 0003:00003e88       ??_C@_0BO@LGBHDOFK@?$FL?$CK?$FNSuspend?5All?5Other?5Threads?6@ 100fce88     niii.obj
+ 0003:00003e88       ??_C@_0BP@EKDICGBH@?$FL?$CK?$FNFinish?5DynamoRIO?5Exit?5Work?6@ 100fce88     niii.obj
  0003:00003eb8       ??_C@_1MG@LJLILFFD@?$AAD?$AAe?$AAb?$AAu?$AAg?$AA?5?$AA?$CF?$AAl?$AAs?$AA?$CB?$AA?6?$AA?6?$AAP?$AAr?$AAo@ 100fceb8     libucrtd:dbgrpt.obj
- 0003:00003f80       ??_C@_0L@OKCKALI@?9logprefix@ 100fcf80     niii.obj
+ 0003:00003f80       ??_C@_0BJ@BKPICHLP@missing?5logprefix?5string@ 100fcf80     niii.obj
  0003:00003fa8       ??_C@_1MG@OODCADGL@?$AAD?$AAe?$AAb?$AAu?$AAg?$AA?5?$AA?$CF?$AAl?$AAs?$AA?$CB?$AA?6?$AA?6?$AAP?$AAr?$AAo@ 100fcfa8     libucrtd:dbgrpt.obj
  0003:00004098       ??_C@_0BH@DNAGHKFM@?$DMprogram?5name?5unknown?$DO@ 100fd098     libucrtd:dbgrpt.obj
  0003:000040b4       ??_C@_1CO@EAEJAADC@?$AA?$DM?$AAp?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAn?$AAa?$AAm?$AAe?$AA?5?$AAu@ 100fd0b4     libucrtd:dbgrpt.obj
@@ -3183,7 +3180,7 @@
  0003:000042d0       ??_C@_1CI@ONEHFNHD@?$AAn?$AAe?$AAw?$AA_?$AAh?$AAo?$AAo?$AAk?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AAn?$AAu?$AAl@ 100fd2d0     libucrtd:dbgrpt.obj
  0003:00004304       ??_C@_1CM@EHMOGBJJ@?$AAc?$AAo?$AAm?$AAm?$AAo?$AAn?$AA_?$AAm?$AAe?$AAs?$AAs?$AAa?$AAg?$AAe?$AA_@ 100fd304     libucrtd:dbgrpt.obj
  0003:00004338       ??_C@_1PE@ECNALGCA@?$AAt?$AAr?$AAa?$AAi?$AAt?$AAs?$AA?3?$AA?3?$AAt?$AAc?$AAs?$AAc?$AAp?$AAy?$AA_@ 100fd338     libucrtd:dbgrpt.obj
- 0003:0000442c       ??_C@_0CL@IJHBPHDL@?$FL?$CK?$FNPerform?5DynamoRIO?5Exit?5With?5@ 100fd42c     niii.obj
+ 0003:0000442c       ??_C@_0BG@LENPKJH@should?5not?5be?5reached@ 100fd42c     niii.obj
  0003:0000445c       ??_C@_11LOCGONAA@@         100fd45c     libucrtd:dbgrpt.obj
  0003:00004460       ??_C@_1BK@PEDCIPMA@?$AAE?$AAx?$AAp?$AAr?$AAe?$AAs?$AAs?$AAi?$AAo?$AAn?$AA?3?$AA?5@ 100fd460     libucrtd:dbgrpt.obj
  0003:00004480       ??_C@_15IABLJNFO@?$AA?6?$AA?6@ 100fd480     libucrtd:dbgrpt.obj
@@ -3207,7 +3204,7 @@
  0003:00004930       _standard_lookup_table     100fd930     libucrtd:output.obj
  0003:000049a0       _format_validation_lookup_table 100fd9a0     libucrtd:output.obj
  0003:00004a10       ??_C@_1BDG@MKBKGHOH@?$AA?$CI?$AA?5?$AA?$CI?$AA_?$AAS?$AAt?$AAr?$AAe?$AAa?$AAm?$AA?4?$AAi?$AAs?$AA_?$AAs@ 100fda10     libucrtd:output.obj
- 0003:00004b50       ??_C@_0BP@IODKOCDP@ModLoad?3?$CFs?0base?3?$CF08x?0end?3?$CF08x?6@ 100fdb50     niii.obj
+ 0003:00004b50       ??_C@_0CL@KHLHDAPB@Can?8t?5find?5specified?5method?5in?5@ 100fdb50     niii.obj
  0003:00004b88       ??_C@_1GC@LCDLABEA@?$AAm?$AAi?$AAn?$AAk?$AAe?$AAr?$AAn?$AAe?$AAl?$AA?2?$AAc?$AAr?$AAt?$AAs?$AA?2@ 100fdb88     libucrtd:output.obj
  0003:00004c00       ??_C@_1II@DIIMCJOK@?$AA_?$AA_?$AAa?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAc?$AAh@ 100fdc00     libucrtd:output.obj
  0003:00004ca4       ??_C@_1CE@JLIJLEKO@?$AAs?$AAt?$AAr?$AAe?$AAa?$AAm?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AAn?$AAu?$AAl?$AAl?$AAp@ 100fdca4     libucrtd:output.obj
@@ -3226,18 +3223,20 @@
  0003:000051a8       ??_C@_0FG@DMHJAJBF@thread?3?$FL?$CFd?$FN?0trace?5function?5retu@ 100fe1a8     niii.obj
  0003:00005208       ??_C@_1EE@DMAIGNBG@?$AA?$CI?$AA?$CC?$AAI?$AAn?$AAc?$AAo?$AAr?$AAr?$AAe?$AAc?$AAt?$AA?5?$AAf?$AAo?$AAr@ 100fe208     libucrtd:output.obj
  0003:00005260       ??_C@_1BLI@EGFICANE@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100fe260     libucrtd:output.obj
- 0003:00005418       ??_C@_08LCHALNCP@fastcall@ 100fe418     niii.obj
- 0003:00005434       ??_C@_0CL@KHLHDAPB@Can?8t?5find?5specified?5method?5in?5@ 100fe434     niii.obj
+ 0003:00005418       ??_C@_08PBKCDPML@thiscall@ 100fe418     niii.obj
+ 0003:00005434       ??_C@_07NOAPLFPL@to_wrap@  100fe434     niii.obj
+ 0003:0000543c       ??_C@_0CN@EBIOMKDB@using?5dump?5binary?5mode?5and?5glob@ 100fe43c     niii.obj
  0003:00005470       ??_C@_1BLI@IKDKMDHI@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100fe470     libucrtd:output.obj
- 0003:00005644       ??_C@_0BE@CLKKOJBP@?9always_instruction@ 100fe644     niii.obj
+ 0003:00005644       ??_C@_0N@OKMAEFDD@?9follow_func@ 100fe644     niii.obj
  0003:00005680       ??_C@_1BKA@DNADAJMC@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100fe680     libucrtd:output.obj
- 0003:00005828       ??_C@_0O@OLBDDKIK@max_elide_jmp@ 100fe828     niii.obj
- 0003:00005838       ??_C@_04LKDJNOLJ@ms64@     100fe838     niii.obj
+ 0003:00005828       ??_C@_0P@JGDENKHC@max_elide_call@ 100fe828     niii.obj
+ 0003:00005840       ??_C@_0DI@IGIFNDDM@modname?3?$CFs?0trace?5function?5?3?$CF08x@ 100fe840     niii.obj
  0003:00005878       ??_C@_1BNA@HGLCOOBP@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100fe878     libucrtd:output.obj
+ 0003:00005a48       ??_C@_0DK@JMLKLHFE@Unknown?5calling?5convention?0?5usi@ 100fea48     niii.obj
  0003:00005aa8       ??_C@_1BLI@FOCNEPKJ@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100feaa8     libucrtd:output.obj
- 0003:00005c60       ??_C@_0DA@NMBJNKIO@modname?3?$CFs?0trace?5found?5restrict@ 100fec60     niii.obj
+ 0003:00005c60       ??_C@_0L@PAANLFBE@?9dump_text@ 100fec60     niii.obj
  0003:00005cb8       ??_C@_1BMK@CPBKHDIH@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100fecb8     libucrtd:output.obj
- 0003:00005e84       ??_C@_0BM@EIJBLFNJ@fuzzing?5call?5convention?5?$CFs?6@ 100fee84     niii.obj
+ 0003:00005e84       ??_C@_0BL@MKAJMOCL@UNRECOGNIZED?5OPTION?3?5?$CC?$CFs?$CC?6@ 100fee84     niii.obj
  0003:00005ee0       ??_C@_1BLC@PMCLHHAE@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100feee0     libucrtd:output.obj
  0003:000060e8       ??_C@_1BLI@EEAAPJD@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100ff0e8     libucrtd:output.obj
  0003:000062f8       ??_C@_1BKA@IIAAOGBO@?$AA_?$AA_?$AAc?$AAr?$AAt?$AA_?$AAs?$AAt?$AAd?$AAi?$AAo?$AA_?$AAo?$AAu?$AAt@ 100ff2f8     libucrtd:output.obj
@@ -4920,6 +4919,130 @@
 
  Static symbols
 
+ 0000:ffedc000       __guard_fids_??B<lambda_998df822d83bde51c0affd9febd79072>@@QBEP6AXQAX@ZXZ 10000000     libvcruntimed:std_type_info.obj
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:debug_heap.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:debug_heap.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:free.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:invalid_parameter.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:dbgrptt.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:dbgrptt.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:getmodulefilenamea.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:getmodulefilenamea.obj
+ 0000:ffedc000       __guard_fids__signal       10000000     libucrtd:signal.obj
+ 0000:ffedc000       __guard_fids_?get_terminate_or_default@@YAP6AXXZQBU__acrt_ptd@@@Z 10000000     libucrtd:terminate.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:terminate.obj
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
+ 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
+ 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:frame.obj
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:argv_wildcards.obj
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffedc000       __guard_fids____scrt_set_unhandled_exception_filter 10000000     LIBCMTD:utility_desktop.obj
+ 0000:ffedc000       __guard_fids__             10000000     LIBCMTD:guard_support.obj
+ 0000:ffedc000       __guard_fids___guard_icall_checks_enforced 10000000     LIBCMTD:guard_support.obj
+ 0000:ffedc000       __guard_fids_??B<lambda_838c7f62c73c983481e27c09e84b0b5d>@@QBEP6AHPBX0@ZXZ 10000000     libucrtd:argv_wildcards.obj
+ 0000:ffedc000       __guard_fids_??B<lambda_d388dc2bcbe6079ffc891eec49d9b3b2>@@QBEP6AHPBX0@ZXZ 10000000     libucrtd:argv_wildcards.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
+ 0000:ffedc000       __guard_fids_??B<lambda_898920cacc91e508364b5fd76d256868>@@QBEP6APAXI@ZXZ 10000000     libvcruntimed:std_type_info.obj
+ 0000:ffed3000       .debug$S                   10000000     drwrap:drwrap.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:exit.obj
+ 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:jbcxrval.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:exit.obj
+ 0000:ffedc000       __guard_fids___guard_icall_checks_enforced 10000000     libvcruntimed:jbcxrval.obj
+ 0000:ffedc000       __guard_fids____except_validate_jump_buffer 10000000     libvcruntimed:jbcxrval.obj
+ 0000:ffed3000       .debug$S                   10000000     drwrap:drwrap.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:exit.obj
+ 0000:ffed3000       .debug$S                   10000000     drwrap:drwrap.dll
+ 0000:ffed3000       .debug$S                   10000000     drwrap:drwrap.dll
+ 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
+ 0000:ffedc000       __guard_fids__             10000000     libucrtd:wsetlocale.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:_sftbuf.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:_sftbuf.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:_sftbuf.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:fputc.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:fileno.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:fputwc.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:fputwc.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:cvt.obj
+ 0000:ffedc000       __guard_fids____dcrt_uninitialize_environments_nolock 10000000     libucrtd:environment_initialization.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:per_thread_data.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:per_thread_data.obj
+ 0000:ffedc000       __guard_fids____acrt_initialize_ptd 10000000     libucrtd:per_thread_data.obj
+ 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
+ 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:onexit.obj
+ 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
+ 0000:ffedc000       __guard_fids____libm_error_support 10000000     libucrtd:libm_error.obj
+ 0000:ffed3000       .debug$S                   10000000     drx:drx.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:win_policies.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:win_policies.obj
+ 0000:ffedc000       __guard_fids__             10000000     LIBCMTD:std_type_info_static.obj
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffeda000       _volmd                     10000000     libucrtd:win_policies.obj
+ 0000:ffed3000       .debug$S                   10000000     niii.exp
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
+ 0000:ffedc000       __guard_fids_??B<lambda_29d3c280b90b41c2ae070ffca879996a>@@QBEP6GHPA_W@ZXZ 10000000     libucrtd:winapi_thunks.obj
+ 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
+ 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
+ 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
+ 0000:ffedc000       __guard_fids__             10000000     libucrtd:console_output_initializer.obj
+ 0000:ffeda000       _volmd                     10000000     libucrtd:87except.obj
+ 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
+ 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
  0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
  0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
  0000:ffedc000       __guard_fids___CRT_RTC_INIT 10000000     LIBCMTD:init.obj
@@ -5189,130 +5312,6 @@
  0000:ffeda000       _volmd                     10000000     libucrtd:isctype.obj
  0000:ffeda000       _volmd                     10000000     libucrtd:comparestringa.obj
  0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffeda000       _volmd                     10000000     libucrtd:87except.obj
- 0000:ffedc000       __guard_fids__             10000000     libucrtd:console_output_initializer.obj
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
- 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
- 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
- 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
- 0000:ffedc000       __guard_fids_??B<lambda_29d3c280b90b41c2ae070ffca879996a>@@QBEP6GHPA_W@ZXZ 10000000     libucrtd:winapi_thunks.obj
- 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:undname.obj
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:output.obj
- 0000:ffed3000       .debug$S                   10000000     niii.exp
- 0000:ffeda000       _volmd                     10000000     libucrtd:win_policies.obj
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffedc000       __guard_fids__             10000000     LIBCMTD:std_type_info_static.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:win_policies.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:win_policies.obj
- 0000:ffed3000       .debug$S                   10000000     drx:drx.dll
- 0000:ffedc000       __guard_fids____libm_error_support 10000000     libucrtd:libm_error.obj
- 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
- 0000:ffeda000       _volmd                     10000000     libucrtd:onexit.obj
- 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
- 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
- 0000:ffedc000       __guard_fids____acrt_initialize_ptd 10000000     libucrtd:per_thread_data.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:per_thread_data.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:per_thread_data.obj
- 0000:ffedc000       __guard_fids____dcrt_uninitialize_environments_nolock 10000000     libucrtd:environment_initialization.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:cvt.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:fputwc.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:fputwc.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:fileno.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:fputc.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:_sftbuf.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:_sftbuf.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:_sftbuf.obj
- 0000:ffedc000       __guard_fids__             10000000     libucrtd:wsetlocale.obj
- 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
- 0000:ffed3000       .debug$S                   10000000     drwrap:drwrap.dll
- 0000:ffed3000       .debug$S                   10000000     drwrap:drwrap.dll
- 0000:ffeda000       _volmd                     10000000     libucrtd:exit.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
- 0000:ffed3000       .debug$S                   10000000     drwrap:drwrap.dll
- 0000:ffedc000       __guard_fids____except_validate_jump_buffer 10000000     libvcruntimed:jbcxrval.obj
- 0000:ffedc000       __guard_fids___guard_icall_checks_enforced 10000000     libvcruntimed:jbcxrval.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:exit.obj
- 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:jbcxrval.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:exit.obj
- 0000:ffed3000       .debug$S                   10000000     drwrap:drwrap.dll
- 0000:ffedc000       __guard_fids_??B<lambda_998df822d83bde51c0affd9febd79072>@@QBEP6AXQAX@ZXZ 10000000     libvcruntimed:std_type_info.obj
- 0000:ffedc000       __guard_fids_??B<lambda_898920cacc91e508364b5fd76d256868>@@QBEP6APAXI@ZXZ 10000000     libvcruntimed:std_type_info.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:_fenvutils.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffeda000       _volmd                     10000000     libucrtd:wsetlocale.obj
- 0000:ffedc000       __guard_fids_??B<lambda_d388dc2bcbe6079ffc891eec49d9b3b2>@@QBEP6AHPBX0@ZXZ 10000000     libucrtd:argv_wildcards.obj
- 0000:ffedc000       __guard_fids_??B<lambda_838c7f62c73c983481e27c09e84b0b5d>@@QBEP6AHPBX0@ZXZ 10000000     libucrtd:argv_wildcards.obj
- 0000:ffedc000       __guard_fids___guard_icall_checks_enforced 10000000     LIBCMTD:guard_support.obj
- 0000:ffedc000       __guard_fids__             10000000     LIBCMTD:guard_support.obj
- 0000:ffedc000       __guard_fids____scrt_set_unhandled_exception_filter 10000000     LIBCMTD:utility_desktop.obj
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffeda000       _volmd                     10000000     libucrtd:argv_wildcards.obj
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffedc000       __guard_fids__             10000000     libvcruntimed:frame.obj
- 0000:ffed3000       .debug$S                   10000000     drmgr:drmgr.dll
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
- 0000:ffeda000       _volmd                     10000000     libucrtd:terminate.obj
- 0000:ffedc000       __guard_fids_?get_terminate_or_default@@YAP6AXXZQBU__acrt_ptd@@@Z 10000000     libucrtd:terminate.obj
- 0000:ffedc000       __guard_fids__signal       10000000     libucrtd:signal.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:getmodulefilenamea.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:getmodulefilenamea.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:dbgrptt.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:dbgrptt.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:invalid_parameter.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:free.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:debug_heap.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:debug_heap.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
- 0000:ffeda000       _volmd                     10000000     libucrtd:winapi_thunks.obj
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffed3000       .debug$S                   10000000     dynamorio:dynamorio.dll
- 0000:ffeda000       _volmd                     10000000     libucrtd:mbctype.obj
- 0000:ffed3000       .debug$S                   10000000     kernel32:KERNEL32.dll
  0000:ffedc004       __guard_fids__             10000004     libucrtd:stdio_initializer.obj
  0002:00006878       $LN10                      10056878     charmmod.obj
  0002:00006880       $LN9                       10056880     charmmod.obj
