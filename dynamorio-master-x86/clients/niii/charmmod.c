@@ -359,6 +359,9 @@ event_thread_init(void *drcontext)
 static void
 event_thread_exit(void *drcontext)
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     per_thread_t *data = (per_thread_t *)drmgr_get_tls_field(drcontext, charm_tls_idx);
     DR_ASSERT(data != NULL, "data must not be NULL");
     dr_thread_free(drcontext, data, sizeof(*data));

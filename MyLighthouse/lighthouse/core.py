@@ -4,7 +4,7 @@ import logging
 
 import idaapi
 
-from lighthouse.parsers.drfunctrace import DrFuncTraceData
+from lighthouse.parsers.drfunctrace import DrFuncTraceData, DrcovFuncBasicBlock
 from lighthouse.ui import CoverageOverview
 from lighthouse.ui.execute_tree import ExecuteTreeView
 from lighthouse.ui.execute_tree_overview import ExecuteTreeOverview
@@ -556,6 +556,45 @@ class Lighthouse(object):
 # Util
 #------------------------------------------------------------------------------
 
+def aoto_wrap_drcov_list(drcov_data):
+    ret_data = []
+    first_len=len(drcov_data.basic_blocks)
+    for bb_idx, bb  in  enumerate(drcov_data.basic_blocks):
+        if bb_idx < first_len-1:
+            next_bb = drcov_data.basic_blocks[bb_idx+1]
+            if (next_bb.start - bb.to) < 0x100 and next_bb.thread_id == bb.thread_id and bb.mod_id_to == next_bb.mod_id and (bb.call_type == FUNC_DIRECT_CALL or bb.call_type == FUNC_INDIRECT_CALL) and (next_bb.call_type == FUNC_DIRECT_CALL or next_bb.call_type == FUNC_INDIRECT_CALL):
+                ret_data.append(bb)
+                newbb=DrcovFuncBasicBlock()
+                newbb.thread_id = bb.thread_id
+                newbb.call_type = BASIC_BLOCK
+                newbb.size = next_bb.start -bb.to
+                newbb.mod_id = bb.mod_id_to
+                newbb.mod_id_to = next_bb.mod_id
+                newbb.func_id = bb.func_id
+                newbb.start = bb.to
+                newbb.to = next_bb.start
+                newbb.ret = 0
+                ret_data.append(newbb)
+            elif (next_bb.start - bb.to) < 0x100 and next_bb.thread_id == bb.thread_id and bb.mod_id_to == next_bb.mod_id and (bb.call_type == FUNC_RETURN) and (next_bb.call_type == FUNC_DIRECT_CALL or next_bb.call_type == FUNC_INDIRECT_CALL):
+                ret_data.append(bb)
+                newbb = DrcovFuncBasicBlock()
+                newbb.thread_id = bb.thread_id
+                newbb.call_type = BASIC_BLOCK
+                newbb.size = next_bb.start - bb.to
+                newbb.mod_id = bb.mod_id_to
+                newbb.mod_id_to = next_bb.mod_id
+                newbb.func_id = next_bb.func_id
+                newbb.start = bb.to
+                newbb.to = next_bb.start
+                newbb.ret = 0
+                ret_data.append(newbb)
+            else:
+                ret_data.append(bb)
+        else:
+            ret_data.append(bb)
+    drcov_data.basic_blocks=ret_data
+    return drcov_data
+
 def load_coverage_files(filenames):
     """
     Load multiple code coverage files from disk.
@@ -612,7 +651,7 @@ def load_func_trace_files(filenames):
         # attempt to load/parse a single coverage data file from disk
         try:
             drcov_data = DrFuncTraceData(filename)
-
+            drcov_data = aoto_wrap_drcov_list(drcov_data)
         # catch all for parse errors / bad input / malformed files
         except Exception as e:
             lmsg("Failed to load coverage %s" % filename)

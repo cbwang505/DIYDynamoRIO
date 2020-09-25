@@ -1,6 +1,9 @@
 ﻿// dllmain.cpp : 定义 DLL 应用程序的入口点。
 
 #include "niii.h"
+
+#include <cstdlib>
+
 #include "configure.h"
 #include "charmtable.h"
 #include "drmgr.h"
@@ -17,11 +20,9 @@ static int tls_for_trace_idx = -1;
 static uint verbose;
 static bool nudge_kills;
 static client_id_t client_id;
-static int niii_init_count;
+extern "C" volatile int niii_init_count = 0;
 static file_t code_handle = nullptr;
 static PMyThreadData global_data;
-
-static int charmtrack_init_count;
 
 static char logdir[MAXIMUM_PATH];
 static volatile bool go_native;
@@ -58,6 +59,19 @@ log_file_create(void *drcontext, PMyThreadData data)
                                data->logname, BUFFER_SIZE_ELEMENTS(data->logname));
 }
 
+void
+cleaup_dynamorio()
+{
+
+    drmodtrack_exit();
+    drmgr_unregister_tls_field(tls_idx);
+    drmgr_unregister_tls_field(tls_for_trace_idx);
+    /*if (!dr_unregister_trace_event(trace_event1))
+        dr_fprintf(STDERR, "unregister failed!\n");*/
+    drx_exit();
+    drmgr_exit();
+    drreg_exit();
+}
 static bool
 event_exception_instrumentation(void *drcontext, dr_exception_t *excpt)
 {
@@ -338,7 +352,17 @@ getByteString(file_t f, uint startaddr, unsigned char *bytesbuf, size_t bytesrea
         dr_snprintf(bytestr_tmp, 4, "%02x ", c);
         bytestr_tmp += 3;
     }
-
+    if (bytesread < 16) {
+        for (int i = bytesread; i < 16; i++) {
+            *bytestr_tmp = 0x20;
+            bytestr_tmp += 1;
+            *bytestr_tmp = 0x20;
+            bytestr_tmp += 1;
+            *bytestr_tmp = 0x20;
+            bytestr_tmp += 1;
+        }
+        *bytestr_tmp = '\0';
+    }
     char *charstr_tmp = charstr;
     for (i = 0; i < bytesread; i++) {
         c = *(bytesbuf + i);
@@ -500,33 +524,36 @@ dump_charm_data(void *drcontext, PMyThreadData data)
     charm_table_print(drcontext, data);
 }
 
-static void
-event_exit(void)
+void
+finish_dynamorio()
 {
-    dr_printf("[*]Process Exited Try To Dump...\n");
-    int count = dr_atomic_add32_return_sum(&charmtrack_init_count, -1);
-    dr_atomic_add32_return_sum(&niii_init_count, -1);
 
+    int count = dr_atomic_add32_return_sum(&niii_init_count, -1);
+    ASSERT(count == 0, "atomic_add32_return_sum_check");
+    dr_printf("[*]Process Exited Try To Dump...\n");
     if (!niii_per_thread) {
         dump_charm_data(NULL, global_data);
         global_data_destroy(global_data);
     }
-    drmodtrack_exit();
-    drmgr_unregister_tls_field(tls_idx);
-    drmgr_unregister_tls_field(tls_for_trace_idx);
-
-    drx_exit();
-    drmgr_exit();
-
     dr_printf("[*]All Done DynamoRIO Exited...\n");
-    drmgr_exit();
-    drreg_exit();
+}
+
+static void
+event_exit(void)
+{
+    if (niii_init_count == 0) {
+        return;
+    }
+    finish_dynamorio();
+    cleaup_dynamorio();
 }
 
 static void
 event_thread_exit(void *drcontext)
 {
-
+    /*if (niii_init_count == 0) {
+        return ;
+    }*/
     PMyThreadData data = (PMyThreadData)drmgr_get_tls_field(drcontext, tls_idx);
     ASSERT(data != NULL, "data must not be NULL");
 
@@ -552,6 +579,9 @@ func_mem_process(void *mem_table, void *addr, func_mem_type arg_type, uint func_
     byte bytesbuf[SAFE_READ_MEM_MAX_SIZE];
     if ((uint)addr > 0x1000 && dr_safe_read(addr, numbytes, bytesbuf, &bytesread)) {
         PMemEntry mem_entry = (PMemEntry)charmtable_alloc(mem_table, 1, NULL);
+        if (mem_entry == NULL) {
+            return nullptr;
+        }
         if (mem_entry != nullptr) {
             mem_entry->arg_type = arg_type;
             mem_entry->arg_size = bytesread;
@@ -662,6 +692,10 @@ charm_table_entry_add(void *drcontext, PMyThreadData data, app_pc start, uint si
     niii_status_t res = drmodtrack_lookup(drcontext, start, &mod_id, &mod_start);
     if (res == NIII_SUCCESS) {
         PBBEntry bb_entry = (PBBEntry)charmtable_alloc(data->bb_table, 1, NULL);
+
+        if (bb_entry == NULL) {
+            return;
+        }
         /* we do not de-duplicate repeated bbs */
         ASSERT(size < USHRT_MAX, "size overflow");
         bb_entry->call_type = BASIC_BLOCK;
@@ -703,13 +737,15 @@ call_table_entry_add(void *drcontext, PMyThreadData data, uint call_type, app_pc
         (res == NIII_SUCCESS && (res2 == NIII_PASS || res2 == NIII_INCLUDE)) ||
         ((res == NIII_PASS || res == NIII_INCLUDE) && res2 == NIII_SUCCESS)) {
 
-
         /*
         ASSERT((call_type == FUNC_DIRECT_CALL &&
                 (res == NIII_SUCCESS && res2 == NIII_SUCCESS)) ||
                    call_type == FUNC_INDIRECT_CALL,
                "direct call must in same model");*/
         PBBEntry cl_entry = (PBBEntry)charmtable_alloc(data->bb_table, 1, NULL);
+        if (cl_entry == NULL) {
+            return;
+        }
         cl_entry->thread_id = dr_get_thread_id(drcontext);
         cl_entry->call_type = call_type;
         cl_entry->func_id = (ushort)global_func_id;
@@ -742,10 +778,11 @@ call_table_entry_add(void *drcontext, PMyThreadData data, uint call_type, app_pc
     }*/
 }
 
+/*
 /* We collect the basic block information including offset from module base,
  * size, and num of instructions, and add it into a basic block table without
  * instrumentation.
- */
+ #1#
 static dr_emit_flags_t
 event_basic_block_analysis(void *drcontext, void *tag, instrlist_t *bb, bool for_trace,
                            bool translating, OUT void **user_data)
@@ -754,7 +791,7 @@ event_basic_block_analysis(void *drcontext, void *tag, instrlist_t *bb, bool for
     instr_t *instr;
     app_pc tag_pc, start_pc, end_pc;
 
-    /* do nothing for translation */
+    /* do nothing for translation #1#
     if (translating)
         return DR_EMIT_DEFAULT;
 
@@ -763,20 +800,20 @@ event_basic_block_analysis(void *drcontext, void *tag, instrlist_t *bb, bool for
      * assuming the basic block does not have any elision on control
      * transfer instructions, which is true for default options passed
      * to DR but not for -opt_speed.
-     */
+     #1#
     /* We separate the tag from the instr pc ranges to handle displaced code
      * such as for the vsyscall hook.
-     */
+     #1#
     tag_pc = dr_fragment_app_pc(tag);
     start_pc = instr_get_app_pc(instrlist_first_app(bb));
-    end_pc = start_pc; /* for finding the size */
+    end_pc = start_pc; /* for finding the size #1#
     for (instr = instrlist_first_app(bb); instr != NULL;
          instr = instr_get_next_app(instr)) {
         app_pc pc = instr_get_app_pc(instr);
         int len = instr_length(drcontext, instr);
-        /* -opt_speed (elision) is not supported */
+        /* -opt_speed (elision) is not supported #1#
         /* For rep str expansion pc may be one back from start pc but equal to the
-         * tag. */
+         * tag. #1#
         ASSERT(pc != NULL && (pc >= start_pc || pc == tag_pc),
                "-opt_speed is not supported");
         if (pc + len > end_pc)
@@ -790,7 +827,7 @@ event_basic_block_analysis(void *drcontext, void *tag, instrlist_t *bb, bool for
      *    repeated bb building, etc.
      * 4. The duplication can be easily handled in a post-processing step,
      *    which is required anyway.
-     */
+     #1#
     charm_table_entry_add(drcontext, data, tag_pc, (uint)(end_pc - start_pc));
     // return DR_EMIT_DEFAULT;
     if (go_native)
@@ -798,6 +835,7 @@ event_basic_block_analysis(void *drcontext, void *tag, instrlist_t *bb, bool for
     else
         return DR_EMIT_DEFAULT;
 }
+*/
 
 static void
 internal_call(app_pc instr_addr, app_pc target_addr, uint call_type)
@@ -911,9 +949,13 @@ at_return(app_pc instr_addr, app_pc target_addr)
                     (PThreadTrace)drmgr_get_tls_field(drcontext, tls_for_trace_idx);
                 ASSERT(thread_trace != NULL, "thread trace data can not be null");
                 if (thread_trace->for_trace == true && thread_trace->ret == target_addr) {
-                    dr_printf(
-                        "thread:[%d],trace function return,stop trace,ret addr %08x\n",
-                        dr_get_thread_id(drcontext), target_addr);
+                    PMyThreadData data2 =
+                        (PMyThreadData)drmgr_get_tls_field(drcontext, tls_idx);
+                    ASSERT(data2 != NULL, "data can not be null");
+                    uint num_entries = charmtable_num_entries(data2->bb_table);
+                    dr_printf("thread:[%d],trace function return,stop trace,ret addr "
+                              "%08x,num_entries count %d bbs \n",
+                              dr_get_thread_id(drcontext), target_addr, num_entries);
                     thread_trace->for_trace = false;
                     thread_trace->ret = (app_pc)0;
                     dotrace = true;
@@ -957,9 +999,11 @@ at_return(app_pc instr_addr, app_pc target_addr)
 }
 
 static void
-dump_bb_inst_list_entry(void *drcontext, instrlist_t *bb, instr_t *&instr,
-                        PMyThreadData data, app_pc tag_pc)
+dump_bb_inst_list_entry(void *drcontext, instrlist_t *bb, PMyThreadData data,
+                        app_pc tag_pc)
 {
+    ASSERT(data != NULL, "thread local data can not be null");
+    instr_t *instr;
     app_pc start_pc, end_pc;
     start_pc = instr_get_app_pc(instrlist_first_app(bb));
     end_pc = start_pc; /* for finding the size */
@@ -970,10 +1014,20 @@ dump_bb_inst_list_entry(void *drcontext, instrlist_t *bb, instr_t *&instr,
         /* -opt_speed (elision) is not supported */
         /* For rep str expansion pc may be one back from start pc but equal to the
          * tag. */
+        if (!(pc != NULL && (pc >= start_pc || pc == tag_pc))) {
+            // dr_printf("fake pc\r\n");
+            return;
+        }
         ASSERT(pc != NULL && (pc >= start_pc || pc == tag_pc),
                "-opt_speed is not supported");
         if (pc + len > end_pc)
             end_pc = pc + len;
+    }
+
+    if (!(end_pc != NULL && (end_pc > start_pc || end_pc > tag_pc) &&
+          (end_pc - start_pc) < USHRT_MAX)) {
+        // dr_printf("fake end_pc\r\n");
+        return;
     }
     /* We allow duplicated basic blocks for the following reasons:
      * 1. Avoids handling issues like code cache consistency, e.g.,
@@ -987,11 +1041,158 @@ dump_bb_inst_list_entry(void *drcontext, instrlist_t *bb, instr_t *&instr,
     charm_table_entry_add(drcontext, data, tag_pc, (uint)(end_pc - start_pc));
 }
 
+static void
+dump_sub_inst_list_entry(void *drcontext, instr_t *instrFirst, instr_t *instrLast,
+                         PMyThreadData data)
+{
+    bool findData = false;
+    bool findLast = false;
+    instr_t *instr = 0;
+    app_pc end_pc = 0;
+    app_pc start_pc = instr_get_app_pc(instrFirst);
+    for ( instr = instrFirst; instr != NULL; instr = instr_get_next_app(instr)) {
+        if (instr == instrLast) {
+            findLast = true;
+        }
+        app_pc pc = instr_get_app_pc(instr);
+        if (end_pc != 0) {
+            if (pc != end_pc) {
+                //dr_printf("trace inst overlapped \r\n");
+                findData = true;
+                break;
+            }
+        }
+
+        int len = instr_length(drcontext, instr);
+        if (pc + len > end_pc) {
+            end_pc = pc + len;
+        }
+    }
+
+
+   
+
+    ASSERT((end_pc - start_pc) < USHRT_MAX, "fake end_pc\r\n");
+    /* int checksize = (end_pc - start_pc);
+     if (checksize <= 0 || checksize > USHRT_MAX) {
+        return DR_EMIT_DEFAULT;
+    }*/
+    if (!(end_pc != NULL && (end_pc > start_pc || end_pc > start_pc) &&
+          (end_pc - start_pc) < USHRT_MAX)) {
+       // dr_printf("fake end_pc\r\n");
+        return;
+    }
+    if (findData) {
+        /* We allow duplicated basic blocks for the following reasons:
+         * 1. Avoids handling issues like code cache consistency, e.g.,
+         *    module load/unload, self-modifying code, etc.
+         * 2. Avoids the overhead on duplication check.
+         * 3. Stores more information on code cache events, e.g., trace building,
+         *    repeated bb building, etc.
+         * 4. The duplication can be easily handled in a post-processing step,
+         *    which is required anyway.
+         */
+        charm_table_entry_add(drcontext, data, start_pc, (uint)(end_pc - start_pc));
+    }
+    if (!findLast) {
+        dr_printf("trace inst overlapped has next\r\n");
+        dump_sub_inst_list_entry(drcontext, instr, instrLast, data);
+    }
+}
+
+static dr_emit_flags_t
+trace_event1(void *drcontext, void *tag, instrlist_t *bb, bool translating)
+{
+    if (translating) {
+        return DR_EMIT_DEFAULT;
+    }
+    if (niii_init_count == 0) {
+        return DR_EMIT_GO_NATIVE;
+    }
+    if (TEST(NIII_FOLLOW_FUNCTION, options.flags) &&
+        options.fuzz_module != NULL & global_func_id == 0) {
+        return DR_EMIT_DEFAULT;
+    }
+
+    if (TEST(NIII_RESTRICT_FUNCTION, options.flags)) {
+        PThreadTrace thread_trace =
+            (PThreadTrace)drmgr_get_tls_field(drcontext, tls_for_trace_idx);
+        ASSERT(thread_trace != NULL, "thread trace data can not be null");
+        if (thread_trace->for_trace == false) {
+            return DR_EMIT_DEFAULT;
+        }
+    }
+    PMyThreadData data = (PMyThreadData)drmgr_get_tls_field(drcontext, tls_idx);
+    ASSERT(data != NULL, "PMyThreadData not null");
+    /*
+    app_pc tag_pc = dr_fragment_app_pc(tag);
+    instr_t *instrFirst = instrlist_first_app(bb);
+
+    instr_t *instrLast = instrlist_last(bb);
+    app_pc first_pc = instr_get_app_pc(instrFirst);
+    app_pc last_pc = instr_get_app_pc(instrLast);
+    int checksize = (last_pc - first_pc);
+    if (checksize <= 0 || checksize > USHRT_MAX) {
+        return DR_EMIT_DEFAULT;
+    }
+    ASSERT(last_pc > first_pc, "thread trace last_pc > first_pc");
+    ASSERT(tag_pc == first_pc, "thread trace data tag_pc == first_pc");
+    dump_bb_inst_list_entry(drcontext, bb, data, tag_pc);
+    */
+    instr_t *instrFirst = instrlist_first_app(bb);
+    instr_t *instrLast = instrlist_last(bb);
+    dump_sub_inst_list_entry(drcontext, instrFirst, instrLast, data);
+    // dr_printf("validpc\r\n");
+    return DR_EMIT_DEFAULT;
+}
+
+/* We collect the basic block information including offset from module base,
+ * size, and num of instructions, and add it into a basic block table without
+ * instrumentation.
+ */
+static dr_emit_flags_t
+event_basic_block_analysis(void *drcontext, void *tag, instrlist_t *bb, bool for_trace,
+                           bool translating, OUT void **user_data)
+{
+
+    if (translating) {
+        return DR_EMIT_DEFAULT;
+    }
+
+    if (niii_init_count == 0) {
+        return DR_EMIT_GO_NATIVE;
+    }
+    if (TEST(NIII_FOLLOW_FUNCTION, options.flags) &&
+        options.fuzz_module != NULL & global_func_id == 0) {
+        return DR_EMIT_DEFAULT;
+    }
+
+    if (TEST(NIII_RESTRICT_FUNCTION, options.flags)) {
+        PThreadTrace thread_trace =
+            (PThreadTrace)drmgr_get_tls_field(drcontext, tls_for_trace_idx);
+        ASSERT(thread_trace != NULL, "thread trace data can not be null");
+        if (thread_trace->for_trace == false) {
+            return DR_EMIT_DEFAULT;
+        }
+    }
+    PMyThreadData data = (PMyThreadData)drmgr_get_tls_field(drcontext, tls_idx);
+    ASSERT(data != NULL, "PMyThreadData not null");
+    app_pc tag_pc = dr_fragment_app_pc(tag);
+    dump_bb_inst_list_entry(drcontext, bb, data, tag_pc);
+    return DR_EMIT_DEFAULT;
+}
+
 static dr_emit_flags_t
 event_bb_insert(void *drcontext, void *tag, instrlist_t *bb, instr_t *instr,
                 bool for_trace, bool translating, void *user_data)
 {
 
+    if (translating) {
+        return DR_EMIT_DEFAULT;
+    }
+    if (niii_init_count == 0) {
+        return DR_EMIT_GO_NATIVE;
+    }
     if (TEST(NIII_FOLLOW_FUNCTION, options.flags) &&
         options.fuzz_module != NULL & global_func_id == 0) {
         return DR_EMIT_DEFAULT;
@@ -1024,15 +1225,13 @@ event_bb_insert(void *drcontext, void *tag, instrlist_t *bb, instr_t *instr,
                                               SPILL_SLOT_1);
             }
         }
-       
+
         if (TEST(NIII_ALWAYS_INSTRUCTION, options.flags) || (instr_is_return(instr))) {
             dr_insert_mbr_instrumentation(drcontext, bb, instr, (app_pc)at_return,
                                           SPILL_SLOT_2);
         }
     }
 
-    if (translating)
-        return DR_EMIT_DEFAULT;
     /* Collect the number of instructions and the basic block size,
      * assuming the basic block does not have any elision on control
      * transfer instructions, which is true for default options passed
@@ -1054,7 +1253,8 @@ event_bb_insert(void *drcontext, void *tag, instrlist_t *bb, instr_t *instr,
         }
     }
     PMyThreadData data = (PMyThreadData)drmgr_get_tls_field(drcontext, tls_idx);
-    dump_bb_inst_list_entry(drcontext, bb, instr, data, tag_pc);
+    ASSERT(data != NULL, "PMyThreadData not null");
+    dump_bb_inst_list_entry(drcontext, bb, data, tag_pc);
     return DR_EMIT_DEFAULT;
     /*if (go_native)
         return DR_EMIT_GO_NATIVE;
@@ -1322,6 +1522,44 @@ event_init(void)
     return NIII_SUCCESS;
 }
 
+static void
+event_nudge(void *drcontext, uint64 arg)
+{
+    if (niii_init_count == 0) {
+        return;
+    }
+    dr_fprintf(STDERR, "nudge delivered %d\n", (uint)arg);
+    if (arg == NUDGE_ARG_SELF)
+        dr_fprintf(STDERR, "self\n");
+    else if (arg == NUDGE_ARG_PRINT)
+        dr_fprintf(STDERR, "printing\n");
+    else if (arg == NUDGE_ARG_TERMINATE) {
+        dr_fprintf(STDERR, "terminating\n");
+
+        void **drcontexts = NULL;
+        uint num_threads, i;
+        go_native = false;
+        NOTIFY(1, "thread " TIDFMT " suspending all threads\n",
+               dr_get_thread_id(drcontext));
+        dr_printf("[*]Suspend All Other Threads\n");
+        if (dr_suspend_all_other_threads_ex(&drcontexts, &num_threads, NULL,
+                                            DR_SUSPEND_NATIVE)) {
+            finish_dynamorio();
+            dr_printf("[*]Finish DynamoRIO Exit Work\n");
+            if (!dr_resume_all_other_threads(drcontexts, num_threads)) {
+                ASSERT(false, "failed to resume threads");
+            }
+            dr_printf("[*]Resume All Other Threads\n");
+        }
+        dr_printf("[*]Perform DynamoRIO Exit With Code 0 ...\n");
+        // exit(0);
+        dr_exit_process(0);
+        cleaup_dynamorio();
+
+        ASSERT(false, "should not be reached");
+    }
+}
+
 DR_EXPORT void
 dr_client_main(client_id_t id, int argc, const char *argv[])
 {
@@ -1386,13 +1624,15 @@ dr_client_main(client_id_t id, int argc, const char *argv[])
     }
     // drmgr_register_bb_instrumentation_event(event_basic_block_analysis,
     // event_bb_insert, &priority);
-    drmgr_register_bb_instrumentation_event(NULL, event_bb_insert, &priority);
+    drmgr_register_bb_instrumentation_event(event_basic_block_analysis, event_bb_insert,
+                                            &priority);
     drmgr_register_exception_event(event_exception_instrumentation);
 
     drmgr_register_module_load_event(module_load_event);
     // drmgr_register_module_unload_event(event_module_unload);
     drmgr_register_thread_init_event(event_thread_init);
     drmgr_register_thread_exit_event(event_thread_exit);
-
+    dr_register_trace_event(trace_event1);
+    dr_register_nudge_event(event_nudge, id);
     event_init();
 }

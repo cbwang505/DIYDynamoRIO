@@ -555,7 +555,7 @@ class CoverageDirector(object):
                 continue
 
             root_filename = self.metadata.filename
-            self.main_module = drcov_data.get_module(root_filename)
+            self.main_module = drcov_data.get_module(root_filename,False)
             self.all_modules = drcov_data.modules
             #
             # before injecting the new coverage data (now a list of instruction

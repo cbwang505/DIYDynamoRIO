@@ -94,7 +94,7 @@ class DrFuncTraceData(object):
         # strict lookup
         else:
             for module in self.modules:
-                if module_name == module.filename:
+                if module_name.lower() == module.filename.lower():
                     return module
 
         # no matching module exists
@@ -106,7 +106,7 @@ class DrFuncTraceData(object):
         """
 
         # locate the coverage that matches the given module_name
-        module = self.get_module(module_name)
+        module = self.get_module(module_name,False)
 
         # if we fail to find a module that matches the given name, bail
         if not module:

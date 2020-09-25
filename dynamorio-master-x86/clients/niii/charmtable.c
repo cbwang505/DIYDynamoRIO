@@ -89,6 +89,7 @@ static void
 charmtable_chunk_iterate(charmtable_chunk_t *chunk, void *iter_data,
                       bool (*iter_func)(ptr_uint_t, void *, void *))
 {
+    
     ptr_uint_t i;
     byte *entry = chunk->base;
     charmtable_t *table = chunk->table;
@@ -108,6 +109,9 @@ charmtable_chunk_iterate(charmtable_chunk_t *chunk, void *iter_data,
 static void *
 charmtable_chunk_alloc(size_t size, uint flags)
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     byte *buf;
     if (TESTANY(charmtable_MEM_32BIT | charmtable_MEM_REACHABLE, flags))
         buf = dr_nonheap_alloc(size, DR_MEMPROT_READ | DR_MEMPROT_WRITE);
@@ -123,6 +127,9 @@ charmtable_chunk_alloc(size_t size, uint flags)
 static charmtable_chunk_t *
 charmtable_chunk_create(charmtable_t *table, ptr_uint_t num_entries)
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     charmtable_chunk_t *chunk;
     chunk = dr_global_alloc(sizeof(*chunk));
     chunk->table = table;
@@ -148,6 +155,9 @@ charmtable_chunk_create(charmtable_t *table, ptr_uint_t num_entries)
 static void
 charmtable_chunk_free(void *data)
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     charmtable_chunk_t *chunk = (charmtable_chunk_t *)data;
     charmtable_t *table = chunk->table;
     if (table->free_entry_func != NULL) {
@@ -164,9 +174,12 @@ void *
 charmtable_create(ptr_uint_t capacity, size_t entry_size, uint flags, bool synch,
                void (*free_entry_func)(ptr_uint_t, void *, void *))
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     charmtable_t *table;
     size_t size;
-
+   
     DR_ASSERT(entry_size > 0 && entry_size < MAX_ENTRY_SIZE);
 
     table = dr_global_alloc(sizeof(*table));
@@ -191,7 +204,11 @@ charmtable_create(ptr_uint_t capacity, size_t entry_size, uint flags, bool synch
 void
 charmtable_destroy(void *tab, void *user_data)
 {
+    /*if (niii_init_count == 0) {
+        return;
+    }*/
     charmtable_t *table = (charmtable_t *)tab;
+    
     DR_ASSERT(table != NULL && table->magic == charmtable_MAGIC);
     if (table->synch)
         charmtable_lock(table);
@@ -207,11 +224,14 @@ charmtable_destroy(void *tab, void *user_data)
 void *
 charmtable_alloc(void *tab, ptr_uint_t num_entries, ptr_uint_t *idx_ptr)
 {
+    if (niii_init_count == 0) {
+        return NULL;
+    }
     void *entry;
     charmtable_t *table = (charmtable_t *)tab;
     charmtable_chunk_t *chunk;
     int i;
-
+  
     DR_ASSERT(table != NULL && table->magic == charmtable_MAGIC);
     if (table->synch)
         charmtable_lock(table);
@@ -258,7 +278,7 @@ charmtable_alloc(void *tab, ptr_uint_t num_entries, ptr_uint_t *idx_ptr)
         charmtable_unlock(table);
     return entry;
 }
-
+//finjob
 void
 charmtable_iterate(void *tab, void *iter_data, bool (*iter_func)(ptr_uint_t, void *, void *))
 {
@@ -298,14 +318,19 @@ charmtable_unlock(void *tab)
 static charmtable_chunk_t *
 charmtable_chunk_lookup_index(charmtable_t *table, ptr_uint_t index)
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     uint i;
     charmtable_chunk_t *chunk;
+    DR_ASSERT(table != NULL && table->magic == charmtable_MAGIC);
     if (index > table->capacity)
         return NULL;
     chunk = table->last_chunk;
     /* we have a racy here, the entries might be updated by others */
     if (index >= chunk->index && index < chunk->index + chunk->entries)
         return chunk;
+    
     if (table->synch)
         charmtable_lock(table);
     for (i = table->vec.entries; i > 0; i--) {
@@ -323,11 +348,16 @@ charmtable_chunk_lookup_index(charmtable_t *table, ptr_uint_t index)
 static charmtable_chunk_t *
 charmtable_chunk_lookup_entry(charmtable_t *table, byte *entry)
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     uint i;
     charmtable_chunk_t *chunk = table->last_chunk;
+    DR_ASSERT(table != NULL && table->magic == charmtable_MAGIC);
     /* we have a racy here, the cur_ptr might be updated by others */
     if (entry >= chunk->base && entry < chunk->cur_ptr)
         return chunk;
+   
     if (table->synch)
         charmtable_lock(table);
     for (i = table->vec.entries; i > 0; i--) {
@@ -345,6 +375,9 @@ charmtable_chunk_lookup_entry(charmtable_t *table, byte *entry)
 void *
 charmtable_get_entry(void *tab, ptr_uint_t index)
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     charmtable_t *table = (charmtable_t *)tab;
     charmtable_chunk_t *chunk;
     DR_ASSERT(table != NULL && table->magic == charmtable_MAGIC);
@@ -357,6 +390,9 @@ charmtable_get_entry(void *tab, ptr_uint_t index)
 ptr_uint_t
 charmtable_get_index(void *tab, void *entry)
 {
+    if (niii_init_count == 0) {
+        return;
+    }
     charmtable_t *table = (charmtable_t *)tab;
     charmtable_chunk_t *chunk;
     ptr_uint_t index;
@@ -367,7 +403,7 @@ charmtable_get_index(void *tab, void *entry)
     index = (ptr_uint_t)(((byte *)entry - chunk->base) / table->entry_size);
     return (chunk->index + index);
 }
-
+//finjob
 ptr_uint_t
 charmtable_num_entries(void *tab)
 {
@@ -375,7 +411,7 @@ charmtable_num_entries(void *tab)
     DR_ASSERT(table != NULL && table->magic == charmtable_MAGIC);
     return table->entries;
 }
-
+//finjob
 ptr_uint_t
 charmtable_dump_entries(void *tab, file_t log)
 {

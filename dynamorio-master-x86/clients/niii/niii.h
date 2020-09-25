@@ -67,6 +67,11 @@
 #define SHORTPATH 65535
 #define SAFE_READ_MEM_MAX_SIZE 256
 
+#    define NUDGE_ARG_SELF 101
+#    define NUDGE_ARG_PRINT 102
+#    define NUDGE_ARG_TERMINATE 103
+
+
 #    ifdef __cplusplus
 extern "C" {
 #    endif
@@ -269,6 +274,9 @@ typedef struct _charmtrack_info_t {
 } charmtrack_info;
 
 
+
+extern  volatile int niii_init_count;
+
 DR_EXPORT
 /**
  * Initializes drcovlib's module tracking feature.  Must be called
@@ -441,6 +449,5 @@ typedef struct _Niii_Options {
 
     uint callconv;
 } Niii_Options, *PNiii_Options;
-
 
 #endif /* _NIII_PRIVATE_H */
