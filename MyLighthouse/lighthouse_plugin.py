@@ -5,6 +5,8 @@ wingdbstub.Ensure()
 if not logging_started():
     logger = start_logging()
 
+import sys
+sys.setrecursionlimit(1000000)
 #------------------------------------------------------------------------------
 # Disassembler Agnonstic Plugin Loader
 #------------------------------------------------------------------------------

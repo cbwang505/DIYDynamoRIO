@@ -53,7 +53,7 @@ call_dispatch_alt_stack_no_free:
 ```
 ### 插桩循环分析 ### 
 
-d_r_dispatch中的主要逻辑是将当前被插桩程序的当前指令位置xip也就是bb->cur_pc解码decode成一个一个basicblock(基本块),将其中每个指令对应一个指令instruction结构放入instrlist_t容器中,处理每个块对应的分支结构也就是cti(其中包括call(程序集内部调用),indirectcall(通过寄存器等间接调用),cbr(条件跳转),ubr(非条件跳转),mbr(通过寄存器等的间接跳转或调用分支)),将这个容器中的指令encode后生成一个fragment,链接其中的incoming_stubs对应结构linkstub_t中cti_offset构成了所有块之间的调用顺序,调用dcontext_t中fcache_enter方法跳转到encode到程序运行空间vmarea中的start_pc中执行插桩循环,最后又回到d_r_dispatch,这是DynamoRIO主干流程.
+d_r_dispatch中的主要逻辑是将当前被插桩程序的当前指令位置xip也就是bb->cur_pc解码decode成一个一个basicblock(基本块),将其中每个指令对应一个指令instruction结构放入instrlist_t容器中,处理每个块对应的分支结构也就是cti(其中包括call(程序集内部调用),indirectcall(通过寄存器计算出的地址进行间接调用),cbr(条件跳转),ubr(非条件跳转),mbr(通过寄存器等的间接跳转或调用分支)),将这个容器中的指令encode后生成一个fragment,链接其中的incoming_stubs对应结构linkstub_t中cti_offset构成了所有块之间的调用顺序,调用dcontext_t中fcache_enter方法跳转到encode到程序运行空间vmarea中的start_pc中执行插桩循环,最后又回到d_r_dispatch,这是DynamoRIO主干流程.
 ```
 void d_r_dispatch(dcontext_t *dcontext){
 while(true){
@@ -84,7 +84,7 @@ fragment_t * build_basic_block_fragment(dcontext_t *dcontext, app_pc start, uint
 }
 }
 ```
-build_basic_block_fragment内部调用了build_bb_ilist用于decode解码当前指令,DynamoRIO内部实现了一套编码与解码对相对于汇编语言的操作库用于将每一条汇编指令翻译成instr_t 结构,其中包含多个源操作数和目的操作数opnd_t结构和当前指令的实际解析地址app_pc translation和操作码opcode等字段,DynamoRIO的api提供了对于instr可以调用opnd_create_xxx创建操作数后将其和操作码opcode作为参数调用instr_create_xxx系列函数创建instr_t 结构.
+build_basic_block_fragment内部调用了build_bb_ilist用于decode解码当前指令,DynamoRIO内部实现了一套编码与解码对相对于汇编语言的操作库用于将每一条汇编指令翻译成instr_t 结构,其中包含多个源操作数和目的操作数opnd_t结构和当前指令的实际解析地址app_pc translation和操作码opcode等字段,DynamoRIO的api提供了对于instr可以调用opnd_create_xxx创建操作数后将其和操作码opcode作为参数调用instr_create_xxx系列函数创建instr_t 结构,常用基于寄存器类操作数通常可表示为base_reg + index_reg*scale + disp类型通用处理.
 build_bb_ilist中循环每个decode后的instr直到确定当前instr存在分支指令,根据分支类型计算出direct_stubs和indirect_stubs的数量,根据这些分支数量在fragment尾部申请若干个linkstub(用于保存分支类型和偏移量),完成fragment的构建初始化.在set_linkstub_fields把linkstub对应分支相对于当前fragment起始地址的偏移量字段赋值,将其中需要退出插桩的linkstub设置出口目标为对应ibl_routine表中的回调项,最后调用默认编码函数instr_encode_arch序列化出程序实际运行的汇编代码和linkstub的分支路由代码完成fragment的构建.
 ```
 static void build_bb_ilist(dcontext_t *dcontext, build_bb_t *bb){
@@ -159,8 +159,15 @@ set_linkstub_fields(dcontext_t *dcontext, fragment_t *f, instrlist_t *ilist,
                 ASSERT_TRUNCATE(l->cti_offset, ushort, pc - f->start_pc);
                 l->cti_offset = (ushort)(pc - f->start_pc);
             }
-		    //里面实际上是调用get_ibl_routine_ex获取ibl表中emit_indirect_branch_lookup,其他类型同理
-			instr_set_branch_target_pc(inst, get_unlinked_entry(dcontext, target));
+		    //对于indirect类型分支,里面实际上是调用get_ibl_routine_ex获取ibl表中emit_indirect_branch_lookup,其他类型同理
+			 if (!EXIT_HAS_STUB(l->flags, f->flags)) {
+               
+                instr_set_branch_target_pc(inst, get_unlinked_entry(dcontext, target));
+            } else {               
+			     //暂时先设为入口pc,会在以后的链接fragment的函数里面再次计算
+                instr_set_branch_target_pc(inst, pc);
+            }
+			
 		}
 		 pc = instr_encode_to_copy(dcontext, inst, vmcode_get_writable_addr(pc),
                                           pc);
@@ -294,9 +301,12 @@ fragment_t * monitor_cache_enter(dcontext_t *dcontext, fragment_t *f)
   if (end_trace) {
   //这里面所有trace的指令列表传给dr_register_trace_event注册的回调
   dr_emit_flags_t emitflags = instrument_trace(dcontext, tag, &md->unmangled_ilist, false /*!recreating*/);
-  //重建fragment返回结束trace
+  //重建fragment返回结束trace,当存在TEST(FRAG_IS_TRACE_HEAD, f->flags)时由emit_fragment决定是否继续trace
   return emit_fragment(dcontext, tag, trace, md->trace_flags, md->trace_vmlist,
                                 true /*link*/);
+  }else{
+   //延申对当前trace的执行,继续trace模式
+   return internal_extend_trace(dcontext, f, dcontext->last_exit, add_size);
   }
  trace_head_counter_t *ctr = thcounter_lookup(dcontext, f->tag);
  //当已经创建过basicblock被多次高频率执行超过阈值的时候则以DynamoRIO在代码缓存中作为trace(缓存块)
@@ -310,6 +320,7 @@ fragment_t * monitor_cache_enter(dcontext_t *dcontext, fragment_t *f)
  }
 }
 ```
+通常DynamoRIO会将断开链接的fragment标记为FRAG_IS_TRACE_HEAD,在emit_fragment函数的内部重新构建了下一个fragment并重置monitor的trace相关状态,这样会在这个下一个fragment进入monitor时决定是否继续trace.
 ### 路由逻辑分析 ### 
 
 ```
@@ -573,7 +584,6 @@ if (instr_is_cti(instr)) {
 static void
 at_call(app_pc instr_addr, app_pc target_addr, uint call_type)
 {
-
     void *drcontext = dr_get_current_drcontext();   
     PMyThreadData data = (PMyThreadData)drmgr_get_tls_field(drcontext, tls_idx);   
     instr_t *instr;   
@@ -592,7 +602,6 @@ at_call(app_pc instr_addr, app_pc target_addr, uint call_type)
 static void
 at_return(app_pc instr_addr, app_pc target_addr)
 {
-
     uint mod_id;
     app_pc mod_start;
     if (target_addr && (uint)target_addr < 0xBFFFFFFF) {
@@ -630,7 +639,7 @@ USAGE: 先drrun参数再配置client参数 [options] <app and args to run>
 Run with -help to see drrun option list
 
 DynamoRIO客户端启动参数说明:
--disable_traces 可选参数,禁用trace笔者建议开启,保证代码追踪记录覆盖的完整性
+-disable_traces 可选参数,禁用trace,笔者建议开启,保证代码追踪记录覆盖的完整性
 -logdir 必须参数,最终生成的记录文件地址
 -dump_text 可选参数,以文本模式输出,一般用作调试模式使用
 -always_instruction 可选参数,始终记录所有模块和函数调用的记录,不建议使用
@@ -649,11 +658,19 @@ DynamoRIO客户端启动参数说明:
 立即结束进程dump追踪数据命令,参数pid为客户端程序进程id:
 "PathTo\drconfig.exe" -nudge_pid pid 0 67
 
-使用方法:
+ida插件使用方法:
 1.复制MyLighthouse目录下文件至"C:\Program Files\IDA 7.0\plugins"目录
 2.在ida打开文件File->Code Function Trace File
 3.在ida函数列表FunctionWindow中右键任意函数Fuzz->ExecTree就可以展示函数调用树,点击树中节点导航到对应函数反汇编代码
+调试模式需要安装Wing Pro 7.2,非调试模式:
+注释"MyLighthouse\lighthouse_plugin.py"文件中以下代码
+import wingdbstub
+wingdbstub.Ensure()
+
+源码编译方法:
+复制git目录dynamorio-master-x86至"E:\svn\PowerResearch\dynamorio-master-x86",使用vs2017打开项目
 ```
+
 ![查看大图](https://ftp.bmp.ovh/imgs/2020/09/5446d0f9f7077071.png)
 ##  相关项目 ##
 [我的DynamoRIO项目](https://gitee.com/cbwang505/diydynamorio)

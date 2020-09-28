@@ -314,6 +314,26 @@ class DatabaseCoverage(object):
     # --------------------------------------------------------------------------
     # Public
     # --------------------------------------------------------------------------
+    def check_sub_trace(self,root_cov,all_Excute_Function_list):
+        for cur_cov in all_Excute_Function_list:
+            if cur_cov.bb_idx == root_cov.bb_idx or cur_cov.trace_depth > 900:
+                cur_cov.parent_coverage.sub_func_coverage.remove(cur_cov)
+            else:
+                self.check_sub_trace(root_cov,cur_cov.sub_func_coverage)
+    # --------------------------------------------------------------------------
+    # Public
+    # --------------------------------------------------------------------------
+    def check_root_trace(self,all_Excute_Function_list):
+        all_len = len(all_Excute_Function_list)
+        len_idx = 0
+        for cur_cov in all_Excute_Function_list:
+            len_idx = len_idx + 1
+            self.check_sub_trace(cur_cov, cur_cov.sub_func_coverage )
+            if len_idx % 50 == 0 or len_idx == all_len:
+                 disassembler.replace_wait_box("Optimizing execute trace metadata %u/%u" % (len_idx, all_len))
+    # --------------------------------------------------------------------------
+    # Public
+    # --------------------------------------------------------------------------
 
     def buidExecuteTrace(self):
         dic_bb = {}
@@ -323,7 +343,7 @@ class DatabaseCoverage(object):
                 dic_bb[bb.thread_id]=[]
             dic_bb[bb.thread_id].append(bb)
         disassembler.replace_wait_box("Building execute trace metadata...")
-        len_idx=0
+        len_idx = 0
         for ke,ve in   dic_bb.iteritems():
             per_thread_Excute_Function_list=[]
             per_thread_Excute_Function_list_cache=[]
@@ -375,16 +395,14 @@ class DatabaseCoverage(object):
             else:
                 for bb_idx, bb in enumerate(ve):
                     len_idx = len_idx + 1
-                    if len_idx % 30000 == 0:
+                    if len_idx % 50 == 0 or len_idx == all_len:
                         disassembler.replace_wait_box("Building execute trace metadata %u/%u" % (len_idx, all_len))
                     if bb.call_type == lighthouse.core.BASIC_BLOCK:
                         bb_start = bb.start
                         bb_end = bb.start + bb.size
                         check_bb = True
                     if bb.call_type == lighthouse.core.FUNC_DIRECT_CALL or bb.call_type == lighthouse.core.FUNC_INDIRECT_CALL:
-                        if cur_func is not None and (
-                                (check_bb is True and bb.start <= bb_end and bb.start >= bb_start) or (
-                                check_bb is False and bb.start >= bb_end)):
+                        if cur_func is not None:
                             sub_cov = ExecuteFunctionCoverage(cur_func, bb_idx, bb.thread_id, bb.mod_id, bb.start,
                                                               bb.mod_id_to, bb.to, bb.ret)
                             cur_func = sub_cov
@@ -396,7 +414,7 @@ class DatabaseCoverage(object):
                             tmp_func = self.getFuncCaller(per_thread_Excute_Function_list, bb.start, bb_idx,
                                                           bb.thread_id, bb.mod_id)
                             if tmp_func is not None:
-                                sub_cov = ExecuteFunctionCoverage(tmp_func, bb_idx, bb.thread_id, bb.mod_id, bb.start,
+                                sub_cov = ExecuteFunctionCoverage(None, bb_idx, bb.thread_id, bb.mod_id, bb.start,
                                                                   bb.mod_id_to, bb.to, bb.ret)
                                 cur_func = sub_cov
                             else:
@@ -420,6 +438,7 @@ class DatabaseCoverage(object):
                         bb_end = bb.to
                         check_bb = False
             self.all_Excute_Function_list.extend(per_thread_Excute_Function_list)
+        self.check_root_trace(self.all_Excute_Function_list)
 
 
     def refresh(self):
