@@ -55,12 +55,13 @@ class CoverageDirector(object):
         # the plugin color palette
         self._palette = palette
         self._core = core
-        self.exec_tree_addr=None
-        self.main_module=None
-        self.all_modules=None
+        self.exec_tree_addr = None
+        self.main_module = None
+        self.all_modules = None
+        self.symbol_data = None
         # the central database metadata cache
         self.metadata = DatabaseMetadata()
-        self.org_function_trace_data=None
+        self.org_function_trace_data = None
         #----------------------------------------------------------------------
         # Coverage
         #----------------------------------------------------------------------
@@ -376,16 +377,16 @@ class CoverageDirector(object):
             self.build_Fun_cov_Name_List(funcov.sub_func_coverage)
 
     def build_Fun_cov_Name(self, funcov):
-        funcov.from_mod_name=self.get_module_file_name(funcov.from_mod)
+        funcov.from_mod_name = self.get_module_file_name(funcov.from_mod)
         if funcov.from_mod == self.main_module.id:
             funcov.from_func_name = self.get_main_module_closest_func_name(self.metadata.imagebase+funcov.from_address)
         else:
-            funcov.from_func_name =None
+            funcov.from_func_name = self.get_extra_module_file_name(funcov.from_mod, funcov.from_address)
         funcov.to_mod_name=self.get_module_file_name(funcov.to_mod)
         if funcov.to_mod == self.main_module.id :
-            funcov.to_func_name=self.get_main_module_func_name(self.metadata.imagebase+funcov.to_address)
+            funcov.to_func_name = self.get_main_module_func_name(self.metadata.imagebase+funcov.to_address)
         else:
-            funcov.to_func_name =None
+            funcov.to_func_name = self.get_extra_module_file_name(funcov.to_mod, funcov.to_address)
 
     def get_main_module_closest_func_name(self,addr):
         return self.metadata.get_closest_function(addr).name
@@ -679,6 +680,24 @@ class CoverageDirector(object):
             if module.id==mid:
                 return module.filename
         return "unknown module"
+
+    def get_extra_module_file_name(self, from_mod, from_address):
+        for symbol in self.symbol_data.modules:
+            if symbol.id == from_mod:
+                return symbol.SymbolDic[from_address]
+        return None
+
+    def build_symbol_modules(self):
+        if self.all_modules is not None:
+            for symbol in self.symbol_data.modules:
+                module_name = symbol.name
+                for module in self.all_modules:
+                    if module_name.lower() in module.filename.lower():
+                        symbol.id = module.id
+                        continue
+                    if "." in module.filename:
+                        if module_name == module.filename[0:module.filename.rfind('.')].replace('.','_'):
+                            symbol.id = module.id
 
     def get_module_base(self,mid):
         for module in self.all_modules:

@@ -46,6 +46,7 @@ class LighthouseIDA(Lighthouse):
     ACTION_LOAD_FILE         = "lighthouse:load_file"
     ACTION_LOAD_BATCH        = "lighthouse:load_batch"
     ACTION_LOAD_FUNC        = "lighthouse:load_func"
+    ACTION_LOAD_SYMBOL        = "lighthouse:load_symbol"
 
     ACTION_COVERAGE_OVERVIEW = "lighthouse:coverage_overview"
 
@@ -116,6 +117,42 @@ class LighthouseIDA(Lighthouse):
             "File/Load file/",      # Relative path of where to add the action
             self.ACTION_LOAD_FUNC,  # The action ID (see above)
             idaapi.SETMENU_APP      # We want to append the action after ^
+        )
+        if not result:
+            RuntimeError("Failed action attach load_file")
+
+        logger.info("Installed the 'Code coverage file' menu entry")
+
+    def _install_load_symbol(self):
+        """
+        Install the 'File->Load->Code coverage file...' menu entry.
+        """
+
+        # create a custom IDA icon
+        icon_path = plugin_resource(os.path.join("icons", "batch.png"))
+        icon_data = str(open(icon_path, "rb").read())
+        self._icon_id_file = idaapi.load_custom_icon(data=icon_data)
+
+        # describe a custom IDA UI action
+        action_desc = idaapi.action_desc_t(
+            self.ACTION_LOAD_SYMBOL,  # The action name
+            "~C~ode symbol file...",  # The action text
+            IDACtxEntry(self.interactive_load_symbol),  # The action handler
+            None,  # Optional: action shortcut
+            "Load symbol dump file(s)",  # Optional: tooltip
+            self._icon_id_file  # Optional: the action icon
+        )
+
+        # register the action with IDA
+        result = idaapi.register_action(action_desc)
+        if not result:
+            RuntimeError("Failed to register load_file action with IDA")
+
+        # attach the action to the File-> dropdown menu
+        result = idaapi.attach_action_to_menu(
+            "File/Load file/",  # Relative path of where to add the action
+            self.ACTION_LOAD_SYMBOL,  # The action ID (see above)
+            idaapi.SETMENU_APP  # We want to append the action after ^
         )
         if not result:
             RuntimeError("Failed action attach load_file")

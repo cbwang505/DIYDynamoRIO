@@ -658,20 +658,26 @@ DynamoRIO客户端启动参数说明:
 立即结束进程dump追踪数据命令,参数pid为客户端程序进程id:
 "PathTo\drconfig.exe" -nudge_pid pid 0 67
 
-ida插件使用方法:
+ida插件代码追踪工插件使用方法:
 1.复制MyLighthouse目录下文件至"C:\Program Files\IDA 7.0\plugins"目录
 2.在ida打开文件File->Code Function Trace File
 3.在ida函数列表FunctionWindow中右键任意函数Fuzz->ExecTree就可以展示函数调用树,点击树中节点导航到对应函数反汇编代码
-调试模式需要安装Wing Pro 7.2,非调试模式:
-注释"MyLighthouse\lighthouse_plugin.py"文件中以下代码
+调试模式需要安装Wing Pro 7.2,非调试模式进行以下操作:
+注释"C:\Program Files\IDA 7.0\plugins\MyLighthouse\lighthouse_plugin.py"文件中以下代码
 import wingdbstub
 wingdbstub.Ensure()
+
+ida插件代码导入符号插件使用方法:
+1.使用windbg调试目标进程运行如下命令,如目标文件为c:\symbol.txt
+1.1 .shell -i- -ci "x *!*" findstr "!">c:\symbol.txt
+1.2 .logappend  c:\symbol.txt ;lm o;.logclose; 
+2.在ida打开文件File->File/Load file/Code symbol file,目标文件为c:\symbol.txt
 
 源码编译方法:
 复制git目录dynamorio-master-x86至"E:\svn\PowerResearch\dynamorio-master-x86",使用vs2017打开项目
 ```
 
-![查看大图](https://ftp.bmp.ovh/imgs/2020/09/5446d0f9f7077071.png)
+![查看大图](../ok.gif)
 ##  相关项目 ##
 [我的DynamoRIO项目](https://gitee.com/cbwang505/diydynamorio)
 

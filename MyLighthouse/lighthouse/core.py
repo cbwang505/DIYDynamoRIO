@@ -5,6 +5,7 @@ import logging
 import idaapi
 
 from lighthouse.parsers.drfunctrace import DrFuncTraceData, DrcovFuncBasicBlock
+from lighthouse.parsers.drsymbol import DrSymbolData
 from lighthouse.ui import CoverageOverview
 from lighthouse.ui.execute_tree import ExecuteTreeView
 from lighthouse.ui.execute_tree_overview import ExecuteTreeOverview
@@ -131,6 +132,7 @@ class Lighthouse(object):
         """
         # self._install_load_file()
         self._install_load_func_trace()
+        self._install_load_symbol()
         self._install_load_exec_tree()
         # self._install_load_batch()
         # self._install_open_coverage_overview()
@@ -153,6 +155,13 @@ class Lighthouse(object):
 
     @abc.abstractmethod
     def _install_load_func_trace(self):
+        """
+        Install the 'File->Load->Code coverage file...' menu entry.
+        """
+        pass
+
+    @abc.abstractmethod
+    def _install_load_symbol(self):
         """
         Install the 'File->Load->Code coverage file...' menu entry.
         """
@@ -425,6 +434,28 @@ class Lighthouse(object):
             return
         self._ui_exe_tree_overview =ExecuteTreeOverview(self)
         self._ui_exe_tree_overview.show()
+    #--------------------------------------------------------------------------
+    # Internal
+    #--------------------------------------------------------------------------
+    def interactive_load_symbol(self,ctx):
+        self.palette.refresh_colors()
+        filenames = self._select_coverage_files()
+        for filename in filenames:
+
+            # attempt to load/parse a single coverage data file from disk
+            try:
+                disassembler.show_wait_box("Loading symbol from disk...")
+                symbol_data = DrSymbolData(filename)
+                self.director.symbol_data = symbol_data
+                self.director.build_symbol_modules()
+            except Exception as e:
+                lmsg("Failed to load DrSymbolData %s" % filename)
+                lmsg(" - Error: %s" % str(e))
+                logger.exception(" - Traceback:")
+                load_failure = True
+                continue
+        disassembler.hide_wait_box()
+
     #--------------------------------------------------------------------------
     # Internal
     #--------------------------------------------------------------------------
