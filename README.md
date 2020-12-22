@@ -677,7 +677,7 @@ ida插件代码导入符号插件使用方法:
 复制git目录dynamorio-master-x86至"E:\svn\PowerResearch\dynamorio-master-x86",使用vs2017打开项目
 ```
 
-![查看大图](../ok.gif)
+![查看大图](../master/ok.gif)
 ##  相关项目 ##
 [我的DynamoRIO项目](https://gitee.com/cbwang505/diydynamorio)
 
