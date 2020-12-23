@@ -1,0 +1,84 @@
+DynamoRIO version 8.0.0, build 1, (c) DynamoRIO developers
+DynamoRIO built with: -DINTERNAL -DDEBUG -DDRSTATS_DEMO -DX86 -DWINDOWS -DCLIENT_INTERFACE -DAPP_EXPORTS -DKSTATS -DANNOTATIONS -DNOLIBC -DASSEMBLE_WITH_MASM -DHAVE_MEMINFO -DHAVE_MEMINFO_QUERY -DWINDOWS_PC_SAMPLE -DDYNAMORIO_IR_EXPORTS -DCUSTOM_TRACES -DCLIENT_SIDELINE -DDR_APP_EXPORTS -DDEBUG_MEMORY -DHEAP_ACCOUNTING -DDEADLOCK_AVOIDANCE -DSHARING_STUDY -DHASHTABLE_STATISTICS
+DynamoRIO built on: Apr 22 2020 00:42:43
+THREAD 3816 (dcontext 0x242f5040)
+
+DR stack is 0x24311000-0x2431f000 (passed in 0x00000000)
+app stack now is 0x0276b000-0x02770000
+app stack region is 0x02730000-0x02770000
+Generated code 0x24341000: 4088 header, 1643 gen, 8192 commit/20480 reserve
+hashtable_generic_init trace heads htable=0x243222f0 bits=9 size=513 mask=0x000001ff offset=0 load=75% resize=384
+               trace heads table 0x243223f4  0x00000000  groom=0% groom_at=0
+hashtable_fragment_init bblock htable=0x242f5f0c bits=5 size=33 mask=0x0000001f offset=0 load=60% resize=19
+               bblock table 0x24331028  0x00000000  groom=0% groom_at=0
+hashtable_fragment_init future htable=0x242f60bc bits=5 size=33 mask=0x0000001f offset=0 load=65% resize=21
+               future table 0x24331128  0x00000000  groom=0% groom_at=0
+hashtable_ibl_init ret_trace htable=0x242f5984 bits=7 size=129 mask=0x0000007f offset=0 load=50% resize=64
+               ret_trace table 0x24331240  0x00000000  groom=0% groom_at=0
+hashtable_ibl_init indcall_trace htable=0x242f5a70 bits=7 size=129 mask=0x0000007f offset=0 load=50% resize=64
+               indcall_trace table 0x24331680  0x00000000  groom=0% groom_at=0
+hashtable_ibl_init indjmp_trace htable=0x242f5b5c bits=7 size=129 mask=0x0000007f offset=0 load=50% resize=64
+               indjmp_trace table 0x24331ac0  0x00000000  groom=0% groom_at=0
+(Begin) Thread statistics @0 global, 0 thread fragments (0:00.166):
+             Number of queries of the commit limit (thread):        5
+                 Generated code protection changes (thread):        3
+                           Protection change calls (thread):        3
+                           Protection change pages (thread):        6
+                                 Patched fragments (thread):        3
+                          Patched relocation slots (thread):       24
+                              Heap headers (bytes) (thread):       24
+                     Peak heap align space (bytes) (thread):        6
+                     Heap bucket pad space (bytes) (thread):     1080
+                Peak heap bucket pad space (bytes) (thread):     1080
+                            Heap allocs in buckets (thread):     1236
+                        Heap allocs variable-sized (thread):        6
+                             Total reserved memory (thread):    28672
+                        Peak total reserved memory (thread):    28672
+               Guard pages, reserved virtual pages (thread):        2
+          Peak guard pages, reserved virtual pages (thread):        2
+                             Mmap capacity (bytes) (thread):     8192
+                        Peak mmap capacity (bytes) (thread):    12288
+           Mmap reserved but not committed (bytes) (thread):    12288
+      Peak mmap reserved but not committed (bytes) (thread):    12288
+                              Heap claimed (bytes) (thread):    13952
+                         Peak heap claimed (bytes) (thread):    13952
+                     Current heap capacity (bytes) (thread):    12288
+                        Peak heap capacity (bytes) (thread):    12288
+           Heap reserved but not committed (bytes) (thread):   -12288
+              Current total memory from OS (bytes) (thread):    28672
+                 Peak total memory from OS (bytes) (thread):    28672
+               Current vmm blocks for special mmap (thread):        1
+                  Peak vmm blocks for special mmap (thread):        1
+                  Our virtual memory blocks in use (thread):        1
+             Peak our virtual memory blocks in use (thread):        1
+                 Wasted vmm space due to alignment (thread):    36864
+            Peak wasted vmm space due to alignment (thread):    36864
+         Current vmm virtual memory in use (bytes) (thread):    65536
+            Peak vmm virtual memory in use (bytes) (thread):    65536
+(End) Thread statistics
+Thread 3816 KSTATS {
+             logging:   1199210 totc,      48 num,     16312 minc,     24983 avg,    144624 maxc,   1199210 self,         0 sub,
+                            0 ms,       187 ms out,in LOG
+      overhead_empty:    569216 totc,   10000 num,        36 minc,        56 avg,     43920 maxc,    569216 self,         0 sub,
+                            0 ms,         0 ms out,empty block overhead
+     overhead_nested:    988168 totc,   10000 num,        76 minc,        98 avg,     49992 maxc,    988168 self,         0 sub,
+                            0 ms,         0 ms out,nested block overhead
+} KSTATS
+ASYNCH intercepted exception in thread 3816 at pc 0x7a9396f2
+SYSLOG_CRITICAL: Application C:\Windows\SysWOW64\mspaint.exe (19612).  DrCov internal crash at PC 0x7a9396f2.  Please report this at http://dynamorio.org/issues.  Program aborted.
+0xc0000005 0x00000000 0x7a9396f2 0x7a9396f2 0x00000000 0xffffffff
+Base: 0x7a6c0000
+Registers: eax=0x00000023 ebx=0x00001000 ecx=0x0000004c edx=0x0276def4
+	esi=0x00000000 edi=0x77b13000 esp=0x0276deec ebp=0x0276df34
+	eflags=0x00010202
+version 8.0.0, build 1
+-no_dynamic_options -loglevel 1 -client_lib 'E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\tools\lib32\release\drcov.dll;0;' -code_api -probe_api -stack_size 56K -nop_initial_bblock -max_elide_jmp 0 -max_elide_call 0 -no_inline_ignored_syscalls -native_exec_default_list '' -no_native_exec_managed_code -no_indcall2direct
+0x0276df34 0x7a9907fd
+0x0276df64 0x7a9630c0
+0x0276dfb8 0x7a954e4d
+0x0276dfe4 0x7a97b0d7
+0x0276e050 0x7a96b644
+0x0276e08c 0x7a979b07
+0x0276ece8 0x7a6ccd5e
+0x0276f5a4 0x7a938b51
+0x0276f60c 0x7a9394b8

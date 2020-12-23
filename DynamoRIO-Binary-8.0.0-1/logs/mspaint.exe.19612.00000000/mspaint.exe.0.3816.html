@@ -1,0 +1,831 @@
+global log file fd=612
+DynamoRIO version 8.0.0, build 1, (c) DynamoRIO developers
+Running: C:\Windows\SysWOW64\mspaint.exe
+App cmdline: C:\Windows\SysWOW64\mspaint.exe
+DynamoRIO built with: -DINTERNAL -DDEBUG -DDRSTATS_DEMO -DX86 -DWINDOWS -DCLIENT_INTERFACE -DAPP_EXPORTS -DKSTATS -DANNOTATIONS -DNOLIBC -DASSEMBLE_WITH_MASM -DHAVE_MEMINFO -DHAVE_MEMINFO_QUERY -DWINDOWS_PC_SAMPLE -DDYNAMORIO_IR_EXPORTS -DCUSTOM_TRACES -DCLIENT_SIDELINE -DDR_APP_EXPORTS -DDEBUG_MEMORY -DHEAP_ACCOUNTING -DDEADLOCK_AVOIDANCE -DSHARING_STUDY -DHASHTABLE_STATISTICS
+DynamoRIO built on: Apr 22 2020 00:42:43
+DYNAMORIO_OPTIONS: -code_api -probe_api "-loglevel" "1" "-nop_initial_bblock" -client_lib "E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\tools\lib32\release\drcov.dll;0;"
+DynamoRIO's stack size: 56 Kb
+vmm_heap_unit_init preferred=0x24250000 got start_addr=0x24250000
+vmm_heap_unit_init vmcode reservation: [0x24250000,0x2c250000) total=2048 free=2048
+
+vmm_dump_map(0x7aaeb148) virtual regions
+0x24250000-0x2c24ffff size=134217728 free
+loaded E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\tools\lib32\release\drcov.dll at 0x7a6a0000-0x7a6a6000
+SYSLOG_INFORMATION: Starting application C:\Windows\SysWOW64\mspaint.exe (19612)
+SYSLOG_INFORMATION: Starting application C:\Windows\SysWOW64\mspaint.exe (19612)
+Running on a 4 CPU machine
+Processor features:
+	edx = 0xbfebfbff
+	ecx = 0x7ffafbff
+	ext_edx = 0x2c100000
+	ext_ecx = 0x00000121
+	sext_ebx = 0x029c6fbf
+	Processor has XD Bit
+	Processor has MMX
+	Processor has fxsave/fxrstor
+	Processor has SSE
+	Processor has SSE2
+	Processor has SSE3
+	Processor has AVX
+	Processor has OSXSAVE
+	Processor and OS fully support AVX
+Cache line size is 64 bytes
+L1 icache=unknown, L1 dcache=unknown, L2 cache=unknown
+Processor brand string = Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+Type=0x0, Family=0x6, Model=0x9e, Stepping=0x9
+hashtable_generic_init section-to-file table htable=0x24253c58 bits=6 size=65 mask=0x0000003f offset=0 load=80% resize=52
+               section-to-file table table 0x24253d58  0x00000000  groom=0% groom_at=0
+DR dll base = 0x7a6c0000
+Removing 0x7a6c0000 E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\lib32\debug\dynamorio.dll from load order module list
+Removing 0x7a6c0000 E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\lib32\debug\dynamorio.dll from memory order module list
+Removing 0x7a6c0000 E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\lib32\debug\dynamorio.dll from init order module list
+SYSLOG_INFORMATION: Running on newer-than-this-build "Microsoft Windows 10-1909 x64"
+SYSLOG_INFORMATION: Running on newer-than-this-build "Microsoft Windows 10-1909 x64"
+Process id: 19612
+PEB: 0x00456000
+x64 PEB: 4542464
+Running on Microsoft Windows 10-1909 x64 == 105 SP0.0
+hashtable_generic_init section-to-file table htable=0x24253f58 bits=6 size=65 mask=0x0000003f offset=0 load=80% resize=52
+               section-to-file table table 0x24254058  0x00000000  groom=0% groom_at=0
+12 TLS slots are @ fs:0xee0
+
+Loaded modules:
+  0x00610000-0x006c9fff mspaint.exe   entry=0x0069f5e0 count=-1 
+	flags=0x0000a2cc timestamp=0x6f750f10 checksum=0x000bc9b9
+	pe_name=(null)  C:\Windows\SysWOW64\mspaint.exe
+	preferred_base=0x00610000
+	dll_relocated=no
+	file_version=10.0.18362.207 product_version=10.0.18362.207	original_filename=MSPAINT.EXE
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x77aa0000-0x77c39fff ntdll.dll     entry=0x00000000 count=-1 
+	flags=0x0000a2c4 timestamp=0x2995af02 checksum=0x0019ec07
+	pe_name=ntdll.dll  C:\Windows\SYSTEM32\ntdll.dll
+	preferred_base=0x77aa0000
+	dll_relocated=no
+	file_version=10.0.18362.815 product_version=10.0.18362.815	original_filename=ntdll.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x752a0000-0x7537ffff KERNEL32.DLL  entry=0x752b5f70 count=-1 
+	flags=0x000ca2cc timestamp=0x17139767 checksum=0x0009acde
+	pe_name=KERNEL32.dll  C:\Windows\System32\KERNEL32.DLL
+	preferred_base=0x752a0000
+	dll_relocated=no
+	file_version=10.0.18362.778 product_version=10.0.18362.778	original_filename=kernel32
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x77320000-0x7751dfff KERNELBASE.dll entry=0x7740da10 count=-1 
+	flags=0x0008a2cc timestamp=0x67005c2a checksum=0x0020954a
+	pe_name=KERNELBASE.dll  C:\Windows\System32\KERNELBASE.dll
+	preferred_base=0x77320000
+	dll_relocated=no
+	file_version=10.0.18362.815 product_version=10.0.18362.815	original_filename=Kernelbase.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x76fd0000-0x77048fff ADVAPI32.dll  entry=0x76fe7450 count=6  
+	flags=0x0008a2ec timestamp=0xcf4d11bd checksum=0x000820a3
+	pe_name=ADVAPI32.dll  C:\Windows\System32\ADVAPI32.dll
+	preferred_base=0x76fd0000
+	dll_relocated=no
+	file_version=10.0.18362.752 product_version=10.0.18362.752	original_filename=advapi32.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x77930000-0x779eefff msvcrt.dll    entry=0x77965b00 count=6  
+	flags=0x0008a2ec timestamp=0x58bec60c checksum=0x000c7868
+	pe_name=msvcrt.dll  C:\Windows\System32\msvcrt.dll
+	preferred_base=0x77930000
+	dll_relocated=no
+	file_version=7.0.18362.1 product_version=10.0.18362.1	original_filename=msvcrt.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x76f50000-0x76fc5fff sechost.dll   entry=0x76f62620 count=6  
+	flags=0x000ca2ec timestamp=0x64d2267f checksum=0x0007991f
+	pe_name=SECHOST.dll  C:\Windows\System32\sechost.dll
+	preferred_base=0x76f50000
+	dll_relocated=no
+	file_version=10.0.18362.693 product_version=10.0.18362.693	original_filename=sechost.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75470000-0x7552afff RPCRT4.dll    entry=0x754abe20 count=6  
+	flags=0x0008a2ec timestamp=0x7acb686b checksum=0x000c6989
+	pe_name=RPCRT4.dll  C:\Windows\System32\RPCRT4.dll
+	preferred_base=0x75470000
+	dll_relocated=no
+	file_version=10.0.18362.628 product_version=10.0.18362.628	original_filename=rpcrt4.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75270000-0x7528ffff SspiCli.dll   entry=0x7527c970 count=6  
+	flags=0x000ca2ec timestamp=0x915e1a82 checksum=0x00021d45
+	pe_name=SspiCli.dll  C:\Windows\System32\SspiCli.dll
+	preferred_base=0x75270000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=security.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75260000-0x75269fff CRYPTBASE.dll entry=0x75262a40 count=6  
+	flags=0x0008a2ec timestamp=0x5218d924 checksum=0x000080b5
+	pe_name=CRYPTBASE.dll  C:\Windows\System32\CRYPTBASE.dll
+	preferred_base=0x75260000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=cryptbase.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75410000-0x7546efff bcryptPrimitives.dll entry=0x75441990 count=6  
+	flags=0x000ca2ec timestamp=0x906f9691 checksum=0x0006996c
+	pe_name=bcryptPrimitives.dll  C:\Windows\System32\bcryptPrimitives.dll
+	preferred_base=0x75410000
+	dll_relocated=no
+	file_version=10.0.18362.836 product_version=10.0.18362.836	original_filename=bcryptprimitives.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x76030000-0x76050fff GDI32.dll     entry=0x76034b50 count=6  
+	flags=0x000ca2ec timestamp=0x527faf7f checksum=0x00020fce
+	pe_name=GDI32.dll  C:\Windows\System32\GDI32.dll
+	preferred_base=0x76030000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=gdi32
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75a10000-0x75a26fff win32u.dll    entry=0x00000000 count=6  
+	flags=0x0008a2ec timestamp=0x6b5c1b19 checksum=0x00017249
+	pe_name=win32u.dll  C:\Windows\System32\win32u.dll
+	preferred_base=0x75a10000
+	dll_relocated=no
+	file_version=10.0.18362.836 product_version=10.0.18362.836	original_filename=Win32u.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x760c0000-0x76219fff gdi32full.dll entry=0x761810f0 count=6  
+	flags=0x000ca2ec timestamp=0x24afd2e3 checksum=0x00166134
+	pe_name=gdi32full.dll  C:\Windows\System32\gdi32full.dll
+	preferred_base=0x760c0000
+	dll_relocated=no
+	file_version=10.0.18362.836 product_version=10.0.18362.836	original_filename=gdi32
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75fb0000-0x7602bfff msvcp_win.dll entry=0x75fc6760 count=6  
+	flags=0x000ca2ec timestamp=0x47892406 checksum=0x0008356d
+	pe_name=msvcp_win.dll  C:\Windows\System32\msvcp_win.dll
+	preferred_base=0x75fb0000
+	dll_relocated=no
+	file_version=10.0.18362.815 product_version=10.0.18362.815	original_filename=msvcp_win.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x757e0000-0x758fefff ucrtbase.dll  entry=0x75807670 count=6  
+	flags=0x0008a2ec timestamp=0xbea5fce0 checksum=0x00120b21
+	pe_name=ucrtbase.dll  C:\Windows\System32\ucrtbase.dll
+	preferred_base=0x757e0000
+	dll_relocated=no
+	file_version=10.0.18362.815 product_version=10.0.18362.815	original_filename=ucrtbase.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75600000-0x75796fff USER32.dll    entry=0x7562c730 count=6  
+	flags=0x000ca2ec timestamp=0xaf54096e checksum=0x001a53c2
+	pe_name=USER32.dll  C:\Windows\System32\USER32.dll
+	preferred_base=0x75600000
+	dll_relocated=no
+	file_version=10.0.18362.836 product_version=10.0.18362.836	original_filename=user32
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x766c0000-0x76703fff SHLWAPI.dll   entry=0x766d7aa0 count=6  
+	flags=0x0008a2ec timestamp=0xc3d29dd3 checksum=0x000461d2
+	pe_name=SHLWAPI.dll  C:\Windows\System32\SHLWAPI.dll
+	preferred_base=0x766c0000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=SHLWAPI.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x77640000-0x778b4fff combase.dll   entry=0x77771a50 count=6  
+	flags=0x0008a2ec timestamp=0x1910771f checksum=0x00277e41
+	pe_name=combase.dll  C:\Windows\System32\combase.dll
+	preferred_base=0x77640000
+	dll_relocated=no
+	file_version=10.0.18362.815 product_version=10.0.18362.815	original_filename=COMBASE.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x77520000-0x775b1fff OLEAUT32.dll  entry=0x775551b0 count=6  
+	flags=0x0008a2ec timestamp=0xa695b008 checksum=0x0009a343
+	pe_name=OLEAUT32.dll  C:\Windows\System32\OLEAUT32.dll
+	preferred_base=0x77520000
+	dll_relocated=no
+	file_version=10.0.18362.836 product_version=10.0.18362.836	original_filename=OLEAUT32.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x7b180000-0x7b2a1fff MFC42u.dll    entry=0x7b1a4d10 count=6  
+	flags=0x0008a2ec timestamp=0x746f01e4 checksum=0x0011d7bb
+	pe_name=MFC42u.dll  C:\Windows\System32\MFC42u.dll
+	preferred_base=0x7b180000
+	dll_relocated=no
+	file_version=6.6.8063.0 product_version=6.6.4.0	original_filename=MFC42.DLL
+	company_name=Microsoft Corporation product_name=Microsoft (R) Visual C++
+  0x75530000-0x755dffff COMDLG32.dll  entry=0x7556ebc0 count=6  
+	flags=0x0008a2ec timestamp=0x98a00d62 checksum=0x000b6e1f
+	pe_name=COMDLG32.dll  C:\Windows\System32\COMDLG32.dll
+	preferred_base=0x75530000
+	dll_relocated=no
+	file_version=10.0.18362.815 product_version=10.0.18362.815	original_filename=comdlg32.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x771b0000-0x772a6fff OLE32.dll     entry=0x771ea0d0 count=6  
+	flags=0x0008a2ec timestamp=0xbc38e692 checksum=0x00103be2
+	pe_name=ole32.dll  C:\Windows\System32\OLE32.dll
+	preferred_base=0x771b0000
+	dll_relocated=no
+	file_version=10.0.18362.693 product_version=10.0.18362.693	original_filename=OLE32.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x6fd30000-0x6ff3efff COMCTL32.dll  entry=0x6fdb41a0 count=6  
+	flags=0x1008a2ec timestamp=0xeb906c2d checksum=0x002136dc
+	pe_name=COMCTL32.dll  C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.836_none_2e71f01a278b41f3\COMCTL32.dll
+	preferred_base=0x6fd30000
+	dll_relocated=no
+	file_version=6.10.18362.836 product_version=10.0.18362.836	original_filename=comctl32.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x76710000-0x76793fff shcore.dll    entry=0x767522c0 count=6  
+	flags=0x0008a2ec timestamp=0x49ebc7e0 checksum=0x00091d44
+	pe_name=SHCORE.dll  C:\Windows\System32\shcore.dll
+	preferred_base=0x76710000
+	dll_relocated=no
+	file_version=10.0.18362.836 product_version=10.0.18362.836	original_filename=SHCORE.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75a30000-0x75fa5fff SHELL32.dll   entry=0x75b97820 count=6  
+	flags=0x0008a2ec timestamp=0x0f9346d0 checksum=0x0057df26
+	pe_name=SHELL32.dll  C:\Windows\System32\SHELL32.dll
+	preferred_base=0x75a30000
+	dll_relocated=no
+	file_version=10.0.18362.815 product_version=10.0.18362.815	original_filename=SHELL32.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x76670000-0x766aafff cfgmgr32.dll  entry=0x7667cf50 count=6  
+	flags=0x000ca2ec timestamp=0xe4afe536 checksum=0x0003dab8
+	pe_name=CFGMGR32.dll  C:\Windows\System32\cfgmgr32.dll
+	preferred_base=0x76670000
+	dll_relocated=no
+	file_version=10.0.18362.387 product_version=10.0.18362.387	original_filename=CFGMGR32.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x76960000-0x76f24fff windows.storage.dll entry=0x76b624c0 count=6  
+	flags=0x0008a2ec timestamp=0x8e886e24 checksum=0x005d43ae
+	pe_name=Windows.Storage.dll  C:\Windows\System32\windows.storage.dll
+	preferred_base=0x76960000
+	dll_relocated=no
+	file_version=10.0.18362.836 product_version=10.0.18362.836	original_filename=Windows.Storage.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x755e0000-0x755fafff profapi.dll   entry=0x755ea3a0 count=6  
+	flags=0x000ca2ec timestamp=0x8d3a1b93 checksum=0x000215a1
+	pe_name=profapi.dll  C:\Windows\System32\profapi.dll
+	preferred_base=0x755e0000
+	dll_relocated=no
+	file_version=10.0.18362.693 product_version=10.0.18362.693	original_filename=PROFAPI.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x767a0000-0x767e2fff powrprof.dll  entry=0x767a6d40 count=6  
+	flags=0x000ca2ec timestamp=0xf7e0ec6f checksum=0x00048970
+	pe_name=POWRPROF.dll  C:\Windows\System32\powrprof.dll
+	preferred_base=0x767a0000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=POWRPROF.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x779f0000-0x779fcfff UMPDC.dll     entry=0x779f7450 count=6  
+	flags=0x0008a2ec timestamp=0x61a1f7cf checksum=0x0000f5b8
+	pe_name=UMPDC.dll  C:\Windows\System32\UMPDC.dll
+	preferred_base=0x779f0000
+	dll_relocated=no
+	module_has_no_version_information
+  0x757b0000-0x757befff kernel.appcore.dll entry=0x757b4700 count=6  
+	flags=0x0008a2ec timestamp=0x6203ca74 checksum=0x00012ed3
+	pe_name=AppCore.dll  C:\Windows\System32\kernel.appcore.dll
+	preferred_base=0x757b0000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=kernel.appcore.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x757c0000-0x757d2fff cryptsp.dll   entry=0x757c5d20 count=6  
+	flags=0x000ca2ec timestamp=0xfaf7cdeb checksum=0x000123c2
+	pe_name=CRYPTSP.dll  C:\Windows\System32\cryptsp.dll
+	preferred_base=0x757c0000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=cryptsp.dll
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x71b50000-0x71c15fff PROPSYS.dll   entry=0x71bb8f30 count=6  
+	flags=0x000ca2ec timestamp=0x4ec43240 checksum=0x000d09c1
+	pe_name=PROPSYS.dll  C:\Windows\System32\PROPSYS.dll
+	preferred_base=0x71b50000
+	dll_relocated=no
+	file_version=7.0.18362.815 product_version=7.0.18362.815	original_filename=propsys.dll
+	company_name=Microsoft Corporation product_name=Windows® Search
+  0x74150000-0x74173fff WINMM.dll     entry=0x74154350 count=6  
+	flags=0x000ca2ec timestamp=0xb3433693 checksum=0x0002dd98
+	pe_name=WINMM.dll  C:\Windows\System32\WINMM.dll
+	preferred_base=0x74150000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=WINMM.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x73a50000-0x73a72fff winmmbase.dll entry=0x73a587e0 count=6  
+	flags=0x000ca2ec timestamp=0xbd75c031 checksum=0x00022845
+	pe_name=WINMMBASE.dll  C:\Windows\SYSTEM32\winmmbase.dll
+	preferred_base=0x73a50000
+	dll_relocated=no
+	file_version=10.0.18362.1 product_version=10.0.18362.1	original_filename=WINMMbase.DLL
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+  0x75380000-0x753a4fff IMM32.DLL     entry=0x75384390 count=6  
+	flags=0x0008a2cc timestamp=0x60562aa5 checksum=0x0002f46a
+	pe_name=IMM32.dll  C:\Windows\System32\IMM32.DLL
+	preferred_base=0x75380000
+	dll_relocated=no
+	file_version=10.0.18362.387 product_version=10.0.18362.387	original_filename=imm32
+	company_name=Microsoft Corporation product_name=Microsoft® Windows® Operating System
+
+ASLR: -aslr 0x00000000, dll end=0x41330000, base=0x40000000, offset=0x10000000 -> delta=0x0132b944, pad=0x00100000
+ASLR: aslr_get_known_dll_path KnownDllPath = C:\Windows\System32
+ASLR: known_dll_path = \??\C:\Windows\System32
+nt_raw_OpenThreadToken failed, res: c000007c
+get_system_basic_info: HighestUserAddress 0x7ffeffff
+os_validate_owner_equals: owner not matching expected_owner
+hashtable_generic_init takeover table htable=0x24254bd8 bits=6 size=65 mask=0x0000003f offset=0 load=80% resize=52
+               takeover table table 0x24254cd8  0x00000000  groom=0% groom_at=0
+apc_context_xsp_offs = 20
+SYSLOG_WARNING: Early threads found
+SYSLOG_WARNING: Early threads found
+hashtable_strhash_init ntdll redirection table htable=0x24289220 bits=7 size=129 mask=0x0000007f offset=0 load=80% resize=103
+               ntdll redirection table table 0x24289324  0x00000000  groom=0% groom_at=0
+hashtable_strhash_init ntdll win7 redirection table htable=0x242895c8 bits=2 size=5 mask=0x00000003 offset=0 load=80% resize=4
+               ntdll win7 redirection table table 0x24288edc  0x00000000  groom=0% groom_at=0
+hashtable_strhash_init kernel32 redirection table htable=0x242896d0 bits=8 size=257 mask=0x000000ff offset=0 load=80% resize=205
+               kernel32 redirection table table 0x242897d4  0x00000000  groom=0% groom_at=0
+hashtable_strhash_add: long collision sequence len=34for 0x7aacdb0c kernel32 redirection table table[105] capacity=257 entries=91)
+hashtable_strhash_add: long collision sequence len=46for 0x7aacdba8 kernel32 redirection table table[115] capacity=257 entries=98)
+hashtable_strhash_add: long collision sequence len=43for 0x7aacdbc0 kernel32 redirection table table[116] capacity=257 entries=99)
+hashtable_strhash_add: long collision sequence len=50for 0x7aacdbf4 kernel32 redirection table table[120] capacity=257 entries=101)
+hashtable_strhash_add: long collision sequence len=38for 0x7aacdc08 kernel32 redirection table table[121] capacity=257 entries=102)
+hashtable_strhash_add: long collision sequence len=44for 0x7aacdc34 kernel32 redirection table table[128] capacity=257 entries=104)
+hashtable_strhash_add: long collision sequence len=65for 0x7aacdc44 kernel32 redirection table table[129] capacity=257 entries=105)
+hashtable_strhash_init rpcrt4 redirection table htable=0x24289f20 bits=2 size=5 mask=0x00000003 offset=0 load=80% resize=4
+               rpcrt4 redirection table table 0x24288e74  0x00000000  groom=0% groom_at=0
+hashtable_strhash_init advapi32 redirection table htable=0x2428a028 bits=4 size=17 mask=0x0000000f offset=0 load=80% resize=13
+               advapi32 redirection table table 0x242868e0  0x00000000  groom=0% groom_at=0
+privload_add_subdir_path: added Extension search dir E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\ext\lib32\debug
+privload_add_subdir_path: added Extension search dir E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\drmemory/drmf\lib32\debug
+privload_process_early_mods: processing imports for drcov.dll
+Generated code 0x242b1000: 4088 header, 3752 gen, 8192 commit/20480 reserve
+hashtable_generic_init callee-info table htable=0x2428d08c bits=6 size=65 mask=0x0000003f offset=0 load=80% resize=52
+               callee-info table table 0x2428d18c  0x00000000  groom=0% groom_at=0
+get_timer_frequency: OS is using RTC!  Reported speed is bogus.
+Processor speed: 2937MHz
+Initial shared bb cache is 56 KB
+Initial shared trace cache is 56 KB
+hashtable_fragment_init shared_bb htable=0x2428ddf0 bits=10 size=1025 mask=0x000003ff offset=0 load=55% resize=563
+               shared_bb table 0x24271a30  0x00000000  groom=0% groom_at=0
+hashtable_fragment_init shared_trace htable=0x2428def0 bits=10 size=1025 mask=0x000003ff offset=0 load=55% resize=563
+               shared_trace table 0x24272a38  0x00000000  groom=0% groom_at=0
+hashtable_fragment_init shared_future htable=0x2428dff0 bits=10 size=1025 mask=0x000003ff offset=0 load=60% resize=615
+               shared_future table 0x24273a40  0x00000000  groom=0% groom_at=0
+SYSLOG_INFORMATION: Initial options = -no_dynamic_options -loglevel 1 -client_lib 'E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\tools\lib32\release\drcov.dll;0;' -code_api -probe_api -stack_size 56K -nop_initial_bblock -max_elide_jmp 0 -max_elide_call 0 -no_inline_ignored_syscalls -native_exec_default_list '' -no_native_exec_managed_code -no_indcall2direct -no_aslr_dr 
+SYSLOG_INFORMATION: Initial options = -no_dynamic_options -loglevel 1 -client_lib 'E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\tools\lib32\release\drcov.dll;0;' -code_api -probe_api -stack_size 56K -nop_initial_bblock -max_elide_jmp 0 -max_elide_call 0 -no_inline_ignored_syscalls -native_exec_default_list '' -no_native_exec_managed_code -no_indcall2direct -no_aslr_dr 
+Initial pcache-affecting options = -no_indcall2direct 
+
+Thread 3816 app handle rights: 0x001fffff
+Thread 3816 our handle rights: 0x001fffff
+
+dynamo_thread_init: 1 thread(s) now, dcontext=0x242f5040, #=0, id=3816, pid=19612
+
+VM heap: addr range 0x24250000--0x2c250000, # free blocks 2035
+(Begin) All statistics @0 (0:00.000):
+           Current threads under DynamoRIO control :        1
+              Peak threads under DynamoRIO control :        1
+                              Threads ever created :        1
+             Number of queries of the commit limit :       31
+              Data section protection wasted calls :       16
+                 Generated code protection changes :        1
+                           Protection change calls :       18
+                           Protection change pages :       25
+                 Fcache shared bb capacity (bytes) :     4096
+            Fcache shared bb peak capacity (bytes) :     4096
+              Fcache shared trace capacity (bytes) :     4096
+         Fcache shared trace peak capacity (bytes) :     4096
+          Current fcache combined capacity (bytes) :     8192
+             Peak fcache combined capacity (bytes) :     8192
+                 Current fcache units on live list :        2
+                    Peak fcache units on live list :        2
+                                Special heap units :        1
+                           Peak special heap units :        1
+             Current special heap capacity (bytes) :     4096
+                Peak special heap capacity (bytes) :     4096
+                   Current heap units on live list :        5
+                      Peak heap units on live list :        5
+                              Heap headers (bytes) :       80
+                          Heap align space (bytes) :       54
+                     Peak heap align space (bytes) :       94
+                     Heap bucket pad space (bytes) :     3536
+                Peak heap bucket pad space (bytes) :     3536
+                            Heap allocs in buckets :     2755
+                        Heap allocs variable-sized :       20
+                             Total reserved memory :   634880
+                        Peak total reserved memory :   634880
+               Guard pages, reserved virtual pages :       24
+          Peak guard pages, reserved virtual pages :       24
+                    Current stack capacity (bytes) :   122880
+                       Peak stack capacity (bytes) :   122880
+                             Mmap capacity (bytes) :    16384
+                        Peak mmap capacity (bytes) :    16384
+           Mmap reserved but not committed (bytes) :   118784
+      Peak mmap reserved but not committed (bytes) :   118784
+                              Heap claimed (bytes) :    98424
+                         Peak heap claimed (bytes) :    98424
+                     Current heap capacity (bytes) :   126976
+                        Peak heap capacity (bytes) :   126976
+           Heap reserved but not committed (bytes) :   151552
+      Peak heap reserved but not committed (bytes) :   167936
+                         File map capacity (bytes) :   221184
+                    Peak file map capacity (bytes) :   221184
+              Current total memory from OS (bytes) :   856064
+                 Peak total memory from OS (bytes) :   856064
+                       Current vmm blocks for heap :        6
+                          Peak vmm blocks for heap :        6
+                      Current vmm blocks for cache :        2
+                         Peak vmm blocks for cache :        2
+                      Current vmm blocks for stack :        3
+                         Peak vmm blocks for stack :        3
+               Current vmm blocks for special heap :        1
+                  Peak vmm blocks for special heap :        1
+               Current vmm blocks for special mmap :        1
+                  Peak vmm blocks for special mmap :        1
+                  Our virtual memory blocks in use :       13
+             Peak our virtual memory blocks in use :       13
+                 Wasted vmm space due to alignment :   217088
+            Peak wasted vmm space due to alignment :   217088
+             Allocations using multiple vmm blocks :        1
+                Blocks used for multi-block allocs :        2
+         Current vmm virtual memory in use (bytes) :   851968
+            Peak vmm virtual memory in use (bytes) :   851968
+             Number of landing pad areas allocated :        1
+                              Number of safe reads :        1
+                         Peak vmarea vector length :        5
+                   Peak dynamo areas vector length :        4
+(End) All statistics
+Heap bucket usage counts and wasted memory:
+ 0   8 count=      272 peak_count=      189 peak_wasted=       68 peak_align=       84
+ 1  12 count=      825 peak_count=       77 peak_wasted=        0 peak_align=       12
+ 2  24 count=      728 peak_count=       27 peak_wasted=       40 peak_align=        3
+ 3  40 count=        1 peak_count=        1 peak_wasted=       12 peak_align=        0
+ 4  60 count=        2 peak_count=        2 peak_wasted=        0 peak_align=        0
+ 5  68 count=      881 peak_count=       92 peak_wasted=        0 peak_align=        0
+ 6  80 count=        0 peak_count=        0 peak_wasted=        0 peak_align=        0
+ 7  96 count=       10 peak_count=        2 peak_wasted=       12 peak_align=        0
+ 8 128 count=       10 peak_count=       10 peak_wasted=        0 peak_align=        0
+ 9 256 count=       12 peak_count=       12 peak_wasted=      444 peak_align=        0
+10 512 count=       14 peak_count=       14 peak_wasted=     2988 peak_align=        0
+11  -1 count=       20 peak_count=       20 peak_wasted=       80 peak_align=        3
+Non-persistent global units heap breakdown:
+BB Fragments: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Coarse Links: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ Future Frag: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ Frag Tables: cur=   12K, max=   12K, #=      3, 1= 4100, new=   12K, re=    0K
+  IBL Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+      Traces: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  FC Empties: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+   Vm Multis: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+          IR: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  RCT Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+    VM Areas: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+     Symbols: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  TH Counter: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+   Tombstone: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Hot Patching: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  Thread Mgt: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  Memory Mgt: cur=    2K, max=    2K, #=      5, 1=  880, new=    2K, re=    0K
+       Stats: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ SpecialHeap: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+      Client: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+     Lib Dup: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  Clean Call: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+       Other: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Total cur usage:     14 KB
+Total max (not nec. all used simult.):     14 KB
+Uprotected global units heap breakdown:
+BB Fragments: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Coarse Links: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ Future Frag: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ Frag Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  IBL Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+      Traces: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  FC Empties: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+   Vm Multis: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+          IR: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  RCT Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+    VM Areas: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+     Symbols: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  TH Counter: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+   Tombstone: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Hot Patching: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  Thread Mgt: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  Memory Mgt: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+       Stats: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ SpecialHeap: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+      Client: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+     Lib Dup: cur=    0K, max=    0K, #=      2, 1=  512, new=    0K, re=    0K
+  Clean Call: cur=    0K, max=    0K, #=      5, 1=   12, new=    0K, re=    0K
+       Other: cur=    0K, max=    0K, #=     10, 1=  600, new=    0K, re=    0K
+Total cur usage:      1 KB
+Total max (not nec. all used simult.):      1 KB
+Racy Up-to-date Process heap breakdown:
+BB Fragments: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Coarse Links: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ Future Frag: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ Frag Tables: cur=   12K, max=   12K, #=      6, 1= 4100, new=   12K, re=    0K
+  IBL Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+      Traces: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  FC Empties: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+   Vm Multis: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+          IR: cur=    0K, max=    7K, #=   2498, 1=   96, new=    8K, re=   78K
+  RCT Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+    VM Areas: cur=   13K, max=   13K, #=     32, 1= 2400, new=   13K, re=    0K
+     Symbols: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  TH Counter: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+   Tombstone: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Hot Patching: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  Thread Mgt: cur=   16K, max=   16K, #=      2, 1=16384, new=   16K, re=    0K
+  Memory Mgt: cur=   13K, max=   13K, #=      6, 1=10924, new=   13K, re=    0K
+       Stats: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ SpecialHeap: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+      Client: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+     Lib Dup: cur=    0K, max=    0K, #=      2, 1=  512, new=    0K, re=    0K
+  Clean Call: cur=    0K, max=    0K, #=      5, 1=   12, new=    0K, re=    0K
+       Other: cur=   40K, max=   40K, #=    224, 1=22564, new=   39K, re=    0K
+Total cur usage:     96 KB
+Total max (not nec. all used simult.):    104 KB
+Updated-at-end Process (max is total of maxes) heap breakdown:
+BB Fragments: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Coarse Links: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ Future Frag: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ Frag Tables: cur=    0K, max=    0K, #=      3, 1=  216, new=    0K, re=    0K
+  IBL Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+      Traces: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  FC Empties: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+   Vm Multis: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+          IR: cur=    0K, max=    7K, #=   2498, 1=   96, new=    8K, re=   78K
+  RCT Tables: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+    VM Areas: cur=   13K, max=   13K, #=     32, 1= 2400, new=   13K, re=    0K
+     Symbols: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  TH Counter: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+   Tombstone: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+Hot Patching: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  Thread Mgt: cur=   16K, max=   16K, #=      2, 1=16384, new=   16K, re=    0K
+  Memory Mgt: cur=   10K, max=   10K, #=      1, 1=10924, new=   10K, re=    0K
+       Stats: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+ SpecialHeap: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+      Client: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+     Lib Dup: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+  Clean Call: cur=    0K, max=    0K, #=      0, 1=    0, new=    0K, re=    0K
+       Other: cur=   39K, max=   39K, #=    214, 1=22564, new=   39K, re=    0K
+Total cur usage:     80 KB
+Total max (not nec. all used simult.):     88 KB
+	Basic block (shared) unit 0 @0x242c1000: capacity 4 KB, used 0 KB, not full
+Basic block (shared) cache: capacity 4 KB, used 0 KB, not full
+fcache Basic block (shared) free list stats:
+	# 0   0 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	      0 bytes :     0 live,        0 charge,        0 waste
+	# 1  44 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     44 bytes :     0 live,        0 charge,        0 waste
+	# 2  52 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     52 bytes :     0 live,        0 charge,        0 waste
+	# 3  56 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     56 bytes :     0 live,        0 charge,        0 waste
+	# 4  64 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     64 bytes :     0 live,        0 charge,        0 waste
+	# 5  72 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     72 bytes :     0 live,        0 charge,        0 waste
+	# 6  80 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     80 bytes :     0 live,        0 charge,        0 waste
+	# 7 112 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	    112 bytes :     0 live,        0 charge,        0 waste
+	# 8 172 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	    172 bytes :     0 live,        0 charge,        0 waste
+fcache Basic block (shared) requests and frees histogram:
+	Trace (shared) unit 0 @0x242d1000: capacity 4 KB, used 0 KB, not full
+Trace (shared) cache: capacity 4 KB, used 0 KB, not full
+fcache Trace (shared) free list stats:
+	# 0   0 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	      0 bytes :     0 live,        0 charge,        0 waste
+	# 1  44 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     44 bytes :     0 live,        0 charge,        0 waste
+	# 2  52 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     52 bytes :     0 live,        0 charge,        0 waste
+	# 3  56 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     56 bytes :     0 live,        0 charge,        0 waste
+	# 4  64 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     64 bytes :     0 live,        0 charge,        0 waste
+	# 5  72 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     72 bytes :     0 live,        0 charge,        0 waste
+	# 6  80 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	     80 bytes :     0 live,        0 charge,        0 waste
+	# 7 112 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	    112 bytes :     0 live,        0 charge,        0 waste
+	# 8 172 bytes :       0 free,       0 reuse,     0 coalesce,     0 split
+	    172 bytes :     0 live,        0 charge,        0 waste
+fcache Trace (shared) requests and frees histogram:
+Currently live process locks: 29, acquired 5474, contended 0 (current only)
+created log file 216=log.0.3816.html
+Not enough room to allocate 0x00005000 bytes post stack of size 0x0000e000
+loader_init_epilogue: calling entry points for drmgr.dll
+privload_load_finalize: loaded drmgr.dll @ 0x7abb0000-0x7abbc000 from E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\ext\lib32\debug/drmgr.dll
+loader_init_epilogue: calling entry points for drreg.dll
+privload_load_finalize: loaded drreg.dll @ 0x7aba0000-0x7abac000 from E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\ext\lib32\debug/drreg.dll
+loader_init_epilogue: calling entry points for drx.dll
+privload_load_finalize: loaded drx.dll @ 0x7ab80000-0x7ab94000 from E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\ext\lib32\debug/drx.dll
+loader_init_epilogue: calling entry points for drcovlib.dll
+privload_load_finalize: loaded drcovlib.dll @ 0x7ab70000-0x7ab7a000 from E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\ext\lib32\debug/drcovlib.dll
+loader_init_epilogue: calling entry points for drcov.dll
+privload_load_finalize: loaded drcov.dll @ 0x7a6a0000-0x7a6a6000 from E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\tools\lib32\release\drcov.dll
+DynamoRIO dll path: E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\lib32\debug\dynamorio.dll
+
+Our regions:
+0x7a6c0000-0x7a6c1000 r---
+0x7a6c1000-0x7a9d8000 r-x-
+0x7a9d8000-0x7aad6000 r---
+0x7aad6000-0x7ab02000 rw--
+0x7ab02000-0x7ab09000 rwx-
+0x7ab09000-0x7ab29000 rw--
+0x7ab29000-0x7ab6c000 r---
+DynamoRIO dll: from 0x7a6c0000 to 0x7ab6c000
+
+New +x app memory region: 0x00010000-0x00011000 r-x
+module mspaint.exe |mspaint.exe| [0x00610000,0x006ca000] added
+image mspaint.exe     mapped @ 0x00610000-0x006ca000
+New +x app memory region: 0x00611000-0x006af000 r-x
+New +x app memory region: 0x027a0000-0x027a1000 r-x
+module COMCTL32.dll |COMCTL32.dll| [0x6fd30000,0x6ff3f000] added
+image COMCTL32.dll    mapped @ 0x6fd30000-0x6ff3f000
+New +x app memory region: 0x6fd31000-0x6fed7000 r-x
+module PROPSYS.dll |PROPSYS.dll| [0x71b50000,0x71c16000] added
+image PROPSYS.dll     mapped @ 0x71b50000-0x71c16000
+New +x app memory region: 0x71b51000-0x71c02000 r-x
+module WINMMBASE.dll |winmmbase.dll| [0x73a50000,0x73a73000] added
+image WINMMBASE.dll   mapped @ 0x73a50000-0x73a73000
+New +x app memory region: 0x73a51000-0x73a6b000 r-x
+module WINMM.dll |WINMM.dll| [0x74150000,0x74174000] added
+image WINMM.dll       mapped @ 0x74150000-0x74174000
+New +x app memory region: 0x74151000-0x74167000 r-x
+module CRYPTBASE.dll |CRYPTBASE.dll| [0x75260000,0x7526a000] added
+image CRYPTBASE.dll   mapped @ 0x75260000-0x7526a000
+New +x app memory region: 0x75261000-0x75265000 r-x
+module SspiCli.dll |SspiCli.dll| [0x75270000,0x75290000] added
+image SspiCli.dll     mapped @ 0x75270000-0x75290000
+New +x app memory region: 0x75271000-0x7528a000 r-x
+module KERNEL32.dll |KERNEL32.DLL| [0x752a0000,0x75380000] added
+image KERNEL32.dll    mapped @ 0x752a0000-0x75380000
+New +x app memory region: 0x752b0000-0x75314000 r-x
+module IMM32.dll |IMM32.DLL| [0x75380000,0x753a5000] added
+image IMM32.dll       mapped @ 0x75380000-0x753a5000
+New +x app memory region: 0x75381000-0x7539a000 r-x
+module bcryptPrimitives.dll |bcryptPrimitives.dll| [0x75410000,0x7546f000] added
+image bcryptPrimitives.dll mapped @ 0x75410000-0x7546f000
+New +x app memory region: 0x75411000-0x75469000 r-x
+module RPCRT4.dll |RPCRT4.dll| [0x75470000,0x7552b000] added
+image RPCRT4.dll      mapped @ 0x75470000-0x7552b000
+New +x app memory region: 0x75471000-0x7551b000 r-x
+module COMDLG32.dll |COMDLG32.dll| [0x75530000,0x755e0000] added
+image COMDLG32.dll    mapped @ 0x75530000-0x755e0000
+New +x app memory region: 0x75531000-0x755cb000 r-x
+module profapi.dll |profapi.dll| [0x755e0000,0x755fb000] added
+image profapi.dll     mapped @ 0x755e0000-0x755fb000
+dll_name=profapi.dll has no exported symbols
+New +x app memory region: 0x755e1000-0x755f5000 r-x
+module USER32.dll |USER32.dll| [0x75600000,0x75797000] added
+image USER32.dll      mapped @ 0x75600000-0x75797000
+New +x app memory region: 0x75601000-0x756a2000 r-x
+module AppCore.dll |kernel.appcore.dll| [0x757b0000,0x757bf000] added
+image AppCore.dll     mapped @ 0x757b0000-0x757bf000
+New +x app memory region: 0x757b1000-0x757b8000 r-x
+module CRYPTSP.dll |cryptsp.dll| [0x757c0000,0x757d3000] added
+image CRYPTSP.dll     mapped @ 0x757c0000-0x757d3000
+New +x app memory region: 0x757c1000-0x757ce000 r-x
+module ucrtbase.dll |ucrtbase.dll| [0x757e0000,0x758ff000] added
+image ucrtbase.dll    mapped @ 0x757e0000-0x758ff000
+New +x app memory region: 0x757e1000-0x758ef000 r-x
+module win32u.dll |win32u.dll| [0x75a10000,0x75a27000] added
+image win32u.dll      mapped @ 0x75a10000-0x75a27000
+New +x app memory region: 0x75a11000-0x75a23000 r-x
+module SHELL32.dll |SHELL32.dll| [0x75a30000,0x75fa6000] added
+image SHELL32.dll     mapped @ 0x75a30000-0x75fa6000
+New +x app memory region: 0x75a31000-0x75f3a000 r-x
+module msvcp_win.dll |msvcp_win.dll| [0x75fb0000,0x7602c000] added
+image msvcp_win.dll   mapped @ 0x75fb0000-0x7602c000
+New +x app memory region: 0x75fb1000-0x76020000 r-x
+module GDI32.dll |GDI32.dll| [0x76030000,0x76051000] added
+image GDI32.dll       mapped @ 0x76030000-0x76051000
+New +x app memory region: 0x76031000-0x7604b000 r-x
+module gdi32full.dll |gdi32full.dll| [0x760c0000,0x7621a000] added
+image gdi32full.dll   mapped @ 0x760c0000-0x7621a000
+New +x app memory region: 0x760c1000-0x761f7000 r-x
+module CFGMGR32.dll |cfgmgr32.dll| [0x76670000,0x766ab000] added
+image CFGMGR32.dll    mapped @ 0x76670000-0x766ab000
+New +x app memory region: 0x76671000-0x766a4000 r-x
+module SHLWAPI.dll |SHLWAPI.dll| [0x766c0000,0x76704000] added
+image SHLWAPI.dll     mapped @ 0x766c0000-0x76704000
+New +x app memory region: 0x766c1000-0x766fa000 r-x
+module SHCORE.dll |shcore.dll| [0x76710000,0x76794000] added
+image SHCORE.dll      mapped @ 0x76710000-0x76794000
+New +x app memory region: 0x76711000-0x76786000 r-x
+module POWRPROF.dll |powrprof.dll| [0x767a0000,0x767e3000] added
+image POWRPROF.dll    mapped @ 0x767a0000-0x767e3000
+New +x app memory region: 0x767a1000-0x767b4000 r-x
+module Windows.Storage.dll |windows.storage.dll| [0x76960000,0x76f25000] added
+image Windows.Storage.dll mapped @ 0x76960000-0x76f25000
+New +x app memory region: 0x76961000-0x76eb0000 r-x
+module SECHOST.dll |sechost.dll| [0x76f50000,0x76fc6000] added
+image SECHOST.dll     mapped @ 0x76f50000-0x76fc6000
+New +x app memory region: 0x76f51000-0x76fb8000 r-x
+module ADVAPI32.dll |ADVAPI32.dll| [0x76fd0000,0x77049000] added
+image ADVAPI32.dll    mapped @ 0x76fd0000-0x77049000
+New +x app memory region: 0x76fd1000-0x77038000 r-x
+module ole32.dll |OLE32.dll| [0x771b0000,0x772a7000] added
+image ole32.dll       mapped @ 0x771b0000-0x772a7000
+New +x app memory region: 0x771b1000-0x7727c000 r-x
+module KERNELBASE.dll |KERNELBASE.dll| [0x77320000,0x7751e000] added
+image KERNELBASE.dll  mapped @ 0x77320000-0x7751e000
+New +x app memory region: 0x77321000-0x774e5000 r-x
+module OLEAUT32.dll |OLEAUT32.dll| [0x77520000,0x775b2000] added
+image OLEAUT32.dll    mapped @ 0x77520000-0x775b2000
+New +x app memory region: 0x77521000-0x775a5000 r-x
+module combase.dll |combase.dll| [0x77640000,0x778b5000] added
+image combase.dll     mapped @ 0x77640000-0x778b5000
+New +x app memory region: 0x77641000-0x77872000 r-x
+module msvcrt.dll |msvcrt.dll| [0x77930000,0x779ef000] added
+image msvcrt.dll      mapped @ 0x77930000-0x779ef000
+New +x app memory region: 0x77931000-0x779e2000 r-x
+module UMPDC.dll |UMPDC.dll| [0x779f0000,0x779fd000] added
+image UMPDC.dll       mapped @ 0x779f0000-0x779fd000
+New +x app memory region: 0x779f1000-0x779f9000 r-x
+image 0x77a90000-0x77a99000 is 64-bit dll (wow64 process?): ignoring it!
+New +x app memory region: 0x77a91000-0x77a93000 r-x
+New +x app memory region: 0x77a96000-0x77a97000 r-x
+module ntdll.dll |ntdll.dll| [0x77aa0000,0x77c3a000] added
+image ntdll.dll       mapped @ 0x77aa0000-0x77c3a000
+New +x app memory region: 0x77aa1000-0x77bbb000 r-x
+module drcov.dll |drcov.dll| [0x7a6a0000,0x7a6a6000] added
+image drcov.dll       mapped @ 0x7a6a0000-0x7a6a6000
+New +x app memory region: 0x7a6a1000-0x7a6a2000 r-x
+module dynamorio.dll |dynamorio.dll| [0x7a6c0000,0x7ab6c000] added
+image dynamorio.dll   mapped @ 0x7a6c0000-0x7ab6c000
+New +x app memory region: 0x7a6c1000-0x7a9d8000 r-x
+New +x app memory region: 0x7ab02000-0x7ab09000 rwx
+WARNING: 0x7ab02000-0x7ab09000 is writable, NOT adding to executable list
+module drcovlib.dll |drcovlib.dll| [0x7ab70000,0x7ab7a000] added
+image drcovlib.dll    mapped @ 0x7ab70000-0x7ab7a000
+New +x app memory region: 0x7ab71000-0x7ab75000 r-x
+module drx.dll |drx.dll| [0x7ab80000,0x7ab94000] added
+image drx.dll         mapped @ 0x7ab80000-0x7ab94000
+New +x app memory region: 0x7ab81000-0x7ab8e000 r-x
+module drreg.dll |drreg.dll| [0x7aba0000,0x7abac000] added
+image drreg.dll       mapped @ 0x7aba0000-0x7abac000
+New +x app memory region: 0x7aba1000-0x7aba7000 r-x
+module drmgr.dll |drmgr.dll| [0x7abb0000,0x7abbc000] added
+image drmgr.dll       mapped @ 0x7abb0000-0x7abbc000
+New +x app memory region: 0x7abb1000-0x7abb6000 r-x
+module MFC42u.dll |MFC42u.dll| [0x7b180000,0x7b2a2000] added
+image MFC42u.dll      mapped @ 0x7b180000-0x7b2a2000
+New +x app memory region: 0x7b181000-0x7b276000 r-x
+
+Execution is allowed in 47 areas
+  0x00010000-0x00011000 ---- alloc
+  0x00611000-0x006af000 ---- module mspaint.exe
+  0x027a0000-0x027a1000 ---- alloc
+  0x6fd31000-0x6fed7000 ---- module COMCTL32.dll
+  0x71b51000-0x71c02000 ---- module PROPSYS.dll
+  0x73a51000-0x73a6b000 ---- module WINMMBASE.dll
+  0x74151000-0x74167000 ---- module WINMM.dll
+  0x75261000-0x75265000 ---- module CRYPTBASE.dll
+  0x75271000-0x7528a000 ---- module SspiCli.dll
+  0x752b0000-0x75314000 ---- module KERNEL32.dll
+  0x75381000-0x7539a000 ---- module IMM32.dll
+  0x75411000-0x75469000 ---- module bcryptPrimitives.dll
+  0x75471000-0x7551b000 ---- module RPCRT4.dll
+  0x75531000-0x755cb000 ---- module COMDLG32.dll
+  0x755e1000-0x755f5000 ---- module profapi.dll
+  0x75601000-0x756a2000 ---- module USER32.dll
+  0x757b1000-0x757b8000 ---- module AppCore.dll
+  0x757c1000-0x757ce000 ---- module CRYPTSP.dll
+  0x757e1000-0x758ef000 ---- module ucrtbase.dll
+  0x75a11000-0x75a23000 ---- module win32u.dll
+  0x75a31000-0x75f3a000 ---- module SHELL32.dll
+  0x75fb1000-0x76020000 ---- module msvcp_win.dll
+  0x76031000-0x7604b000 ---- module GDI32.dll
+  0x760c1000-0x761f7000 ---- module gdi32full.dll
+  0x76671000-0x766a4000 ---- module CFGMGR32.dll
+  0x766c1000-0x766fa000 ---- module SHLWAPI.dll
+  0x76711000-0x76786000 ---- module SHCORE.dll
+  0x767a1000-0x767b4000 ---- module POWRPROF.dll
+  0x76961000-0x76eb0000 ---- module Windows.Storage.dll
+  0x76f51000-0x76fb8000 ---- module SECHOST.dll
+  0x76fd1000-0x77038000 ---- module ADVAPI32.dll
+  0x771b1000-0x7727c000 ---- module ole32.dll
+  0x77321000-0x774e5000 ---- module KERNELBASE.dll
+  0x77521000-0x775a5000 ---- module OLEAUT32.dll
+  0x77641000-0x77872000 ---- module combase.dll
+  0x77931000-0x779e2000 ---- module msvcrt.dll
+  0x779f1000-0x779f9000 ---- module UMPDC.dll
+  0x77a91000-0x77a93000 ---- alloc 
+  0x77a96000-0x77a97000 ---- alloc 
+  0x77aa1000-0x77bbb000 ---- module ntdll.dll
+  0x7a6a1000-0x7a6a2000 ---- module drcov.dll
+  0x7a6c1000-0x7a9d8000 ---- module dynamorio.dll
+  0x7ab71000-0x7ab75000 ---- module drcovlib.dll
+  0x7ab81000-0x7ab8e000 ---- module drx.dll
+  0x7aba1000-0x7aba7000 ---- module drreg.dll
+  0x7abb1000-0x7abb6000 ---- module drmgr.dll
+  0x7b181000-0x7b276000 ---- module MFC42u.dll
+hashtable_strhash_init annotation handler hashtable htable=0x2436a81c bits=8 size=257 mask=0x000000ff offset=0 load=80% resize=205
+               annotation handler hashtable table 0x2436a920  0x00000000  groom=0% groom_at=0
+drcov: log file is .\drcov.mspaint.exe.19612.0000.proc.log
+SYSLOG_CRITICAL: Application C:\Windows\SysWOW64\mspaint.exe (19612).  DrCov internal crash at PC 0x7a9396f2.  Please report this at http://dynamorio.org/issues.  Program aborted.
+0xc0000005 0x00000000 0x7a9396f2 0x7a9396f2 0x00000000 0xffffffff
+Base: 0x7a6c0000
+Registers: eax=0x00000023 ebx=0x00001000 ecx=0x0000004c edx=0x0276def4
+	esi=0x00000000 edi=0x77b13000 esp=0x0276deec ebp=0x0276df34
+	eflags=0x00010202
+version 8.0.0, build 1
+-no_dynamic_options -loglevel 1 -client_lib 'E:\svn\PowerResearch\DynamoRIO-Windows-8.0.0-1\tools\lib32\release\drcov.dll;0;' -code_api -probe_api -stack_size 56K -nop_initial_bblock -max_elide_jmp 0 -max_elide_call 0 -no_inline_ignored_syscalls -native_exec_default_list '' -no_native_exec_managed_code -no_indcall2direct
+0x0276df34 0x7a9907fd
+0x0276df64 0x7a9630c0
+0x0276dfb8 0x7a954e4d
+0x0276dfe4 0x7a97b0d7
+0x0276e050 0x7a96b644
+0x0276e08c 0x7a979b07
+0x0276ece8 0x7a6ccd5e
+0x0276f5a4 0x7a938b51
+0x0276f60c 0x7a9394b8
