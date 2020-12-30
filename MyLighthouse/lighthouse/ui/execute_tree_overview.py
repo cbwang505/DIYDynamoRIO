@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QHeaderView
 
 from lighthouse.ui.execute_tree import ExecuteTreeView
 from lighthouse.ui.functrace_table import FunctionTraceTableModel, FunctionTraceTableController, FunctionTraceTableView
+from lighthouse.util.disassembler.ida_api import map_line2citem, map_line2node, map_line2itemaddress
 from lighthouse.util.qt import *
 from lighthouse.util.misc import plugin_resource
 from lighthouse.util.disassembler import disassembler, DockableWindow
@@ -105,6 +106,7 @@ class ExecuteTreeModel(object):
     def refresh(self):
         pass
 
+
 class ExecuteTreeController(object):
     def __init__(self, model):
         self._model = model
@@ -121,7 +123,48 @@ class ExecuteTreeController(object):
         disassembler.replace_wait_box("Refreshing execute trace Overview...")
 
 
-    def jump_to_func(self,addr,mod):
+    def jump_to_func(self,addr,mod,from_addr):
         if mod==self._model._director.main_module.id:
             idaapi.jumpto(self._model._director.metadata.imagebase+addr)
 
+
+    def forcus_to_func(self, addr, mod, from_addr):
+        self.forcus_addr(self._model._director.metadata.imagebase + from_addr)
+
+    def forcus_addr(self,from_addr):
+        db_metadata = self._model._director.metadata
+        cfunc = self._model._director.cfunc_current
+        if cfunc:
+            decompilation_text = cfunc.get_pseudocode()
+
+            #
+            # the objective here is to paint hexrays lines that are associated with
+            # our runtime data. unfortunately, there are very few API resources that
+            # link decompilation line numbers to anything (eg, citems, nodes, ea, etc)
+            #
+            # this means that we must build our own data relationships to draw from
+            #
+
+            #
+            # first, let's build a relationship between a given line of text, and the
+            # citems that contribute to it. the only way to do that (as I see it) is
+            # to lex citem ID's out of the decompiled output string
+            #
+
+            line2citem = map_line2citem(decompilation_text)
+
+            #
+            # now that we have some understanding of how citems contribute to each
+            # line of decompiled text, we can use this information to build a
+            # relationship that ties graph nodes (basic blocks) to individual lines.
+            #
+
+            line2node = map_line2itemaddress(cfunc, db_metadata, line2citem)
+            idaapi.set_item_color(from_addr, 0x1EDB98)
+            for line_number, line_nodes in line2node.iteritems():
+                if from_addr in line_nodes:
+                    decompilation_text[line_number].bgcolor = 0x1EDB98
+                    idaapi.refresh_idaview_anyway()
+                    break;
+        else:
+            idaapi.set_item_color(from_addr, 0x1EDB98)

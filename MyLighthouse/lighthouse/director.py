@@ -59,6 +59,7 @@ class CoverageDirector(object):
         self.main_module = None
         self.all_modules = None
         self.symbol_data = None
+        self.cfunc_current = None
         # the central database metadata cache
         self.metadata = DatabaseMetadata()
         self.org_function_trace_data = None
@@ -682,9 +683,10 @@ class CoverageDirector(object):
         return "unknown module"
 
     def get_extra_module_file_name(self, from_mod, from_address):
-        for symbol in self.symbol_data.modules:
-            if symbol.id == from_mod:
-                return symbol.SymbolDic[from_address]
+        if self.symbol_data:
+            for symbol in self.symbol_data.modules:
+                if symbol.id == from_mod:
+                    return symbol.SymbolDic[from_address]
         return None
 
     def build_symbol_modules(self):

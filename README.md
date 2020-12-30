@@ -643,7 +643,7 @@ DynamoRIO客户端启动参数说明:
 -logdir 必须参数,最终生成的记录文件地址
 -dump_text 可选参数,以文本模式输出,一般用作调试模式使用
 -always_instruction 可选参数,始终记录所有模块和函数调用的记录,不建议使用
--trace_module 可选参数,代码覆盖记录的追踪模块
+-trace_module 必须参数,代码覆盖记录的追踪模块
 -follow_func 可选参数,当-target_module启用时可选参数,追踪函数调用,调用函数顺序以次数递增方式展示,首次函数调用触发后开始记录
 -target_module 可选参数,当-follow_func或-restrict_func启用时必须参数,追踪函数调用对应模块文件名,调用函数顺序以次数递增方式展示
 -target_method 可选参数,当-target_module启用时必须参数,不能与-target_offset共用,追踪函数调用函数相对于模块地址中的函数名称,调用函数顺序以次数递增方式展示
@@ -655,19 +655,19 @@ DynamoRIO客户端启动参数说明:
 测试启动命令:测试启动程序notepad.exe,追踪函数偏移量4410A0:
 "PathTo\drrun.exe" -verbose -disable_traces -c "PathTo\niii.dll" -logdir "PathTo\logDir" -trace_module "notepad.exe" -target_module "notepad.exe" [-from_module "notepad.exe"]  [-restrict_func] -target_offset 4410A0 [-call_convention stdcall]   -- "PathTo\notepad.exe"
 
+GUI启动程序:
+直接运行TraceLauncher.exe
+
 立即结束进程dump追踪数据命令,参数pid为客户端程序进程id:
 "PathTo\drconfig.exe" -nudge_pid pid 0 67
 
-ida插件代码追踪插件使用方法:
+IDA7.0插件代码追踪工插件使用方法:
 1.复制MyLighthouse目录下文件至"C:\Program Files\IDA 7.0\plugins"目录
 2.在ida打开文件File->Code Function Trace File
 3.在ida函数列表FunctionWindow中右键任意函数Fuzz->ExecTree就可以展示函数调用树,点击树中节点导航到对应函数反汇编代码
-调试模式需要安装Wing Pro 7.2,非调试模式进行以下操作:
-注释"C:\Program Files\IDA 7.0\plugins\MyLighthouse\lighthouse_plugin.py"文件中以下代码
-import wingdbstub
-wingdbstub.Ensure()
+调试模式需要安装Wing Pro 7.2
 
-ida插件代码导入符号插件使用方法:
+IDA7.0插件代码导入符号插件使用方法:
 1.使用windbg调试目标进程运行如下命令,如目标文件为c:\symbol.txt
 1.1 .shell -i- -ci "x *!*" findstr "!">c:\symbol.txt
 1.2 .logappend  c:\symbol.txt ;lm o;.logclose; 
@@ -678,6 +678,10 @@ ida插件代码导入符号插件使用方法:
 ```
 
 ![查看大图](../master/ok.gif)
+
+##  视频介绍 ##
+[视频介绍](https://www.youtube.com/watch?v=_zumplegXT8&feature=youtu.be)
+
 ##  相关项目 ##
 [我的DynamoRIO项目](https://gitee.com/cbwang505/diydynamorio)
 

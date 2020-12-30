@@ -61,28 +61,31 @@ class DrSymbolData(object):
 
     def _parse_module_symbol(self, f, reg, all_lines):
         disassembler.replace_wait_box("Building module_symbol metadata...")
-        len_idx=1;
+        len_idx = 1
         while 1:
-            module_line = f.readline().strip()
-            if ("Opened" in module_line or "start" in module_line) and "!" not in module_line:
-                break
-            if module_line == None or module_line == "":
-                break
-            else:
-                len_idx = len_idx + 1
-                disassembler.replace_wait_box("Building module symbol metadata %u/%u" % (len_idx, all_lines))
-                regMatch = reg.match(module_line)
-                linebits = regMatch.groupdict()
-                dic = {}
-                for k, v in linebits.iteritems():
-                    if k == "addr":
-                        dic["addr"] = v
-                    if k == "symbol":
-                        module = v[0:v.find("!")]
-                        symbol = v[v.find("!")+1:]
-                        dic["module"] = module
-                        dic["symbol"] = symbol
-                self.all_symbol.append(dic)
+            try:
+                module_line = f.readline().strip()
+                if ("Opened" in module_line or "start" in module_line) and "!" not in module_line:
+                    break
+                if module_line == None or module_line == "":
+                    break
+                else:
+                    len_idx = len_idx + 1
+                    disassembler.replace_wait_box("Building module symbol metadata %u/%u" % (len_idx, all_lines))
+                    regMatch = reg.match(module_line)
+                    linebits = regMatch.groupdict()
+                    dic = {}
+                    for k, v in linebits.iteritems():
+                        if k == "addr":
+                            dic["addr"] = v
+                        if k == "symbol":
+                            module = v[0:v.find("!")]
+                            symbol = v[v.find("!")+1:]
+                            dic["module"] = module
+                            dic["symbol"] = symbol
+                    self.all_symbol.append(dic)
+            except Exception as e:
+                continue
 
 
     def _fix_symbol(self, f):

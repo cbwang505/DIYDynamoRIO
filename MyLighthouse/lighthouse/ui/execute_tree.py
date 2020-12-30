@@ -28,6 +28,7 @@ class ExecuteTreeView(QtWidgets.QTreeWidget):
         self.setColumnHidden(1, True)  # reference address
         self.setColumnHidden(2, True)  # reference address
         self.itemClicked.connect(self._onClickItem)
+        self.itemDoubleClicked.connect(self._ondbClickItem)
         self.populate()
 
     def buid_sub_tree(self,ls,root):
@@ -36,6 +37,7 @@ class ExecuteTreeView(QtWidgets.QTreeWidget):
             sub.setText(0, funcov.get_to_func_name_full())  # set text of root1
             sub.setText(1, funcov.get_to_address_hex_str())  # reference address
             sub.setText(2, str(funcov.to_mod))  # reference to_mod
+            sub.setText(3, funcov.get_from_address_hex_str())  # reference to_mod
             self.buid_sub_tree(funcov.sub_func_coverage,sub)
 
     def populate(self):
@@ -49,6 +51,7 @@ class ExecuteTreeView(QtWidgets.QTreeWidget):
             root.setText(0, funcov.get_to_func_name_full())  # set text of root1
             root.setText(1, funcov.get_to_address_hex_str())  # reference address
             root.setText(2, str(funcov.to_mod))  # reference to_mod
+            root.setText(3, funcov.get_from_address_hex_str())  # reference to_mod
             self.buid_sub_tree(funcov.sub_func_coverage, root)
 
     @disassembler.execute_ui
@@ -61,4 +64,11 @@ class ExecuteTreeView(QtWidgets.QTreeWidget):
 
         xref = int(item.text(1), 16)
         mod = int(item.text(2))
-        self._controller.jump_to_func(xref,mod)
+        from_addr = int(item.text(3), 16)
+        self._controller.forcus_to_func(xref, mod, from_addr)
+
+    def _ondbClickItem(self, item):
+        xref = int(item.text(1), 16)
+        mod = int(item.text(2))
+        from_addr = int(item.text(3), 16)
+        self._controller.jump_to_func(xref, mod, from_addr)

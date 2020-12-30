@@ -1,7 +1,9 @@
 from lighthouse.util.log import logging_started, start_logging
 from lighthouse.util.disassembler import disassembler
+import os
 import wingdbstub
-wingdbstub.Ensure()
+if "wing.exe" in os.popen('tasklist /FI "IMAGENAME eq wing.exe"').read():
+    wingdbstub.Ensure()
 if not logging_started():
     logger = start_logging()
 

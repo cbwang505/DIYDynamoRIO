@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1231
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLauncher", "TraceLauncher\TraceLauncher.csproj", "{FB506A03-43FC-4CB7-9F2F-28F0A801FC0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB506A03-43FC-4CB7-9F2F-28F0A801FC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB506A03-43FC-4CB7-9F2F-28F0A801FC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB506A03-43FC-4CB7-9F2F-28F0A801FC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB506A03-43FC-4CB7-9F2F-28F0A801FC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {297DB7DE-D989-4658-8900-A942C940FD57}
+	EndGlobalSection
+EndGlobal

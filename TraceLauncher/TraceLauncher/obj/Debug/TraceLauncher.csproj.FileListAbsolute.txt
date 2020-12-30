@@ -1,0 +1,9 @@
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\bin\Debug\TraceLauncher.exe
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\bin\Debug\TraceLauncher.pdb
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\obj\Debug\TraceLauncher.csprojAssemblyReference.cache
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\obj\Debug\TraceLauncher.Form1.resources
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\obj\Debug\TraceLauncher.Properties.Resources.resources
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\obj\Debug\TraceLauncher.csproj.GenerateResource.cache
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\obj\Debug\TraceLauncher.csproj.CoreCompileInputs.cache
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\obj\Debug\TraceLauncher.exe
+E:\svn\PowerResearch\TraceLauncher\TraceLauncher\obj\Debug\TraceLauncher.pdb

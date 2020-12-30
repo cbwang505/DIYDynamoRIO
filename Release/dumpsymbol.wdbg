@@ -1,0 +1,5 @@
+.echo dump symbol path to ${$arg1};
+.reload /f *;
+.block {.shell -i- -ci "x *!*" findstr "!">${$arg1}}
+.logappend ${$arg1} ;lm o;.logclose;
+.echo successfully dump symbol file, you can find in ${$arg1};

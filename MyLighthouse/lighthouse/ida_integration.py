@@ -15,7 +15,7 @@ class MyHooks(idaapi.UI_Hooks):
         # has been populated.
         # Submenu Others
         if idaapi.get_tform_type(form) == idaapi.BWN_FUNCS:
-            idaapi.attach_action_to_popup(form, popup, ACTION_EXEC_TREE, 'FUZZ/')
+            idaapi.attach_action_to_popup(form, popup, ACTION_EXEC_TREE, 'Function Tracer/')
 
 
 
@@ -162,10 +162,10 @@ class LighthouseIDA(Lighthouse):
     def _install_load_exec_tree(self):
         tree_func_desc = idaapi.action_desc_t(
             ACTION_EXEC_TREE,  # Unique ID
-            'Exec Tree',  # Action text
+            'Execute Tree',  # Action text
             IDACtxEntry(self.interactive_load_exec_tree),  # Action handler
             None,  # Optional: shortcut
-            'show function exec tree',  # Optional: tooltip (menus, toolbars)
+            'show function execute tree',  # Optional: tooltip (menus, toolbars)
             197  # Optional: icon (menus, toolbars)
         )
         # register the action with IDA

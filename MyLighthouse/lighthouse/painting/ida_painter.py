@@ -392,7 +392,7 @@ class IDAPainter(DatabasePainter):
             # more code-friendly, readable aliases
             vdui = args[0]
             cfunc = vdui.cfunc
-
+            self._director.cfunc_current = cfunc
             # if there's no coverage data for this function, there's nothing to do
             if not cfunc.entry_ea in self._director.coverage.functions:
                 return 0

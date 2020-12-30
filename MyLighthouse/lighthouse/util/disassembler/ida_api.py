@@ -470,6 +470,60 @@ def map_line2node(cfunc, metadata, line2citem):
     # all done, return the computed map
     return line2node
 
+def map_line2itemaddress(cfunc, metadata, line2citem):
+    """
+    Map decompilation line numbers to node (basic blocks) addresses.
+
+    This function allows us to build a relationship between graph nodes
+    (basic blocks) and specific lines in the hexrays decompilation text.
+
+    Output:
+
+        +- line2node:
+        |    a map keyed with line numbers, holding sets of node addresses
+        |
+        |      eg: { int(line_number): set(nodes), ... }
+        '
+
+    """
+    line2node = {}
+    treeitems = cfunc.treeitems
+    function_address = cfunc.entry_ea
+
+    #
+    # prior to this function, a line2citem map was built to tell us which
+    # citems reside on any given line of text in the decompilation output.
+    #
+    # now, we walk through this line2citem map one 'line_number' at a time in
+    # an effort to resolve the set of graph nodes associated with its citems.
+    #
+
+    for line_number, citem_indexes in line2citem.iteritems():
+        nodes = set()
+
+        #
+        # we are at the level of a single line (line_number). we now consume
+        # its set of citems (citem_indexes) and attempt to identify explicit
+        # graph nodes they claim to be sourced from (by their reported EA)
+        #
+
+        for index in citem_indexes:
+
+            # get the code address of the given citem
+            try:
+                item = treeitems[index]
+                address = item.ea
+                nodes.add(address)
+
+            # apparently this is a thing on IDA 6.95
+            except IndexError as e:
+                continue
+
+        line2node[line_number] = nodes
+
+    # all done, return the computed map
+    return line2node
+
 def lex_citem_indexes(line):
     """
     Lex all ctree item indexes from a given line of text.
