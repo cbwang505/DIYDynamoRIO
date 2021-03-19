@@ -13,7 +13,7 @@
 #include <windows.h>
 #include <limits.h>
 
-extern "C" Niii_Options options;
+extern "C" static  Niii_Options options;
 static bool niii_per_thread = false;
 static int tls_idx = -1;
 static int tls_for_trace_idx = -1;
@@ -1050,14 +1050,14 @@ dump_sub_inst_list_entry(void *drcontext, instr_t *instrFirst, instr_t *instrLas
     instr_t *instr = 0;
     app_pc end_pc = 0;
     app_pc start_pc = instr_get_app_pc(instrFirst);
-    for ( instr = instrFirst; instr != NULL; instr = instr_get_next_app(instr)) {
+    for (instr = instrFirst; instr != NULL; instr = instr_get_next_app(instr)) {
         if (instr == instrLast) {
             findLast = true;
         }
         app_pc pc = instr_get_app_pc(instr);
         if (end_pc != 0) {
             if (pc != end_pc) {
-                //dr_printf("trace inst overlapped \r\n");
+                // dr_printf("trace inst overlapped \r\n");
                 findData = true;
                 break;
             }
@@ -1069,9 +1069,6 @@ dump_sub_inst_list_entry(void *drcontext, instr_t *instrFirst, instr_t *instrLas
         }
     }
 
-
-   
-
     ASSERT((end_pc - start_pc) < USHRT_MAX, "fake end_pc\r\n");
     /* int checksize = (end_pc - start_pc);
      if (checksize <= 0 || checksize > USHRT_MAX) {
@@ -1079,7 +1076,7 @@ dump_sub_inst_list_entry(void *drcontext, instr_t *instrFirst, instr_t *instrLas
     }*/
     if (!(end_pc != NULL && (end_pc > start_pc || end_pc > start_pc) &&
           (end_pc - start_pc) < USHRT_MAX)) {
-       // dr_printf("fake end_pc\r\n");
+        // dr_printf("fake end_pc\r\n");
         return;
     }
     if (findData) {
@@ -1095,7 +1092,7 @@ dump_sub_inst_list_entry(void *drcontext, instr_t *instrFirst, instr_t *instrLas
         charm_table_entry_add(drcontext, data, start_pc, (uint)(end_pc - start_pc));
     }
     if (!findLast) {
-        //dr_printf("trace inst overlapped has next\r\n");
+        // dr_printf("trace inst overlapped has next\r\n");
         dump_sub_inst_list_entry(drcontext, instr, instrLast, data);
     }
 }
@@ -1110,7 +1107,7 @@ trace_event1(void *drcontext, void *tag, instrlist_t *bb, bool translating)
         return DR_EMIT_GO_NATIVE;
     }
     if (TEST(NIII_FOLLOW_FUNCTION, options.flags) &&
-        options.fuzz_module != NULL & global_func_id == 0) {
+        *options.fuzz_module & global_func_id == 0) {
         return DR_EMIT_DEFAULT;
     }
 
@@ -1163,7 +1160,7 @@ event_basic_block_analysis(void *drcontext, void *tag, instrlist_t *bb, bool for
         return DR_EMIT_GO_NATIVE;
     }
     if (TEST(NIII_FOLLOW_FUNCTION, options.flags) &&
-        options.fuzz_module != NULL & global_func_id == 0) {
+        *options.fuzz_module & global_func_id == 0) {
         return DR_EMIT_DEFAULT;
     }
 
@@ -1194,7 +1191,7 @@ event_bb_insert(void *drcontext, void *tag, instrlist_t *bb, instr_t *instr,
         return DR_EMIT_GO_NATIVE;
     }
     if (TEST(NIII_FOLLOW_FUNCTION, options.flags) &&
-        options.fuzz_module != NULL & global_func_id == 0) {
+        *options.fuzz_module  & global_func_id == 0) {
         return DR_EMIT_DEFAULT;
     }
 
@@ -1272,7 +1269,7 @@ module_load_event(void *drcontext, const module_data_t *mod, bool loaded)
 
     const char *modname = dr_module_preferred_name(mod);
     dr_printf("ModLoad:%s,base:%08x,end:%08x\n", modname, mod->start, mod->end);
-    if (options.fuzz_module != NULL) {
+    if (*options.fuzz_module ) {
         if (_stricmp(modname, options.fuzz_module) == 0) {
             if (options.fuzz_offset) {
                 to_wrap = mod->start + options.fuzz_offset;
@@ -1565,13 +1562,14 @@ dr_client_main(client_id_t id, int argc, const char *argv[])
 {
 
     dr_enable_console_printing();
-    options = {
-        sizeof(options),
-    };
+
+     
+    ZeroMemory(&options, sizeof(options));
+    options.struct_size = sizeof(options);
     options.callconv = DRWRAP_CALLCONV_DEFAULT;
 
     client_id = id;
-
+   
     options_init(id, argc, argv, &options);
 
     dr_set_client_name("DynamoRIO NIII tracer", "https://www.niii.com/");

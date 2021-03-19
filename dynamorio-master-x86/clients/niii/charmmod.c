@@ -41,7 +41,8 @@
 
 #define NUM_GLOBAL_MODULE_CACHE 8
 #define NUM_THREAD_MODULE_CACHE 4
-Niii_Options options;
+
+static Niii_Options options;
 typedef struct _module_entry_t {
     uint id;
     uint containing_id;
@@ -191,7 +192,7 @@ event_module_load(void *drcontext, const module_data_t *data, bool loaded)
         entry->unload = false;
         entry->dotrace = TRACE_EXCLUDE;
         const char *modname = dr_module_preferred_name(data);
-        if (options.mod_trace_name!=NULL) {           
+        if (*options.mod_trace_name) {           
             if (_stricmp(modname, options.mod_trace_name) == 0) {
                 dr_printf("always tracing module %s\n", modname);
                 
@@ -200,7 +201,7 @@ event_module_load(void *drcontext, const module_data_t *data, bool loaded)
                
             } 
         }
-        if (options.fuzz_from_module != NULL) {           
+        if (*options.fuzz_from_module ) {           
             if (_stricmp(modname, options.fuzz_from_module) == 0) {
                 dr_printf("always include from tracing module %s\n", modname);
                 if (entry->dotrace == TRACE_EXCLUDE) {
@@ -208,7 +209,7 @@ event_module_load(void *drcontext, const module_data_t *data, bool loaded)
                 }
             } 
         }
-        if (options.mod_trace_name == NULL && options.fuzz_from_module == NULL) {            
+        if (*options.mod_trace_name == 0 && *options.fuzz_from_module == 0) {            
             entry->dotrace = TRACE_ALWAYS;           
         }
         entry->data = dr_copy_module_data(data);

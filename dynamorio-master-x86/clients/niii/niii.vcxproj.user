@@ -2,9 +2,16 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LocalDebuggerCommand>E:\svn\PowerResearch\dynamorio-master-x86\bin32\drrun.exe</LocalDebuggerCommand>
-    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <DebuggerFlavor>WindowsRemoteDebugger</DebuggerFlavor>
     <LocalDebuggerCommandArguments>-verbose   -c $(TargetPath)   -trace_module "Sterm32.exe"  -logdir "E:\git\ALLIDA\stash" -- ""E:\git\ReverseEngineer\Scatterm\Sterm32.exe"</LocalDebuggerCommandArguments>
     <LocalDebuggerWorkingDirectory>E:\git\ALLIDA\stash</LocalDebuggerWorkingDirectory>
     <LocalDebuggerAttach>false</LocalDebuggerAttach>
+    <RemoteDebuggerCommand>C:\dl\trace\DynamoRIO-Binary-8.0.0-1\bin32\drrun.exe</RemoteDebuggerCommand>
+    <RemoteDebuggerCommandArguments> -disable_traces -c "C:\dl\trace\Release\niii.dll" -logdir "C:\dl\trace\log" -trace_module UnityXL.exe -- "C:\Program Files (x86)\Schneider Electric\Unity Pro\UnityXL.exe" </RemoteDebuggerCommandArguments>
+    <RemoteDebuggerWorkingDirectory>C:\dl\trace\Release</RemoteDebuggerWorkingDirectory>
+    <RemoteDebuggerServerName>10.1.6.239:4024</RemoteDebuggerServerName>
+    <RemoteDebuggerConnection>RemoteWithoutAuthentication</RemoteDebuggerConnection>
+    <DeploymentDirectory>C:\dl\trace\Release</DeploymentDirectory>
+    <RemoteDebuggerDeployDebugCppRuntime>false</RemoteDebuggerDeployDebugCppRuntime>
   </PropertyGroup>
 </Project>
