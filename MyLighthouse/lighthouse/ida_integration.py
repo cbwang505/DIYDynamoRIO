@@ -26,8 +26,7 @@ class MyHooks(idaapi.UI_Hooks):
 class LighthouseIDA(Lighthouse):
     """
     Lighthouse UI Integration for IDA Pro.
-    """
-
+    """    
     def __init__(self):
 
         # menu entry icons
@@ -59,7 +58,7 @@ class LighthouseIDA(Lighthouse):
         icon_path = plugin_resource(os.path.join("icons", "load.png"))
         icon_data = str(open(icon_path, "rb").read())
         self._icon_id_file = idaapi.load_custom_icon(data=icon_data)
-
+        
         # describe a custom IDA UI action
         action_desc = idaapi.action_desc_t(
             self.ACTION_LOAD_FILE,                   # The action name
@@ -69,7 +68,7 @@ class LighthouseIDA(Lighthouse):
             "Load individual code coverage file(s)", # Optional: tooltip
             self._icon_id_file                       # Optional: the action icon
         )
-
+        
         # register the action with IDA
         result = idaapi.register_action(action_desc)
         if not result:
